@@ -9,6 +9,7 @@ import {
   Twitter,
   Instagram,
   Youtube,
+  MessageCircle,
   ArrowRight
 } from 'lucide-react';
 
@@ -64,7 +65,8 @@ const Footer = () => {
     { icon: Facebook, href: '#', name: 'Facebook' },
     { icon: Twitter, href: '#', name: 'Twitter' },
     { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Youtube, href: '#', name: 'YouTube' }
+    { icon: Youtube, href: '#', name: 'YouTube' },
+    { icon: MessageCircle, href: 'https://wa.me/917208205268', name: 'WhatsApp' }
   ];
 
   return (
@@ -122,7 +124,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="text-background/70 text-sm">+91 98765 43210</span>
+                <span className="text-background/70 text-sm">+91 7208205268</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-primary" />
