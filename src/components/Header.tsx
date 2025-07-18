@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, GraduationCap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Subjects', href: '#subjects' },
-    { name: 'Teachers', href: '#teachers' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Physics', href: '/physics' },
+    { name: 'Chemistry', href: '/chemistry' },
+    { name: 'Mathematics', href: '/mathematics' },
+    { name: 'Biology', href: '/biology' },
   ];
 
   return (
@@ -18,7 +19,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="p-2 bg-gradient-primary rounded-lg">
               <GraduationCap className="h-6 w-6 text-white" />
             </div>
@@ -26,26 +27,28 @@ const Header = () => {
               <h1 className="text-xl font-bold text-foreground">IVYDON Academy</h1>
               <p className="text-xs text-muted-foreground">Excellence in Education</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              Login
-            </Button>
+            <Link to="/login">
+              <Button variant="outline" size="sm">
+                Login
+              </Button>
+            </Link>
             <Button variant="hero" size="sm">
               Get Started
             </Button>
@@ -68,19 +71,21 @@ const Header = () => {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border shadow-lg">
             <nav className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="block text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Button variant="outline" className="w-full">
-                  Login
-                </Button>
+                <Link to="/login" className="block">
+                  <Button variant="outline" className="w-full">
+                    Login
+                  </Button>
+                </Link>
                 <Button variant="hero" className="w-full">
                   Get Started
                 </Button>
