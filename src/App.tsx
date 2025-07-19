@@ -13,6 +13,7 @@ import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
 import Mathematics from "./pages/Mathematics";
 import Biology from "./pages/Biology";
+import TestSeries from "./pages/TestSeries";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/chemistry" element={<Chemistry />} />
           <Route path="/mathematics" element={<Mathematics />} />
           <Route path="/biology" element={<Biology />} />
+          <Route path="/test-series/:subject" element={<TestSeries />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

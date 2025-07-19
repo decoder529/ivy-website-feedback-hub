@@ -86,8 +86,12 @@ const Subjects = () => {
                     "{subject.funQuote}"
                   </blockquote>
                   
-                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    Learn More
+                  <Button 
+                    variant="outline" 
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
+                    onClick={() => window.location.href = `/test-series/${subject.name.toLowerCase()}`}
+                  >
+                    View Test Series
                   </Button>
                 </div>
               </CardContent>
