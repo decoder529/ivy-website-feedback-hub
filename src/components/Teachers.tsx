@@ -19,7 +19,7 @@ const Teachers = () => {
       name: 'Mr. Deepak Yadav',
       role: 'Co-Founder & Tech Expert',
       experience: '8+ Years',
-      specialization: 'Mathematics & Computer Science',
+      specialization: 'Technology & Communication',
       education: 'B.E. Electronics & Communication, Mumbai University',
       achievements: ['Tech Industry Expert', 'Cyber Security Specialist', 'Communication Expert'],
       description: 'The tech wizard of the team—straight out of the communication and cyber security industry, bringing technical expertise to education.',
