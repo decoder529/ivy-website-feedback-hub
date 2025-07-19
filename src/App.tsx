@@ -14,6 +14,7 @@ import Chemistry from "./pages/Chemistry";
 import Mathematics from "./pages/Mathematics";
 import Biology from "./pages/Biology";
 import TestSeries from "./pages/TestSeries";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/mathematics" element={<Mathematics />} />
           <Route path="/biology" element={<Biology />} />
           <Route path="/test-series/:subject" element={<TestSeries />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

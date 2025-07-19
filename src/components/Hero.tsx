@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Star, Users, Award, BookOpen } from 'lucide-react';
+import BookDemoForm from './BookDemoForm';
 
 const Hero = () => {
   const stats = [
@@ -37,9 +38,11 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button variant="hero" size="xl" className="bg-white text-primary hover:bg-white/90">
-                Start Your Journey
-              </Button>
+              <BookDemoForm trigger={
+                <Button variant="hero" size="xl" className="bg-white text-primary hover:bg-white/90">
+                  Book Free Demo
+                </Button>
+              } />
               <Button variant="outline" size="xl" className="border-white/30 text-white hover:bg-white/10">
                 View Success Stories
               </Button>

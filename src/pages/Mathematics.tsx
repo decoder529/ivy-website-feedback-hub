@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Calculator, TrendingUp, PieChart, Target } from 'lucide-react';
+import BookDemoForm from '@/components/BookDemoForm';
 
 const Mathematics = () => {
   const topics = [
@@ -82,9 +83,11 @@ const Mathematics = () => {
               Develop logical thinking and analytical skills with our structured mathematics curriculum.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="hero">
-                Book Free Assessment
-              </Button>
+              <BookDemoForm trigger={
+                <Button size="lg" variant="hero">
+                  Book Free Assessment
+                </Button>
+              } />
               <Button size="lg" variant="outline">
                 Practice Problems
               </Button>

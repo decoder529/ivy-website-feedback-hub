@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      demo_requests: {
+        Row: {
+          created_at: string
+          grade: string
+          id: string
+          notes: string | null
+          parents_mobile: string
+          parents_name: string
+          school_name: string
+          status: string
+          students_name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          grade: string
+          id?: string
+          notes?: string | null
+          parents_mobile: string
+          parents_name: string
+          school_name: string
+          status?: string
+          students_name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          grade?: string
+          id?: string
+          notes?: string | null
+          parents_mobile?: string
+          parents_name?: string
+          school_name?: string
+          status?: string
+          students_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       subscription_plans: {
         Row: {
           created_at: string

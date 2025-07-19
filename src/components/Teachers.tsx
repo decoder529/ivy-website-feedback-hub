@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { GraduationCap, Award, Users, Clock } from 'lucide-react';
+import BookDemoForm from './BookDemoForm';
 
 const Teachers = () => {
   const teachers = [
@@ -118,9 +119,11 @@ const Teachers = () => {
               Join hundreds of students who have achieved academic excellence under the guidance of our expert educators.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
-                Book a Free Consultation
-              </Button>
+              <BookDemoForm trigger={
+                <Button variant="hero" size="lg">
+                  Book a Free Consultation
+                </Button>
+              } />
               <Button variant="outline" size="lg">
                 Meet All Teachers
               </Button>
