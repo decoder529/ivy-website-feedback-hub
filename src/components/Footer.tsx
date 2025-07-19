@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Stay Updated with IVYDON Academy
+              Stay Updated with IVYDon
             </h3>
             <p className="text-background/70 mb-8 max-w-2xl mx-auto">
               Get the latest study tips, exam updates, and exclusive resources delivered to your inbox
@@ -106,7 +106,7 @@ const Footer = () => {
                 <GraduationCap className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-bold">IVYDON Academy</h2>
+                <h2 className="text-xl font-bold">IVYDon - AP, IBDP, IGCSE & AS-A Level Tuitions</h2>
                 <p className="text-xs text-background/70">Excellence in Education</p>
               </div>
             </div>
@@ -173,7 +173,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-background/70 text-sm mb-4 md:mb-0">
-              © 2024 IVYDON Academy. All rights reserved.
+              © 2024 IVYDon - AP, IBDP, IGCSE & AS-A Level Tuitions. All rights reserved.
             </div>
             
             <div className="flex items-center space-x-6 text-sm">

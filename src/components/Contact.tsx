@@ -209,7 +209,7 @@ const Contact = () => {
           <div className="space-y-6">
             <Card className="bg-gradient-primary text-white border-0">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Why Choose IVYDON Academy?</h3>
+                <h3 className="text-2xl font-bold mb-4">Why Choose IVYDon?</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-300" />

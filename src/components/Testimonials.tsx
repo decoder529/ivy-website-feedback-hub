@@ -20,7 +20,7 @@ const Testimonials = () => {
       subject: 'IBDP Mathematics HL',
       school: 'International School Singapore',
       period: 'May 2023',
-      quote: 'Thanks to IVYDON Academy, I scored a perfect 7 in Math HL. The problem-solving techniques were game-changing.',
+      quote: 'Thanks to IVYDon, I scored a perfect 7 in Math HL. The problem-solving techniques were game-changing.',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
