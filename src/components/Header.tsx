@@ -25,7 +25,7 @@ const Header = () => {
               <GraduationCap className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">IVYDON Academy</h1>
+              <h1 className="text-xl font-bold text-foreground">IVYDon - AP, IBDP, IGCSE & AS-A Level Tuitions</h1>
               <p className="text-xs text-muted-foreground">Excellence in Education</p>
             </div>
           </Link>
