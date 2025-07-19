@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { TestTube, Atom, Beaker, Zap } from 'lucide-react';
+import BookDemoForm from '@/components/BookDemoForm';
 
 const Chemistry = () => {
   const topics = [
@@ -45,8 +46,9 @@ const Chemistry = () => {
               Chemistry Mastery
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore the molecular world with our comprehensive chemistry program. 
-              From basic atomic theory to advanced organic synthesis, discover the science of matter.
+              Expert Chemistry tutoring for IBDP, IGCSE AS-A Level, and AP curricula. 
+              Explore the molecular world from basic atomic theory to advanced organic synthesis 
+              with comprehensive laboratory experience and expert guidance.
             </p>
           </div>
 
@@ -82,9 +84,11 @@ const Chemistry = () => {
               Build a strong foundation in chemistry with expert guidance and hands-on laboratory experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="hero">
-                Book Free Consultation
-              </Button>
+              <BookDemoForm trigger={
+                <Button size="lg" variant="hero">
+                  Book Free Consultation
+                </Button>
+              } />
               <Button size="lg" variant="outline">
                 View Lab Sessions
               </Button>

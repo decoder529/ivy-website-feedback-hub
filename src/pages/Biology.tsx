@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Microscope, Dna, Leaf, Heart } from 'lucide-react';
+import BookDemoForm from '@/components/BookDemoForm';
 
 const Biology = () => {
   const topics = [
@@ -45,8 +46,9 @@ const Biology = () => {
               Biology Exploration
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover the fascinating world of life sciences with our comprehensive biology program. 
-              From molecular biology to ecology, explore the complexity and beauty of living organisms.
+              Comprehensive Biology tutoring for IBDP, IGCSE AS-A Level, and AP curricula. 
+              Discover the fascinating world of life sciences from molecular biology to ecology, 
+              exploring the complexity and beauty of living organisms.
             </p>
           </div>
 
@@ -82,9 +84,11 @@ const Biology = () => {
               Understand the mechanisms of life with hands-on experiments and detailed explanations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="hero">
-                Book Free Consultation
-              </Button>
+              <BookDemoForm trigger={
+                <Button size="lg" variant="hero">
+                  Book Free Consultation
+                </Button>
+              } />
               <Button size="lg" variant="outline">
                 Virtual Lab Tour
               </Button>

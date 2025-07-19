@@ -29,12 +29,13 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Elite <span className="text-yellow-300">AP, IBDP & IGCSE</span> Tutoring
+              Elite <span className="text-yellow-300">IBDP, IGCSE AS-A Level & AP</span> Tutoring
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-2xl">
-              World-class educators delivering personalized, prestigious tutoring for academic excellence. 
-              Join hundreds of students achieving their dreams.
+              Expert tutoring for International Baccalaureate Diploma Programme (IBDP), 
+              Cambridge IGCSE AS-A Levels, and Advanced Placement (AP) curricula. 
+              Personalized education for global academic excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">

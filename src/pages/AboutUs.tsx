@@ -51,7 +51,8 @@ const AboutUs = () => {
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 We are a premier online tutoring platform dedicated to delivering world-class education 
-                for AP, IBDP, and IGCSE curricula. Our mission is to empower students globally with 
+                for International Baccalaureate Diploma Programme (IBDP), Cambridge IGCSE AS-A Levels, 
+                and Advanced Placement (AP) curricula. Our mission is to empower students globally with 
                 personalized, high-quality education that transforms lives.
               </p>
             </div>

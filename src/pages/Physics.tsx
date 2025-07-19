@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Atom, Zap, Waves, Target } from 'lucide-react';
+import BookDemoForm from '@/components/BookDemoForm';
 
 const Physics = () => {
   const topics = [
@@ -45,8 +46,9 @@ const Physics = () => {
               Physics Excellence
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Master the fundamental laws of nature with our comprehensive physics curriculum. 
-              From classical mechanics to quantum physics, unlock the mysteries of the universe.
+              Comprehensive Physics tutoring for IBDP, IGCSE AS-A Level, and AP curricula. 
+              Master fundamental laws of nature from classical mechanics to quantum physics with 
+              our expert educators who have guided hundreds of students to success.
             </p>
           </div>
 
@@ -82,9 +84,11 @@ const Physics = () => {
               Join thousands of students who have achieved excellence in physics with our proven teaching methods.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="hero">
-                Book Free Consultation
-              </Button>
+              <BookDemoForm trigger={
+                <Button size="lg" variant="hero">
+                  Book Free Consultation
+                </Button>
+              } />
               <Button size="lg" variant="outline">
                 View Sample Lessons
               </Button>

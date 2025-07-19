@@ -46,8 +46,9 @@ const Mathematics = () => {
               Mathematics Excellence
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Build strong mathematical foundations with our systematic approach. 
-              From basic arithmetic to advanced calculus, develop problem-solving skills that last a lifetime.
+              Expert Mathematics tutoring for IBDP, IGCSE AS-A Level, and AP curricula. 
+              Build strong mathematical foundations with our systematic approach, from basic arithmetic 
+              to advanced calculus, developing problem-solving skills that last a lifetime.
             </p>
           </div>
 
