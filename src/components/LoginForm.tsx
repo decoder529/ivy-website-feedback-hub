@@ -94,7 +94,7 @@ const LoginForm = () => {
           title: "Success",
           description: "Signed in successfully!",
         });
-        navigate('/');
+        navigate('/dashboard');
       }
     } catch (error: any) {
       toast({

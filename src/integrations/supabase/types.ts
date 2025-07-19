@@ -14,7 +14,152 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      subscription_plans: {
+        Row: {
+          created_at: string
+          duration_months: number
+          features: Json
+          id: string
+          name: string
+          price: number
+          teacher_support: boolean
+          test_series_access: string[]
+        }
+        Insert: {
+          created_at?: string
+          duration_months?: number
+          features?: Json
+          id?: string
+          name: string
+          price: number
+          teacher_support?: boolean
+          test_series_access?: string[]
+        }
+        Update: {
+          created_at?: string
+          duration_months?: number
+          features?: Json
+          id?: string
+          name?: string
+          price?: number
+          teacher_support?: boolean
+          test_series_access?: string[]
+        }
+        Relationships: []
+      }
+      teacher_support: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          response: string | null
+          status: string
+          subject: string
+          teacher_name: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          response?: string | null
+          status?: string
+          subject: string
+          teacher_name: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          response?: string | null
+          status?: string
+          subject?: string
+          teacher_name?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      test_series: {
+        Row: {
+          created_at: string
+          description: string | null
+          difficulty_level: string
+          duration_minutes: number
+          id: string
+          required_plan: string
+          subject: string
+          title: string
+          total_questions: number
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          difficulty_level?: string
+          duration_minutes?: number
+          id?: string
+          required_plan?: string
+          subject: string
+          title: string
+          total_questions?: number
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          difficulty_level?: string
+          duration_minutes?: number
+          id?: string
+          required_plan?: string
+          subject?: string
+          title?: string
+          total_questions?: number
+        }
+        Relationships: []
+      }
+      user_subscriptions: {
+        Row: {
+          created_at: string
+          end_date: string | null
+          id: string
+          plan_id: string
+          start_date: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          end_date?: string | null
+          id?: string
+          plan_id: string
+          start_date?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          end_date?: string | null
+          id?: string
+          plan_id?: string
+          start_date?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_subscriptions_plan_id_fkey"
+            columns: ["plan_id"]
+            isOneToOne: false
+            referencedRelation: "subscription_plans"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

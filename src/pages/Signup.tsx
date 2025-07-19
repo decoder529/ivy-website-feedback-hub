@@ -94,7 +94,7 @@ const Signup = () => {
           title: "Success",
           description: "Phone number verified successfully!",
         });
-        navigate('/');
+        navigate('/dashboard');
       }
     } catch (error: any) {
       toast({
