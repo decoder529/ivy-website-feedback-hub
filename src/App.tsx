@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
 import Mathematics from "./pages/Mathematics";
@@ -22,6 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/physics" element={<Physics />} />
           <Route path="/chemistry" element={<Chemistry />} />
           <Route path="/mathematics" element={<Mathematics />} />
