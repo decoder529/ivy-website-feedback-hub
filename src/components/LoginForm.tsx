@@ -1,29 +1,166 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Eye, EyeOff, Lock, Mail } from 'lucide-react';
+import { InputOTP, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+import { Phone, ArrowLeft } from 'lucide-react';
 
 const LoginForm = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+  const [step, setStep] = useState<'phone' | 'otp'>('phone');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [otp, setOtp] = useState('');
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const formatPhoneNumber = (phone: string) => {
+    // Remove any non-digit characters and ensure it starts with +91
+    const cleanPhone = phone.replace(/\D/g, '');
+    if (cleanPhone.startsWith('91')) {
+      return `+${cleanPhone}`;
+    }
+    if (cleanPhone.startsWith('0')) {
+      return `+91${cleanPhone.slice(1)}`;
+    }
+    return `+91${cleanPhone}`;
+  };
+
+  const handleSendOTP = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to Supabase authentication
-    console.log('Login attempt:', formData);
+    if (!phoneNumber) {
+      toast({
+        title: "Error",
+        description: "Please enter your mobile number",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const formattedPhone = formatPhoneNumber(phoneNumber);
+      
+      const { error } = await supabase.auth.signInWithOtp({
+        phone: formattedPhone,
+      });
+
+      if (error) throw error;
+
+      setStep('otp');
+      toast({
+        title: "OTP Sent",
+        description: "Please check your mobile for the verification code",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send OTP",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+  const handleVerifyOTP = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!otp || otp.length !== 6) {
+      toast({
+        title: "Error",
+        description: "Please enter the 6-digit OTP",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const formattedPhone = formatPhoneNumber(phoneNumber);
+      
+      const { data, error } = await supabase.auth.verifyOtp({
+        phone: formattedPhone,
+        token: otp,
+        type: 'sms',
+      });
+
+      if (error) throw error;
+
+      if (data.user) {
+        toast({
+          title: "Success",
+          description: "Signed in successfully!",
+        });
+        navigate('/');
+      }
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Invalid OTP",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const handleBackToPhone = () => {
+    setStep('phone');
+    setOtp('');
+  };
+
+  if (step === 'otp') {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 p-4">
+        <Card className="w-full max-w-md">
+          <CardHeader className="space-y-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-fit p-0 h-auto"
+              onClick={handleBackToPhone}
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back
+            </Button>
+            <CardTitle className="text-2xl font-bold text-center">Verify OTP</CardTitle>
+            <CardDescription className="text-center">
+              Enter the 6-digit code sent to {phoneNumber}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleVerifyOTP} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="otp">Verification Code</Label>
+                <div className="flex justify-center">
+                  <InputOTP
+                    maxLength={6}
+                    value={otp}
+                    onChange={(value) => setOtp(value)}
+                  >
+                    <InputOTPGroup>
+                      <InputOTPSlot index={0} />
+                      <InputOTPSlot index={1} />
+                      <InputOTPSlot index={2} />
+                      <InputOTPSlot index={3} />
+                      <InputOTPSlot index={4} />
+                      <InputOTPSlot index={5} />
+                    </InputOTPGroup>
+                  </InputOTP>
+                </div>
+              </div>
+              <Button type="submit" className="w-full" disabled={loading}>
+                {loading ? "Verifying..." : "Sign In"}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 p-4">
@@ -35,57 +172,37 @@ const LoginForm = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSendOTP} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="phone">Mobile Number</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Phone className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  id="phone"
+                  type="tel"
+                  placeholder="Enter your mobile number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                   className="pl-10"
                   required
                 />
               </div>
+              <p className="text-xs text-muted-foreground">
+                We'll send you a verification code
+              </p>
             </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                  id="password"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="pl-10 pr-10"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 h-4 w-4 text-muted-foreground hover:text-foreground"
-                >
-                  {showPassword ? <EyeOff /> : <Eye />}
-                </button>
-              </div>
-            </div>
-
-            <Button type="submit" className="w-full" size="lg">
-              Sign In
+            <Button type="submit" className="w-full" size="lg" disabled={loading}>
+              {loading ? "Sending..." : "Send OTP"}
             </Button>
-
             <div className="text-center text-sm text-muted-foreground">
               Don't have an account?{' '}
-              <button type="button" className="text-primary hover:underline">
+              <Button
+                variant="link"
+                onClick={() => navigate('/signup')}
+                className="text-sm p-0 h-auto"
+              >
                 Sign up here
-              </button>
+              </Button>
             </div>
           </form>
         </CardContent>
