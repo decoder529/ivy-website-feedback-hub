@@ -16,6 +16,10 @@ import Biology from "./pages/Biology";
 import TestSeries from "./pages/TestSeries";
 import AdminDashboard from "./pages/AdminDashboard";
 import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import FAQ from "./pages/FAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +42,10 @@ const App = () => (
           <Route path="/test-series/:subject" element={<TestSeries />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

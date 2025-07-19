@@ -51,12 +51,11 @@ const Footer = () => {
     {
       title: 'Support',
       links: [
+        'About Us',
         'Contact Us',
         'FAQ',
-        'Help Center',
         'Privacy Policy',
-        'Terms of Service',
-        'Refund Policy'
+        'Terms of Service'
       ]
     }
   ];
@@ -152,16 +151,29 @@ const Footer = () => {
             <div key={index}>
               <h3 className="font-semibold text-background mb-4">{section.title}</h3>
               <ul className="space-y-2">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href="#"
-                      className="text-background/70 text-sm hover:text-primary transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {section.links.map((link, linkIndex) => {
+                  const getHref = () => {
+                    switch (link) {
+                      case 'About Us': return '/about';
+                      case 'Contact Us': return '/contact';
+                      case 'FAQ': return '/faq';
+                      case 'Privacy Policy': return '/privacy';
+                      case 'Terms of Service': return '/terms';
+                      default: return '#';
+                    }
+                  };
+
+                  return (
+                    <li key={linkIndex}>
+                      <a
+                        href={getHref()}
+                        className="text-background/70 text-sm hover:text-primary transition-colors duration-200"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -177,10 +189,10 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-background/70 hover:text-primary transition-colors">
+              <a href="/privacy" className="text-background/70 hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-background/70 hover:text-primary transition-colors">
+              <a href="/terms" className="text-background/70 hover:text-primary transition-colors">
                 Terms of Service
               </a>
               <a href="#" className="text-background/70 hover:text-primary transition-colors">

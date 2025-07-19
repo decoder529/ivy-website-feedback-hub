@@ -12,7 +12,6 @@ const Header = () => {
     { name: 'Chemistry', href: '/chemistry' },
     { name: 'Mathematics', href: '/mathematics' },
     { name: 'Biology', href: '/biology' },
-    { name: 'About Us', href: '/about' },
   ];
 
   return (
