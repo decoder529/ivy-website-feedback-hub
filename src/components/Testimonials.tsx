@@ -33,6 +33,26 @@ const Testimonials = () => {
       quote: 'Chemistry seemed impossible until I joined IVYDON. Now it\'s my favorite subject! The tutors make complex concepts so simple.',
       rating: 5,
       image: '/api/placeholder/80/80'
+    },
+    {
+      name: 'Akshat',
+      achievement: '7.7 Score',
+      subject: 'IBDP Physics HL',
+      school: 'International School',
+      period: 'May 2024',
+      quote: 'Achieving 7.7 in Physics HL seemed impossible until I joined IVYDon. The structured approach and personalized attention made all the difference.',
+      rating: 5,
+      image: '/api/placeholder/80/80'
+    },
+    {
+      name: 'Arnav',
+      achievement: 'Perfect Score',
+      subject: 'IBDP Physics SL',
+      school: 'International School',
+      period: 'May 2024',
+      quote: 'The expert guidance helped me master Physics SL completely. The teaching methodology is exceptional and results-oriented.',
+      rating: 5,
+      image: '/api/placeholder/80/80'
     }
   ];
 
@@ -76,34 +96,64 @@ const Testimonials = () => {
           </Card>
         </div>
 
-        {/* Other Testimonials */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.slice(1).map((testimonial, index) => (
-            <Card key={index} className="hover:shadow-card transition-all duration-300 hover:scale-105">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                
-                <blockquote className="text-muted-foreground italic mb-6">
-                  "{testimonial.quote}"
-                </blockquote>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+        {/* Moving Testimonials */}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-[slide_20s_linear_infinite] space-x-8">
+            {/* First set */}
+            {testimonials.slice(1).map((testimonial, index) => (
+              <Card key={`first-${index}`} className="flex-shrink-0 w-80 hover:shadow-card transition-all duration-300 hover:scale-105">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
                   </div>
-                  <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
+                  
+                  <blockquote className="text-muted-foreground italic mb-6">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
+                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
+                      <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {testimonials.slice(1).map((testimonial, index) => (
+              <Card key={`second-${index}`} className="flex-shrink-0 w-80 hover:shadow-card transition-all duration-300 hover:scale-105">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  
+                  <blockquote className="text-muted-foreground italic mb-6">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
+                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
+                      <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Achievement Stats */}
