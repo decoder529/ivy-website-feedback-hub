@@ -36,17 +36,17 @@ const Testimonials = () => {
     },
     {
       name: 'Akshat',
-      achievement: '7.7 Score',
+      achievement: '7/7 Score',
       subject: 'IBDP Physics HL',
       school: 'International School',
       period: 'May 2024',
-      quote: 'Achieving 7.7 in Physics HL seemed impossible until I joined IVYDon. The structured approach and personalized attention made all the difference.',
+      quote: 'Achieving 7/7 in Physics HL seemed impossible until I joined IVYDon. The structured approach and personalized attention made all the difference.',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
     {
       name: 'Arnav',
-      achievement: 'Perfect Score',
+      achievement: '7/7 Score',
       subject: 'IBDP Physics SL',
       school: 'International School',
       period: 'May 2024',
