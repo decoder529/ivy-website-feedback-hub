@@ -248,13 +248,18 @@ const Contact = () => {
 
             {/* Quick Actions */}
             <div className="space-y-4">
-              <Button variant="success" size="lg" className="w-full">
+              <Button 
+                variant="success" 
+                size="lg" 
+                className="w-full"
+                onClick={() => window.open('https://wa.me/917208205268', '_blank')}
+              >
                 <MessageSquare className="w-4 h-4 mr-2" />
                 WhatsApp Quick Chat
               </Button>
               <Button variant="outline" size="lg" className="w-full">
                 <Phone className="w-4 h-4 mr-2" />
-                Schedule Free Consultation
+                Book Free Demo
               </Button>
             </div>
           </div>
