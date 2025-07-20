@@ -199,7 +199,13 @@ const AboutUs = () => {
                     Book Free Consultation
                   </Button>
                 } />
-                <Button variant="outline" size="lg">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => {
+                    window.location.href = '/#testimonials';
+                  }}
+                >
                   View Success Stories
                 </Button>
               </div>

@@ -44,7 +44,12 @@ const Hero = () => {
                   Book Free Demo
                 </Button>
               } />
-              <Button variant="outline" size="xl" className="border-white/30 text-white hover:bg-white/10">
+              <Button 
+                variant="outline" 
+                size="xl" 
+                className="border-white/30 text-white hover:bg-white/10"
+                onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 View Success Stories
               </Button>
             </div>
