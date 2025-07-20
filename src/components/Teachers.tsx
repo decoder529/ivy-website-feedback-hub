@@ -114,9 +114,6 @@ const Teachers = () => {
                     </div>
                   </div>
 
-                  <Button variant="outline" className="w-full">
-                    View Profile
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -135,7 +132,7 @@ const Teachers = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <BookDemoForm trigger={
                 <Button variant="hero" size="lg">
-                  Book a Free Consultation
+                  Book Free Demo
                 </Button>
               } />
               <Button variant="outline" size="lg">
