@@ -10,7 +10,7 @@ const Curricula = () => {
       name: 'IBDP',
       fullName: 'International Baccalaureate Diploma Programme',
       description: 'Comprehensive two-year educational programme for students aged 16-19, recognized by universities worldwide.',
-      features: ['Theory of Knowledge (TOK)', 'Extended Essay', 'Creativity, Activity, Service (CAS)', 'Six Subject Groups'],
+      features: ['Subject specialists', 'Customized teaching style', 'Rigorous test series', 'Target strategies'],
       gradient: 'from-blue-500 to-purple-600'
     },
     {
@@ -18,7 +18,7 @@ const Curricula = () => {
       name: 'IGCSE AS-A Level',
       fullName: 'Cambridge International AS & A Levels',
       description: 'Gold standard qualification recognized by universities globally, offering flexible subject combinations.',
-      features: ['Two-stage qualification', 'Wide subject choice', 'University preparation', 'Global recognition'],
+      features: ['Subject specialists', 'Customized teaching style', 'Rigorous test series', 'Target strategies'],
       gradient: 'from-green-500 to-teal-600'
     },
     {
@@ -26,7 +26,7 @@ const Curricula = () => {
       name: 'AP',
       fullName: 'Advanced Placement',
       description: 'College-level courses and exams that allow students to earn college credit while still in high school.',
-      features: ['College-level rigor', 'Credit opportunities', '38+ courses available', 'Skills development'],
+      features: ['Subject specialists', 'Customized teaching style', 'Rigorous test series', 'Target strategies'],
       gradient: 'from-orange-500 to-red-600'
     }
   ];
@@ -64,7 +64,7 @@ const Curricula = () => {
                   {curriculum.description}
                 </p>
 
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2">
                   <h4 className="font-semibold text-foreground">Key Features:</h4>
                   <ul className="space-y-1">
                     {curriculum.features.map((feature, featureIndex) => (
@@ -75,10 +75,6 @@ const Curricula = () => {
                     ))}
                   </ul>
                 </div>
-
-                <Button variant="outline" className="w-full">
-                  Learn More
-                </Button>
               </CardContent>
             </Card>
           ))}
