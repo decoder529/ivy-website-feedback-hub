@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { GraduationCap, Award, Users, Clock } from 'lucide-react';
 import BookDemoForm from './BookDemoForm';
 
@@ -57,9 +58,18 @@ const Teachers = () => {
                 {/* Header */}
                 <div className="bg-gradient-primary p-6 text-white text-center relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                  <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center relative z-10">
-                    <GraduationCap className="w-12 h-12 text-white" />
-                  </div>
+                  {index === 0 ? (
+                    <Avatar className="w-24 h-24 mx-auto mb-4 relative z-10 border-4 border-white/30">
+                      <AvatarImage src="" alt={teacher.name} />
+                      <AvatarFallback className="bg-white/20 text-white text-2xl font-bold">
+                        {teacher.name.split(' ').map(n => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                  ) : (
+                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center relative z-10">
+                      <GraduationCap className="w-12 h-12 text-white" />
+                    </div>
+                  )}
                   <h3 className="text-xl font-bold mb-1 relative z-10">{teacher.name}</h3>
                   <p className="text-white/90 text-sm relative z-10">{teacher.role}</p>
                 </div>
