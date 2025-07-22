@@ -63,27 +63,23 @@ const Subjects = () => {
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
                   <subject.icon className="w-12 h-12 mb-4 relative z-10" />
                   <h3 className="text-2xl font-bold mb-2 relative z-10">{subject.name}</h3>
+                  <blockquote className="italic text-sm text-white/80 mb-2 relative z-10">
+                    "{subject.funQuote}"
+                  </blockquote>
                 </div>
                 
                 <div className="p-6">
                   <p className="text-muted-foreground mb-4">{subject.description}</p>
                   
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-6">
+                    <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
                       {subject.curricula.map((curriculum, curriculumIndex) => (
-                        <span 
-                          key={curriculumIndex}
-                          className="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground"
-                        >
+                        <li key={curriculumIndex}>
                           {curriculum}
-                        </span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
-                  
-                  <blockquote className="italic text-sm text-muted-foreground mb-6 border-l-4 border-primary pl-4">
-                    "{subject.funQuote}"
-                  </blockquote>
                   
                   <Button 
                     variant="outline" 
