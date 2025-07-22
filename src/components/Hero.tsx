@@ -63,12 +63,12 @@ const Hero = () => {
           {/* Hero Image */}
           <div className="lg:order-last">
             <div className="relative">
-              <div className="aspect-[4/3] bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 p-8 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <BookOpen className="w-24 h-24 mx-auto mb-4 opacity-80" />
-                  <h3 className="text-2xl font-bold mb-2">Your Success Starts Here</h3>
-                  <p className="text-white/80">Join the world's most elite tutoring platform</p>
-                </div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                <img 
+                  src="/lovable-uploads/d9f0ec3f-7006-4a12-9aee-06383e66374f.png" 
+                  alt="Students learning together - Your Success Starts Here"
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               {/* Floating Achievement Cards */}
