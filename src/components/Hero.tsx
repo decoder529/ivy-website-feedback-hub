@@ -47,7 +47,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="xl" 
-                className="border-white/30 text-white hover:bg-white/10 transition-none hover:scale-100 hover:shadow-none"
+                className="border-primary/30 text-primary-foreground hover:bg-primary/10 transition-none hover:scale-100 hover:shadow-none"
                 onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Success Stories
