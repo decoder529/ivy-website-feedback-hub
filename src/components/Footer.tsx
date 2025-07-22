@@ -40,7 +40,6 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: '#', name: 'Facebook' },
-    { icon: Twitter, href: '#', name: 'Twitter' },
     { icon: Instagram, href: '#', name: 'Instagram' },
     { icon: Youtube, href: '#', name: 'YouTube' },
     { icon: MessageCircle, href: 'https://wa.me/917208205268', name: 'WhatsApp' }
@@ -83,7 +82,7 @@ const Footer = () => {
                 <GraduationCap className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-bold">IVYDon - AP, IBDP, IGCSE & AS-A Level Tuitions</h2>
+                <h2 className="text-xl font-bold">IVYDon Tuitions</h2>
                 <p className="text-xs text-background/70">Excellence in Education</p>
               </div>
             </div>
