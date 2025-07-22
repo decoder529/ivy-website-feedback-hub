@@ -9,7 +9,7 @@ const FreeTestSeries = () => {
   const testSeries = [
     {
       subject: 'Physics',
-      title: 'AP Physics Mock Test',
+      title: ' Physics Mock Test',
       duration: '3 hours',
       questions: 60,
       difficulty: 'Advanced',
