@@ -82,8 +82,7 @@ const Subjects = () => {
                   </div>
                   
                   <Button 
-                    variant="outline" 
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
+                    className={`w-full ${subject.color} text-white hover:opacity-90 transition-opacity`}
                     onClick={() => window.location.href = '/free-test-series'}
                   >
                     Free Test Series
