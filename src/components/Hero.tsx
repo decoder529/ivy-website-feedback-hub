@@ -38,20 +38,12 @@ const Hero = () => {
               Personalized education for global academic excellence.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex justify-center mb-12">
               <BookDemoForm trigger={
                 <Button variant="hero" size="xl" className="bg-white text-primary hover:bg-white/90">
                   Book Free Demo
                 </Button>
               } />
-              <Button 
-                variant="outline" 
-                size="xl" 
-                className="bg-white text-primary hover:bg-white/90">,
-                onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
-  
-                View Success Stories
-              </Button>
             </div>
 
             {/* Stats */}
