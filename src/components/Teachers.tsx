@@ -13,7 +13,7 @@ const Teachers = () => {
       experience: '12+ Years',
       specialization: 'IBDP, IGCSE AS-A Level & AP Physics',
       education: 'B.E. Mechanical Engineering, Mumbai University',
-      achievements: ['500+ Students Taught', '95% A*/A Grade Rate', 'Country Topper Mentor'],
+      achievements: ['1000+ Students Taught', '95% A*/A Grade Rate', 'Country Topper Mentor'],
       description: 'A dedicated Physics educator with over 12 years of experience. His teaching style combines humor with deep conceptual understanding.',
       image: '/api/placeholder/150/150'
     },

@@ -31,7 +31,7 @@ const AboutUs = () => {
   ];
 
   const achievements = [
-    { number: "500+", label: "Students Taught Globally" },
+    { number: "1000+", label: "Students Taught Globally" },
     { number: "95%", label: "A*/A Grade Achievement Rate" },
     { number: "12+", label: "Years of Combined Experience" },
     { number: "3", label: "International Curricula" }
@@ -78,7 +78,7 @@ const AboutUs = () => {
                     experiences that adapt to each student's unique needs and learning style.
                   </p>
                   <p>
-                    Today, we're proud to have helped over 500 students achieve their academic goals, 
+                    Today, we're proud to have helped over 1000 students achieve their academic goals, 
                     with an impressive 95% A*/A grade achievement rate across all subjects we teach.
                   </p>
                 </div>

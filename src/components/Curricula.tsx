@@ -97,7 +97,7 @@ const Curricula = () => {
               <p className="text-sm text-muted-foreground">A*/A Grade Rate</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">1000+</div>
               <p className="text-sm text-muted-foreground">Students Taught</p>
             </div>
             <div className="text-center">

@@ -5,7 +5,7 @@ import BookDemoForm from './BookDemoForm';
 
 const Hero = () => {
   const stats = [
-    { icon: Users, value: '500+', label: 'Students Taught' },
+    { icon: Users, value: '1000+', label: 'Students Taught' },
     { icon: Award, value: '95%', label: 'Success Rate' },
     { icon: BookOpen, value: '3', label: 'Curricula' },
     { icon: Star, value: '4.9', label: 'Rating' },
@@ -25,7 +25,7 @@ const Hero = () => {
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center px-4 py-2 bg-white/20 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm">
               <Star className="w-4 h-4 mr-2 text-yellow-300" />
-              Trusted by 500+ Students Globally
+              Trusted by 1000+ Students Globally
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
