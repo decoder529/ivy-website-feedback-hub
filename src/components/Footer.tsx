@@ -19,11 +19,7 @@ const Footer = () => {
       title: 'Resources',
       links: [
         'Study Materials',
-        'Practice Tests',
-        'Video Tutorials',
-        'Blog Articles',
-        'Success Stories',
-        'Free Resources'
+        'Practice Tests'
       ]
     },
     {
@@ -39,9 +35,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', name: 'Facebook' },
-    { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Youtube, href: '#', name: 'YouTube' },
+    { icon: Facebook, href: 'https://www.facebook.com/share/15ffrQqGfS/?mibextid=qi2Omg', name: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/ivydon.official?igsh=OXdkMWN4MXExYzdm', name: 'Instagram' },
+    { icon: Youtube, href: 'https://youtube.com/@ivydonacademy?si=-Gr_a4676ahjr0X-', name: 'YouTube' },
     { icon: MessageCircle, href: 'https://wa.me/917208205268', name: 'WhatsApp' }
   ];
 
