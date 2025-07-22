@@ -104,16 +104,30 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+              {socialLinks.map((social, index) => {
+                const getSocialColors = () => {
+                  switch (social.name) {
+                    case 'Facebook': return 'hover:bg-[#1877F2] hover:shadow-[0_0_20px_rgba(24,119,242,0.4)]';
+                    case 'Instagram': return 'hover:bg-gradient-to-r hover:from-[#E4405F] hover:to-[#833AB4] hover:shadow-[0_0_20px_rgba(228,64,95,0.4)]';
+                    case 'YouTube': return 'hover:bg-[#FF0000] hover:shadow-[0_0_20px_rgba(255,0,0,0.4)]';
+                    case 'WhatsApp': return 'hover:bg-[#25D366] hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]';
+                    default: return 'hover:bg-primary hover:shadow-[0_0_20px_rgba(var(--primary),0.4)]';
+                  }
+                };
+
+                return (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className={`w-14 h-14 bg-background/10 rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 hover-scale ${getSocialColors()}`}
+                    aria-label={social.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <social.icon className="w-7 h-7 text-background hover:text-white transition-colors duration-300" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
