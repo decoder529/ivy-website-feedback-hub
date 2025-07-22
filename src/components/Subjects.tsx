@@ -12,7 +12,7 @@ const Subjects = () => {
       funQuote: 'I joined Physics for the laws… now I\'m just breaking them.',
       color: 'bg-blue-500',
       gradient: 'from-blue-500 to-indigo-600',
-      topics: ['Mechanics', 'Thermodynamics', 'Electromagnetism', 'Quantum Physics']
+      curricula: ['IBMYP', 'IBDP', 'IGCSE', 'AS-A Levels', 'AP', 'Edexcel']
     },
     {
       icon: FlaskConical,
@@ -21,7 +21,7 @@ const Subjects = () => {
       funQuote: 'If you can\'t handle me at my molar mass, you don\'t deserve me at my limiting reagent.',
       color: 'bg-green-500',
       gradient: 'from-green-500 to-emerald-600',
-      topics: ['Organic Chemistry', 'Inorganic Chemistry', 'Physical Chemistry', 'Biochemistry']
+      curricula: ['IBMYP', 'IBDP', 'IGCSE', 'AS-A Levels', 'AP', 'Edexcel']
     },
     {
       icon: Calculator,
@@ -30,7 +30,7 @@ const Subjects = () => {
       funQuote: 'Where numbers make you question your existence.',
       color: 'bg-purple-500',
       gradient: 'from-purple-500 to-violet-600',
-      topics: ['Calculus', 'Algebra', 'Statistics', 'Geometry']
+      curricula: ['IBMYP', 'IBDP', 'IGCSE', 'AS-A Levels', 'AP', 'Edexcel']
     },
     {
       icon: Dna,
@@ -39,7 +39,7 @@ const Subjects = () => {
       funQuote: 'Keep calm and blame it on the genes.',
       color: 'bg-orange-500',
       gradient: 'from-orange-500 to-red-600',
-      topics: ['Cell Biology', 'Genetics', 'Ecology', 'Human Physiology']
+      curricula: ['IBMYP', 'IBDP', 'IGCSE', 'AS-A Levels', 'AP', 'Edexcel']
     }
   ];
 
@@ -69,14 +69,13 @@ const Subjects = () => {
                   <p className="text-muted-foreground mb-4">{subject.description}</p>
                   
                   <div className="mb-4">
-                    <h4 className="font-semibold text-foreground mb-2">Key Topics:</h4>
                     <div className="flex flex-wrap gap-2">
-                      {subject.topics.map((topic, topicIndex) => (
+                      {subject.curricula.map((curriculum, curriculumIndex) => (
                         <span 
-                          key={topicIndex}
+                          key={curriculumIndex}
                           className="px-2 py-1 bg-muted rounded-md text-xs text-muted-foreground"
                         >
-                          {topic}
+                          {curriculum}
                         </span>
                       ))}
                     </div>
