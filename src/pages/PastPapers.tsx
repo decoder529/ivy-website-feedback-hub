@@ -1,89 +1,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Download, Calendar, FileText, Search } from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { Calendar, FileText, ChevronDown } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const PastPapers = () => {
-  const pastPapers = [
-    {
-      subject: 'Physics',
-      exam: 'AP Physics 1',
-      year: '2023',
-      session: 'May',
-      type: 'Question Paper',
-      format: 'PDF',
-      size: '2.4 MB',
-    },
-    {
-      subject: 'Physics',
-      exam: 'AP Physics 1',
-      year: '2023',
-      session: 'May',
-      type: 'Mark Scheme',
-      format: 'PDF',
-      size: '1.8 MB',
-    },
-    {
-      subject: 'Chemistry',
-      exam: 'IBDP Chemistry HL',
-      year: '2023',
-      session: 'November',
-      type: 'Question Paper',
-      format: 'PDF',
-      size: '3.1 MB',
-    },
-    {
-      subject: 'Chemistry',
-      exam: 'IBDP Chemistry HL',
-      year: '2023',
-      session: 'November',
-      type: 'Mark Scheme',
-      format: 'PDF',
-      size: '2.2 MB',
-    },
-    {
-      subject: 'Mathematics',
-      exam: 'AS-Level Mathematics',
-      year: '2023',
-      session: 'October',
-      type: 'Question Paper',
-      format: 'PDF',
-      size: '2.8 MB',
-    },
-    {
-      subject: 'Mathematics',
-      exam: 'AS-Level Mathematics',
-      year: '2023',
-      session: 'October',
-      type: 'Mark Scheme',
-      format: 'PDF',
-      size: '1.9 MB',
-    },
-    {
-      subject: 'Biology',
-      exam: 'IGCSE Biology',
-      year: '2023',
-      session: 'June',
-      type: 'Question Paper',
-      format: 'PDF',
-      size: '2.6 MB',
-    },
-    {
-      subject: 'Biology',
-      exam: 'IGCSE Biology',
-      year: '2023',
-      session: 'June',
-      type: 'Mark Scheme',
-      format: 'PDF',
-      size: '1.7 MB',
-    },
-  ];
-
-  const subjects = ['All', 'Physics', 'Chemistry', 'Mathematics', 'Biology'];
-  const years = ['All', '2023', '2022', '2021', '2020'];
 
   return (
     <div className="min-h-screen bg-background">
@@ -93,10 +14,10 @@ const PastPapers = () => {
       <section className="pt-24 pb-12 bg-gradient-to-br from-secondary/10 via-background to-primary/10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Past Papers
+            Topical Questions
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Access comprehensive collection of past examination papers for AP, IBDP, IGCSE & AS-A Level subjects
+            Create custom tests with topical questions from past papers across different exam boards and subjects
           </p>
           <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -104,8 +25,8 @@ const PastPapers = () => {
               <span>Question Papers</span>
             </div>
             <div className="flex items-center gap-2">
-              <Download className="h-4 w-4" />
-              <span>Mark Schemes</span>
+              <FileText className="h-4 w-4" />
+              <span>Topic-based Questions</span>
             </div>
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
@@ -115,97 +36,164 @@ const PastPapers = () => {
         </div>
       </section>
 
-      {/* Search and Filter Section */}
-      <section className="py-8 border-b border-border">
+      {/* Topical Questions Filter Section */}
+      <section className="py-12 bg-gradient-to-br from-secondary/5 via-background to-primary/5">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="flex-1 max-w-md">
-              <div className="relative">
-                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search papers..."
-                  className="pl-10"
-                />
+          <div className="max-w-4xl mx-auto">
+            {/* Filter Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {/* Board */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Board</label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select board" />
+                    <ChevronDown className="h-4 w-4" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="igcse">IGCSE</SelectItem>
+                    <SelectItem value="ib-diploma">IB Diploma</SelectItem>
+                    <SelectItem value="edexcel-a-levels">Edexcel A Levels</SelectItem>
+                    <SelectItem value="a-levels">A Levels</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Subject */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select subject" />
+                    <ChevronDown className="h-4 w-4" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="physics">Physics</SelectItem>
+                    <SelectItem value="chemistry">Chemistry</SelectItem>
+                    <SelectItem value="mathematics">Mathematics</SelectItem>
+                    <SelectItem value="biology">Biology</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Paper */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Paper</label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select paper" />
+                    <ChevronDown className="h-4 w-4" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="paper-1">Paper 1</SelectItem>
+                    <SelectItem value="paper-2">Paper 2</SelectItem>
+                    <SelectItem value="paper-3">Paper 3</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Variant */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Variant</label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select variant" />
+                    <ChevronDown className="h-4 w-4" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1">1</SelectItem>
+                    <SelectItem value="2">2</SelectItem>
+                    <SelectItem value="3">3</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Topics */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Topics</label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select topics" />
+                    <ChevronDown className="h-4 w-4" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="mechanics">Mechanics</SelectItem>
+                    <SelectItem value="thermodynamics">Thermodynamics</SelectItem>
+                    <SelectItem value="waves">Waves</SelectItem>
+                    <SelectItem value="electricity">Electricity</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Session */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Session</label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select session" />
+                    <ChevronDown className="h-4 w-4" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="may-june">May/June</SelectItem>
+                    <SelectItem value="oct-nov">Oct/Nov</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Years */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Years</label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select years" />
+                    <ChevronDown className="h-4 w-4" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="2023">2023</SelectItem>
+                    <SelectItem value="2022">2022</SelectItem>
+                    <SelectItem value="2021">2021</SelectItem>
+                    <SelectItem value="2020">2020</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Difficulty */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Difficulty</label>
+                <Select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select difficulty" />
+                    <ChevronDown className="h-4 w-4" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="easy">Easy</SelectItem>
+                    <SelectItem value="medium-easy">Medium-easy</SelectItem>
+                    <SelectItem value="medium">Medium</SelectItem>
+                    <SelectItem value="medium-high">Medium-high</SelectItem>
+                    <SelectItem value="high">High</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </div>
-            <div className="flex gap-4">
-              <select className="px-3 py-2 rounded-md border border-border bg-background">
-                <option>All Subjects</option>
-                {subjects.slice(1).map(subject => (
-                  <option key={subject}>{subject}</option>
-                ))}
-              </select>
-              <select className="px-3 py-2 rounded-md border border-border bg-background">
-                <option>All Years</option>
-                {years.slice(1).map(year => (
-                  <option key={year}>{year}</option>
-                ))}
-              </select>
+
+            {/* Clear Filters Button */}
+            <div className="text-center mb-8">
+              <Button variant="outline">Clear Filters</Button>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="outline" size="lg" className="min-w-[150px]">
+                Create Test
+              </Button>
+              <Button variant="default" size="lg" className="min-w-[150px]">
+                Get Questions
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Past Papers Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pastPapers.map((paper, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary">{paper.subject}</Badge>
-                    <Badge variant="outline">{paper.year}</Badge>
-                  </div>
-                  <CardTitle className="text-lg">{paper.exam}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-muted-foreground">Session:</span>
-                        <span className="font-medium">{paper.session}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-muted-foreground">Type:</span>
-                        <span className="font-medium">{paper.type}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-muted-foreground">Format:</span>
-                        <span className="font-medium">{paper.format}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-muted-foreground">Size:</span>
-                        <span className="font-medium">{paper.size}</span>
-                      </div>
-                    </div>
-                    
-                    <Button className="w-full" variant="outline">
-                      <Download className="h-4 w-4 mr-2" />
-                      Download
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-secondary to-secondary/80">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
-            Need Help with Past Papers?
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Our expert tutors can guide you through solving past papers and improving your exam technique.
-          </p>
-          <Button variant="default" size="lg">
-            Work With Us
-          </Button>
-        </div>
-      </section>
 
       <Footer />
     </div>
