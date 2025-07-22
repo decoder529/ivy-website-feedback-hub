@@ -16,28 +16,6 @@ import {
 const Footer = () => {
   const footerSections = [
     {
-      title: 'Subjects',
-      links: [
-        'Physics Tutoring',
-        'Chemistry Tutoring',
-        'Mathematics Tutoring',
-        'Biology Tutoring',
-        'Past Papers',
-        'Exam Preparation'
-      ]
-    },
-    {
-      title: 'Programs',
-      links: [
-        'AP Tutoring',
-        'IBDP Tutoring',
-        'IGCSE Tutoring',
-        'University Preparation',
-        'Group Classes',
-        'Individual Sessions'
-      ]
-    },
-    {
       title: 'Resources',
       links: [
         'Study Materials',
