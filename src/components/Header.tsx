@@ -8,10 +8,8 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Physics', href: '/physics' },
-    { name: 'Chemistry', href: '/chemistry' },
-    { name: 'Mathematics', href: '/mathematics' },
-    { name: 'Biology', href: '/biology' },
+    { name: 'Free Test Series', href: '/free-test-series' },
+    { name: 'Past Papers', href: '/past-papers' },
   ];
 
   return (
@@ -44,13 +42,8 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/login">
-              <Button variant="outline" size="sm">
-                Login
-              </Button>
-            </Link>
             <Button variant="hero" size="sm">
-              Get Started
+              Work With Us
             </Button>
           </div>
 
@@ -80,14 +73,9 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 space-y-2">
-                <Link to="/login" className="block">
-                  <Button variant="outline" className="w-full">
-                    Login
-                  </Button>
-                </Link>
+               <div className="pt-4 space-y-2">
                 <Button variant="hero" className="w-full">
-                  Get Started
+                  Work With Us
                 </Button>
               </div>
             </nav>

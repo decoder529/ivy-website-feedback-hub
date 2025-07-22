@@ -20,6 +20,8 @@ import ContactUs from "./pages/ContactUs";
 import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import FreeTestSeries from "./pages/FreeTestSeries";
+import PastPapers from "./pages/PastPapers";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,8 @@ const App = () => (
           <Route path="/mathematics" element={<Mathematics />} />
           <Route path="/biology" element={<Biology />} />
           <Route path="/test-series/:subject" element={<TestSeries />} />
+          <Route path="/free-test-series" element={<FreeTestSeries />} />
+          <Route path="/past-papers" element={<PastPapers />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
