@@ -43,27 +43,25 @@ const Footer = () => {
 
   return (
     <footer className="bg-foreground text-background">
-      {/* Newsletter Section */}
+      {/* WhatsApp Group Section */}
       <div className="border-b border-background/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Stay Updated with IVYDon
+              Join Our WhatsApp Community
             </h3>
             <p className="text-background/70 mb-8 max-w-2xl mx-auto">
-              Get the latest study tips, exam updates, and exclusive resources delivered to your inbox
+              Connect with fellow students, get instant updates, and access exclusive study materials
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg bg-background/10 border border-background/20 text-background placeholder-background/50 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <Button variant="hero" size="lg" className="bg-primary hover:bg-primary-hover">
-                Subscribe
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </div>
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="bg-primary hover:bg-primary-hover"
+              onClick={() => window.open('https://chat.whatsapp.com/EZZ6mf7i917D9IublfZZay', '_blank')}
+            >
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Join Group
+            </Button>
           </div>
         </div>
       </div>
