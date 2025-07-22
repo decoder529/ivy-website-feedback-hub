@@ -45,11 +45,8 @@ const Hero = () => {
                 </Button>
               } />
               <Button 
-                variant="outline" 
-                size="xl" 
-                className="border-primary/30 text-primary-foreground hover:bg-primary/10 transition-none hover:scale-100 hover:shadow-none"
-                onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
-              >
+              
+               variant="hero" size="xl" className="bg-white text-primary hover:bg-white/90">
                 View Success Stories
               </Button>
             </div>
