@@ -88,7 +88,7 @@ const Subjects = () => {
                   <Button 
                     variant="outline" 
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
-                    onClick={() => window.location.href = `/${subject.name.toLowerCase()}`}
+                    onClick={() => window.location.href = '/free-test-series'}
                   >
                     Free Test Series
                   </Button>
