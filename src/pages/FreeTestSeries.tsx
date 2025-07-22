@@ -13,7 +13,7 @@ const FreeTestSeries = () => {
       duration: '3 hours',
       questions: 60,
       difficulty: 'Advanced',
-      topics: ['Mechanics', 'Thermodynamics', 'Electromagnetism'],
+      curricula: ['IBMYP', 'IBDP', 'IGCSE', 'AS-A Levels', 'AP', 'Edexcel'],
     },
     {
       subject: 'Chemistry',
@@ -21,7 +21,7 @@ const FreeTestSeries = () => {
       duration: '2.5 hours',
       questions: 45,
       difficulty: 'Intermediate',
-      topics: ['Organic Chemistry', 'Chemical Bonding', 'Kinetics'],
+      curricula: ['IBMYP', 'IBDP', 'IGCSE', 'AS-A Levels', 'AP', 'Edexcel'],
     },
     {
       subject: 'Mathematics',
@@ -29,7 +29,7 @@ const FreeTestSeries = () => {
       duration: '2 hours',
       questions: 40,
       difficulty: 'Advanced',
-      topics: ['Calculus', 'Statistics', 'Pure Mathematics'],
+      curricula: ['IBMYP', 'IBDP', 'IGCSE', 'AS-A Levels', 'AP', 'Edexcel'],
     },
     {
       subject: 'Biology',
@@ -37,7 +37,7 @@ const FreeTestSeries = () => {
       duration: '1.5 hours',
       questions: 35,
       difficulty: 'Intermediate',
-      topics: ['Cell Biology', 'Genetics', 'Ecology'],
+      curricula: ['IBMYP', 'IBDP', 'IGCSE', 'AS-A Levels', 'AP', 'Edexcel'],
     },
   ];
 
@@ -100,11 +100,11 @@ const FreeTestSeries = () => {
                     </div>
                     
                     <div>
-                      <p className="text-sm font-medium mb-2">Key Topics:</p>
+                      <p className="text-sm font-medium mb-2">Curricula:</p>
                       <div className="flex flex-wrap gap-2">
-                        {test.topics.map((topic, topicIndex) => (
-                          <Badge key={topicIndex} variant="outline" className="text-xs">
-                            {topic}
+                        {test.curricula.map((curriculum, curriculumIndex) => (
+                          <Badge key={curriculumIndex} variant="outline" className="text-xs">
+                            {curriculum}
                           </Badge>
                         ))}
                       </div>

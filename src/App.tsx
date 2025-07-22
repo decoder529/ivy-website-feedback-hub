@@ -9,10 +9,6 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
-import Physics from "./pages/Physics";
-import Chemistry from "./pages/Chemistry";
-import Mathematics from "./pages/Mathematics";
-import Biology from "./pages/Biology";
 import TestSeries from "./pages/TestSeries";
 import AdminDashboard from "./pages/AdminDashboard";
 import AboutUs from "./pages/AboutUs";
@@ -37,10 +33,6 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/physics" element={<Physics />} />
-          <Route path="/chemistry" element={<Chemistry />} />
-          <Route path="/mathematics" element={<Mathematics />} />
-          <Route path="/biology" element={<Biology />} />
           <Route path="/test-series/:subject" element={<TestSeries />} />
           <Route path="/free-test-series" element={<FreeTestSeries />} />
           <Route path="/past-papers" element={<PastPapers />} />
