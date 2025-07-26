@@ -77,19 +77,19 @@ const PastPapers = () => {
       );
     }
 
-    if (selectedSubject) {
+    if (selectedSubject && selectedSubject !== 'all') {
       filtered = filtered.filter(paper => paper.subject === selectedSubject);
     }
 
-    if (selectedBoard) {
+    if (selectedBoard && selectedBoard !== 'all') {
       filtered = filtered.filter(paper => paper.board === selectedBoard);
     }
 
-    if (selectedYear) {
+    if (selectedYear && selectedYear !== 'all') {
       filtered = filtered.filter(paper => paper.year.toString() === selectedYear);
     }
 
-    if (selectedLevel) {
+    if (selectedLevel && selectedLevel !== 'all') {
       filtered = filtered.filter(paper => paper.level === selectedLevel);
     }
 
@@ -215,7 +215,7 @@ const PastPapers = () => {
                   <SelectValue placeholder="All Subjects" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Subjects</SelectItem>
+                  <SelectItem value="all">All Subjects</SelectItem>
                   {uniqueSubjects.map(subject => (
                     <SelectItem key={subject} value={subject}>{subject}</SelectItem>
                   ))}
@@ -227,7 +227,7 @@ const PastPapers = () => {
                   <SelectValue placeholder="All Boards" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Boards</SelectItem>
+                  <SelectItem value="all">All Boards</SelectItem>
                   {uniqueBoards.map(board => (
                     <SelectItem key={board} value={board}>{board}</SelectItem>
                   ))}
@@ -239,7 +239,7 @@ const PastPapers = () => {
                   <SelectValue placeholder="All Levels" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Levels</SelectItem>
+                  <SelectItem value="all">All Levels</SelectItem>
                   {uniqueLevels.map(level => (
                     <SelectItem key={level} value={level}>{level}</SelectItem>
                   ))}
@@ -251,7 +251,7 @@ const PastPapers = () => {
                   <SelectValue placeholder="All Years" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Years</SelectItem>
+                  <SelectItem value="all">All Years</SelectItem>
                   {uniqueYears.map(year => (
                     <SelectItem key={year} value={year}>{year}</SelectItem>
                   ))}
