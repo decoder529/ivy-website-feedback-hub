@@ -11,7 +11,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
 interface QuestionPaper {
-  id: string;
+  id: number;
   title: string;
   subject: string;
   board: string;
