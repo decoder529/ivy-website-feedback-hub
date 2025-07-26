@@ -53,6 +53,60 @@ export type Database = {
         }
         Relationships: []
       }
+      question_papers: {
+        Row: {
+          board: string
+          created_at: string
+          download_count: number | null
+          file_path: string
+          file_size: number | null
+          id: string
+          is_active: boolean | null
+          level: string
+          paper_number: string
+          session: string
+          subject: string
+          title: string
+          updated_at: string
+          variant: string | null
+          year: number
+        }
+        Insert: {
+          board: string
+          created_at?: string
+          download_count?: number | null
+          file_path: string
+          file_size?: number | null
+          id?: string
+          is_active?: boolean | null
+          level: string
+          paper_number: string
+          session: string
+          subject: string
+          title: string
+          updated_at?: string
+          variant?: string | null
+          year: number
+        }
+        Update: {
+          board?: string
+          created_at?: string
+          download_count?: number | null
+          file_path?: string
+          file_size?: number | null
+          id?: string
+          is_active?: boolean | null
+          level?: string
+          paper_number?: string
+          session?: string
+          subject?: string
+          title?: string
+          updated_at?: string
+          variant?: string | null
+          year?: number
+        }
+        Relationships: []
+      }
       subscription_plans: {
         Row: {
           created_at: string
@@ -204,7 +258,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_download_count: {
+        Args: { paper_id: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
