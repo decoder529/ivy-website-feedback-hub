@@ -257,7 +257,12 @@ const Contact = () => {
                 <MessageSquare className="w-4 h-4 mr-2" />
                 WhatsApp Quick Chat
               </Button>
-              <Button variant="outline" size="lg" className="w-full">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="w-full"
+                onClick={() => window.open('https://forms.gle/Hu7QD3j88U5Eza2a8', '_blank')}
+              >
                 <Phone className="w-4 h-4 mr-2" />
                 Book Free Demo
               </Button>

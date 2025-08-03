@@ -39,11 +39,14 @@ const Hero = () => {
             </p>
 
             <div className="flex justify-center mb-12">
-              <BookDemoForm trigger={
-                <Button variant="hero" size="xl" className="bg-white text-primary hover:bg-white/90">
-                  Book Free Demo
-                </Button>
-              } />
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="bg-white text-primary hover:bg-white/90"
+                onClick={() => window.open('https://forms.gle/Hu7QD3j88U5Eza2a8', '_blank')}
+              >
+                Book Free Demo
+              </Button>
             </div>
 
             {/* Stats */}
