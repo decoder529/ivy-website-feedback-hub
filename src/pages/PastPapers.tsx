@@ -89,12 +89,8 @@ const PastPapers = () => {
       filtered = filtered.filter(paper => paper.year.toString() === selectedYear);
     }
 
-    if (selectedLevel && selectedLevel !== 'all') {
-      filtered = filtered.filter(paper => paper.level === selectedLevel);
-    }
-
     setFilteredPapers(filtered);
-  }, [papers, searchTerm, selectedSubject, selectedBoard, selectedYear, selectedLevel]);
+  }, [papers, searchTerm, selectedSubject, selectedBoard, selectedYear]);
 
   // Download paper function
   const downloadPaper = async (paper: QuestionPaper) => {
@@ -137,14 +133,12 @@ const PastPapers = () => {
     setSelectedSubject('');
     setSelectedBoard('');
     setSelectedYear('');
-    setSelectedLevel('');
   };
 
   // Get unique values for filter options
-  const uniqueSubjects = [...new Set(papers.map(p => p.subject))];
-  const uniqueBoards = [...new Set(papers.map(p => p.board))];
-  const uniqueLevels = [...new Set(papers.map(p => p.level))];
-  const uniqueYears = [...new Set(papers.map(p => p.year.toString()))].sort((a, b) => parseInt(b) - parseInt(a));
+  const uniqueSubjects = ["Physics", "Chemistry", "Maths", "Biology"];
+  const uniqueBoards = ["IGCSE"];
+  const uniqueYears = ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"];
 
   if (loading) {
     return (
@@ -209,7 +203,7 @@ const PastPapers = () => {
             </div>
 
             {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <Select value={selectedSubject} onValueChange={setSelectedSubject}>
                 <SelectTrigger>
                   <SelectValue placeholder="All Subjects" />
@@ -234,18 +228,6 @@ const PastPapers = () => {
                 </SelectContent>
               </Select>
 
-              <Select value={selectedLevel} onValueChange={setSelectedLevel}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Levels" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Levels</SelectItem>
-                  {uniqueLevels.map(level => (
-                    <SelectItem key={level} value={level}>{level}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
               <Select value={selectedYear} onValueChange={setSelectedYear}>
                 <SelectTrigger>
                   <SelectValue placeholder="All Years" />
@@ -257,6 +239,7 @@ const PastPapers = () => {
                   ))}
                 </SelectContent>
               </Select>
+
             </div>
 
             {/* Clear Filters */}
