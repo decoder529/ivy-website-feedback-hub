@@ -100,7 +100,11 @@ const Physics = () => {
   };
 
   const handleFormClick = (year: number, period: string) => {
-    const url = formUrls[year as keyof typeof formUrls]?.[period as keyof typeof formUrls[2025]];
+    console.log('Year:', year, 'Period:', period);
+    const yearData = formUrls[year as keyof typeof formUrls];
+    console.log('Year data:', yearData);
+    const url = yearData?.[period as keyof typeof yearData];
+    console.log('URL found:', url);
     if (url) {
       window.location.href = url;
     } else {
