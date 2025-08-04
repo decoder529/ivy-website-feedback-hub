@@ -20,7 +20,7 @@ const Testimonials = () => {
       subject: 'IBMYP4 Physics',
       school: 'Edubridge International School, Mumbai',
       period: 'May 2023',
-      quote: 'Thanks to IVYDon, I scored a perfect 7 in Math HL. The problem-solving techniques were game-changing.',
+      quote: 'Thanks to IVYDon, I scored a perfect 7 in Physics. The problem-solving techniques & Concept teaching method were game-changing.',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
