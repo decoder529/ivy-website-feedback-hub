@@ -15,22 +15,23 @@ const Testimonials = () => {
       image: '/api/placeholder/80/80'
     },
     {
-      name: 'Alex Chen',
+      name: 'Manas',
       achievement: 'Perfect Score',
-      subject: 'IBDP Mathematics HL',
-      school: 'International School Singapore',
-      period: 'May 2023',
-      quote: 'Thanks to IVYDon, I scored a perfect 7 in Math HL. The problem-solving techniques were game-changing.',
+      subject: 'IBMYP 4 Physics',
+      school: 'Edubridge International School',
+      period: 'May 2025',
+      quote: 'Thanks to IVYDon, I scored a perfect 7 in Physics. The problem-solving techniques were game-changing.',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
     {
-      name: 'Priya Sharma',
-      achievement: 'A* Grade',
-      subject: 'IGCSE Chemistry',
-      school: 'British School Delhi',
+      name: 'Aadit Sureka',
+      achievement: '7/7 Perfect Score',
+      subject: 'IBDP Physics HL',
+      school: 'Jumeira Baccalaureate IB School',
       period: 'June 2023',
-      quote: 'Chemistry seemed impossible until I joined IVYDON. Now it\'s my favorite subject! The tutors make complex concepts so simple.',
+      quote: 'It would be a crime to post this award without credits to my favourite teacher, PROF. RAHUL YADAV, who was the reason I was able to understand every physics concept and tackle even the most difficult of questions.
+',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
