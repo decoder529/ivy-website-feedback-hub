@@ -9,10 +9,10 @@ const FreeTestSeries = () => {
   const navigate = useNavigate();
 
   const subjects = [
-    { name: 'Physics', icon: '⚛️' },
-    { name: 'Chemistry', icon: '🧪' },
-    { name: 'Biology', icon: '🧬' },
-    { name: 'Maths', icon: '📐' }
+    { name: 'Physics', icon: '⚛️', gradient: 'from-blue-500 to-indigo-600' },
+    { name: 'Chemistry', icon: '🧪', gradient: 'from-green-500 to-emerald-600' },
+    { name: 'Biology', icon: '🧬', gradient: 'from-teal-500 to-cyan-600' },
+    { name: 'Maths', icon: '📐', gradient: 'from-purple-500 to-violet-600' }
   ];
 
   return (
@@ -59,7 +59,7 @@ const FreeTestSeries = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {subjects.map((subject, index) => (
               <Card key={index} className="group hover:shadow-hero transition-all duration-300 hover:scale-105 border-0 bg-gradient-card overflow-hidden animate-fade-in">
-                <CardHeader className="text-center bg-gradient-to-br from-primary to-secondary text-white relative overflow-hidden">
+                <CardHeader className={`text-center bg-gradient-to-br ${subject.gradient} text-white relative overflow-hidden`}>
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
                   <div className="text-4xl mb-4 relative z-10">{subject.icon}</div>
                   <CardTitle className="text-xl text-white relative z-10">{subject.name}</CardTitle>
