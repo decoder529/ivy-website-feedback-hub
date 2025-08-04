@@ -42,7 +42,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="hero" size="sm">
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={() => window.open('https://forms.gle/ULYCY4VLyXHyHhfh6', '_blank')}
+            >
               Work With Us
             </Button>
           </div>
@@ -74,7 +78,11 @@ const Header = () => {
                 </Link>
               ))}
                <div className="pt-4 space-y-2">
-                <Button variant="hero" className="w-full">
+                <Button 
+                  variant="hero" 
+                  className="w-full"
+                  onClick={() => window.open('https://forms.gle/ULYCY4VLyXHyHhfh6', '_blank')}
+                >
                   Work With Us
                 </Button>
               </div>
