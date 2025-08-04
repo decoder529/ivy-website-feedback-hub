@@ -37,22 +37,112 @@ const Maths = () => {
         </div>
       </section>
 
-      {/* Test Content */}
+      {/* Years Grid */}
       <section className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <Card className="max-w-2xl mx-auto shadow-hero hover:scale-105 transition-smooth animate-scale-in">
-            <CardHeader>
-              <CardTitle className="text-2xl">IGCSE Maths Mock Test</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-muted-foreground">
-                Test your understanding of algebra, geometry, statistics, and calculus
-              </p>
-              <Button size="lg" className="w-full bg-gradient-primary hover:shadow-hero hover:scale-105 transition-smooth">
-                Start Maths Test
-              </Button>
-            </CardContent>
-          </Card>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 animate-fade-in">Past Papers by Year</h2>
+          
+          {/* Years Grid - 3 rows */}
+          <div className="space-y-8 max-w-6xl mx-auto">
+            {/* Row 1: 2025, 2024, 2022 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[2025, 2024, 2022].map((year) => (
+                <Card key={year} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
+                  <CardHeader className="text-center bg-gradient-to-br from-purple-500 to-violet-600 text-white">
+                    <CardTitle className="text-2xl">{year}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="grid grid-cols-1 gap-3">
+                      {[
+                        'Feb-Mar 22',
+                        'May-June 21', 
+                        'May-June 22',
+                        'May-June 23',
+                        'Oct-Nov 21',
+                        'Oct-Nov 22',
+                        'Oct-Nov 23'
+                      ].map((period) => (
+                        <Button 
+                          key={period}
+                          variant="outline" 
+                          size="sm"
+                          className="hover:bg-purple-50 hover:border-purple-300 transition-smooth"
+                        >
+                          {period}
+                        </Button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Row 2: 2021, 2020, 2019 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[2021, 2020, 2019].map((year) => (
+                <Card key={year} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
+                  <CardHeader className="text-center bg-gradient-to-br from-purple-500 to-violet-600 text-white">
+                    <CardTitle className="text-2xl">{year}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="grid grid-cols-1 gap-3">
+                      {[
+                        'Feb-Mar 22',
+                        'May-June 21', 
+                        'May-June 22',
+                        'May-June 23',
+                        'Oct-Nov 21',
+                        'Oct-Nov 22',
+                        'Oct-Nov 23'
+                      ].map((period) => (
+                        <Button 
+                          key={period}
+                          variant="outline" 
+                          size="sm"
+                          className="hover:bg-purple-50 hover:border-purple-300 transition-smooth"
+                        >
+                          {period}
+                        </Button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Row 3: 2018, 2017, 2016 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[2018, 2017, 2016].map((year) => (
+                <Card key={year} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
+                  <CardHeader className="text-center bg-gradient-to-br from-purple-500 to-violet-600 text-white">
+                    <CardTitle className="text-2xl">{year}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="grid grid-cols-1 gap-3">
+                      {[
+                        'Feb-Mar 22',
+                        'May-June 21', 
+                        'May-June 22',
+                        'May-June 23',
+                        'Oct-Nov 21',
+                        'Oct-Nov 22',
+                        'Oct-Nov 23'
+                      ].map((period) => (
+                        <Button 
+                          key={period}
+                          variant="outline" 
+                          size="sm"
+                          className="hover:bg-purple-50 hover:border-purple-300 transition-smooth"
+                        >
+                          {period}
+                        </Button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
