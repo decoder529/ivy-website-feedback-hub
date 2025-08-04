@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/components/AuthContext';
-import { ROUTES } from '@/lib/routes';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -49,7 +48,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!authLoading && !user) {
-      navigate('/d4sh80rd-l091n'); // login route to be created
+      navigate('/login');
       return;
     }
     
@@ -103,7 +102,7 @@ const Dashboard = () => {
 
   const handleSignOut = async () => {
     await signOut();
-    navigate(ROUTES.home);
+    navigate('/');
   };
 
   const getPlanIcon = (planName: string) => {
@@ -212,7 +211,7 @@ const Dashboard = () => {
             ) : (
               <div className="text-center py-8">
                 <p className="text-muted-foreground mb-4">No active subscription found</p>
-                <Button onClick={() => navigate('/5ub5cr1pt10n')}>
+                <Button onClick={() => navigate('/subscription')}>
                   Choose a Plan
                 </Button>
               </div>

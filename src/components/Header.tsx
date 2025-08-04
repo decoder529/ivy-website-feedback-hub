@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '@/lib/routes';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: ROUTES.home },
-    { name: 'Free Test Series', href: ROUTES.freeTestSeries },
-    { name: 'Past Papers', href: ROUTES.pastPapers },
+    { name: 'Home', href: '/' },
+    { name: 'Free Test Series', href: '/free-test-series' },
+    { name: 'Past Papers', href: '/past-papers' },
   ];
 
   return (
@@ -18,7 +17,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to={ROUTES.home} className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="p-2 bg-gradient-primary rounded-lg">
               <GraduationCap className="h-6 w-6 text-white" />
             </div>

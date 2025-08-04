@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '@/lib/routes';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Users, Award, Target, Heart, Globe, Star } from 'lucide-react';
@@ -205,7 +204,7 @@ const AboutUs = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  onClick={() => navigate(ROUTES.home + '#testimonials')}
+                  onClick={() => navigate('/#testimonials')}
                 >
                   View Success Stories
                 </Button>

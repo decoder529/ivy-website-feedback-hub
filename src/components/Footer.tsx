@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '@/lib/routes';
 import { 
   GraduationCap, 
   Mail, 
@@ -141,11 +140,11 @@ const Footer = () => {
                 {section.links.map((link, linkIndex) => {
                   const getHref = () => {
                     switch (link) {
-                      case 'About Us': return ROUTES.about;
-                      case 'Contact Us': return ROUTES.contact;
-                      case 'FAQ': return ROUTES.faq;
-                      case 'Privacy Policy': return ROUTES.privacy;
-                      case 'Terms of Service': return ROUTES.terms;
+                      case 'About Us': return '/about';
+                      case 'Contact Us': return '/contact';
+                      case 'FAQ': return '/faq';
+                      case 'Privacy Policy': return '/privacy';
+                      case 'Terms of Service': return '/terms';
                       default: return '#';
                     }
                   };
@@ -176,10 +175,10 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
-              <Link to={ROUTES.privacy} className="text-background/70 hover:text-primary transition-colors">
+              <Link to="/privacy" className="text-background/70 hover:text-primary transition-colors">
                 Privacy Policy
               </Link>
-              <Link to={ROUTES.terms} className="text-background/70 hover:text-primary transition-colors">
+              <Link to="/terms" className="text-background/70 hover:text-primary transition-colors">
                 Terms of Service
               </Link>
               <a href="#" className="text-background/70 hover:text-primary transition-colors">
