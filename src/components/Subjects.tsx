@@ -82,7 +82,7 @@ const Subjects = () => {
                   </div>
                   
                   <Button 
-                    className={`w-full ${subject.color} text-white hover:opacity-90 transition-opacity`}
+                    className={`w-full ${subject.color} text-white hover:opacity-90 transition-smooth hover:scale-105`}
                     onClick={() => window.location.href = '/free-test-series'}
                   >
                     Free Test Series
