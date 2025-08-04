@@ -16,6 +16,10 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import FreeTestSeries from "./pages/FreeTestSeries";
 import PastPapers from "./pages/PastPapers";
+import Physics from "./pages/Physics";
+import Chemistry from "./pages/Chemistry";
+import Biology from "./pages/Biology";
+import Maths from "./pages/Maths";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +35,10 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/test-series/:subject" element={<TestSeries />} />
           <Route path="/free-test-series" element={<FreeTestSeries />} />
+          <Route path="/free-test-series/physics" element={<Physics />} />
+          <Route path="/free-test-series/chemistry" element={<Chemistry />} />
+          <Route path="/free-test-series/biology" element={<Biology />} />
+          <Route path="/free-test-series/maths" element={<Maths />} />
           <Route path="/past-papers" element={<PastPapers />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
