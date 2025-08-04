@@ -17,13 +17,13 @@ const Physics = () => {
       'Oct-Nov 23': '', // Add your form URL here
     },
     2024: {
-      'Feb-Mar 22': 'https://forms.gle/X4YtaVLDU4j6r8XU9', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/1d6ecL3T3viQ81Tp6',
+      'May-June 21': 'https://forms.gle/LctXASwXwrhHfGd77',
+      'May-June 22': 'https://forms.gle/wKaK9hogi35UkbCr9',
+      'May-June 23': 'https://forms.gle/2JeZsT67s2hbMEEE6',
+      'Oct-Nov 21': 'https://forms.gle/ZUn1rY4ten41W9aT8',
+      'Oct-Nov 22': 'https://forms.gle/DeZmpaztHwnGr9Fd7',
+      'Oct-Nov 23': 'https://forms.gle/q26mQ6RTTgxLwxwGA',
     },
     2023: {
       'Feb-Mar 22': '', // Add your form URL here
