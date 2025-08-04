@@ -17,25 +17,25 @@ const Physics = () => {
       'Oct-Nov 23': '', // Add your form URL here
     },
     2024: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/9V9rY2ELnbUmvCeW6', // Add your form URL here
+      'May-June 21': 'https://forms.gle/3CW8Na28KEUwzC8c8', // Add your form URL here
+      'May-June 22': 'https://forms.gle/ZonRuX5n7Km9jXQm9', // Add your form URL here
+      'May-June 23': 'https://forms.gle/nwxatDWog1zs9y6AA', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/xe57PNeekvmEYUHZ9', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/wRHu4Fsa5a5XND449', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/odniz5jTkqB2Rgak9', // Add your form URL here
     },
     2023: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/VzSeJMSmva2QAseVA', // Add your form URL here
+      'May-June 21': 'https://forms.gle/EDK2uZsC27joFDsB6', // Add your form URL here
+      'May-June 22': 'https://forms.gle/xcH2zHXwhPYwBiXU9', // Add your form URL here
+      'May-June 23': 'https://forms.gle/CxXRJfSmqqLWSJwz5', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/yXYV4AYUb6fJbtcF9', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/Pqs3vBUpcJacLDgC9', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/R3vDtLxEjjJ8TmpT9', // Add your form URL here
     },
     2022: {
-      'Feb-Mar 22': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/kWsTEn9A44pLSYtw5', // Add your form URL here
       'May-June 21': '', // Add your form URL here
       'May-June 22': '', // Add your form URL here
       'May-June 23': '', // Add your form URL here
