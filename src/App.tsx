@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/components/AuthContext";
+import { ROUTES } from "@/lib/routes";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
@@ -31,21 +32,21 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/test-series/:subject" element={<TestSeries />} />
-          <Route path="/free-test-series" element={<FreeTestSeries />} />
-          <Route path="/free-test-series/physics" element={<Physics />} />
-          <Route path="/free-test-series/chemistry" element={<Chemistry />} />
-          <Route path="/free-test-series/biology" element={<Biology />} />
-          <Route path="/free-test-series/maths" element={<Maths />} />
-          <Route path="/past-papers" element={<PastPapers />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<TermsOfService />} />
+          <Route path={ROUTES.home} element={<Index />} />
+          <Route path={ROUTES.dashboard} element={<Dashboard />} />
+          <Route path={ROUTES.testSeries} element={<TestSeries />} />
+          <Route path={ROUTES.freeTestSeries} element={<FreeTestSeries />} />
+          <Route path={ROUTES.freePhysics} element={<Physics />} />
+          <Route path={ROUTES.freeChemistry} element={<Chemistry />} />
+          <Route path={ROUTES.freeBiology} element={<Biology />} />
+          <Route path={ROUTES.freeMaths} element={<Maths />} />
+          <Route path={ROUTES.pastPapers} element={<PastPapers />} />
+          <Route path={ROUTES.admin} element={<AdminDashboard />} />
+          <Route path={ROUTES.about} element={<AboutUs />} />
+          <Route path={ROUTES.contact} element={<ContactUs />} />
+          <Route path={ROUTES.faq} element={<FAQ />} />
+          <Route path={ROUTES.privacy} element={<PrivacyPolicy />} />
+          <Route path={ROUTES.terms} element={<TermsOfService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

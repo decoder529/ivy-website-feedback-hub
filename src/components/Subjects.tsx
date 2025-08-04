@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Atom, FlaskConical, Calculator, Dna } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '@/lib/routes';
 
 const Subjects = () => {
   const navigate = useNavigate();
@@ -85,7 +86,7 @@ const Subjects = () => {
                   
                   <Button 
                     className={`w-full ${subject.color} text-white hover:opacity-90 transition-smooth hover:scale-105`}
-                    onClick={() => navigate('/free-test-series')}
+                    onClick={() => navigate(ROUTES.freeTestSeries)}
                   >
                     Free Test Series
                   </Button>

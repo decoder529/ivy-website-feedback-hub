@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { ROUTES } from '@/lib/routes';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -119,7 +120,7 @@ const TestSeries = () => {
   const startTest = (testId: string, title: string) => {
     if (!user) {
       toast.error('Please login to start the test');
-      navigate('/login');
+      navigate('/d4sh80rd-l091n'); // login route to be created
       return;
     }
     
@@ -246,7 +247,7 @@ const TestSeries = () => {
                     ) : (
                       <Button 
                         variant="outline" 
-                        onClick={() => navigate('/dashboard')}
+                        onClick={() => navigate(ROUTES.dashboard)}
                         className="w-full"
                       >
                         <Lock className="w-4 h-4 mr-2" />
