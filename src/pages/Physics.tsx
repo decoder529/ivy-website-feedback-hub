@@ -66,7 +66,7 @@ const Physics = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-blue-50 hover:border-blue-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600 hover:text-white hover:border-blue-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>
@@ -99,7 +99,7 @@ const Physics = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-blue-50 hover:border-blue-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600 hover:text-white hover:border-blue-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>
@@ -132,7 +132,7 @@ const Physics = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-blue-50 hover:border-blue-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600 hover:text-white hover:border-blue-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>

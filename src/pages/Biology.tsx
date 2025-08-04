@@ -66,7 +66,7 @@ const Biology = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-teal-50 hover:border-teal-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-teal-500 hover:to-cyan-600 hover:text-white hover:border-teal-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>
@@ -99,7 +99,7 @@ const Biology = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-teal-50 hover:border-teal-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-teal-500 hover:to-cyan-600 hover:text-white hover:border-teal-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>
@@ -132,7 +132,7 @@ const Biology = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-teal-50 hover:border-teal-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-teal-500 hover:to-cyan-600 hover:text-white hover:border-teal-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>

@@ -66,7 +66,7 @@ const Chemistry = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-green-50 hover:border-green-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>
@@ -99,7 +99,7 @@ const Chemistry = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-green-50 hover:border-green-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>
@@ -132,7 +132,7 @@ const Chemistry = () => {
                           key={period}
                           variant="outline" 
                           size="sm"
-                          className="hover:bg-green-50 hover:border-green-300 transition-smooth"
+                          className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
                         >
                           {period}
                         </Button>
