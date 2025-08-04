@@ -250,7 +250,7 @@ const Physics = () => {
 
             {/* Row 3: 2016 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[2019].map((year) => (
+              {[2016].map((year) => (
                 <Card key={year} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
                   <CardHeader className="text-center bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
                     <CardTitle className="text-2xl">{year}</CardTitle>
