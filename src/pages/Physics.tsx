@@ -5,6 +5,99 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Clock, Users, Award } from 'lucide-react';
 
 const Physics = () => {
+  // Form URLs for each year and exam period
+  const formUrls = {
+    2025: {
+      'Feb-Mar 22': 'https://forms.gle/uNby3XpyX4PoR6648',
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    },
+    2024: {
+      'Feb-Mar 22': '', // Add your form URL here
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    },
+    2022: {
+      'Feb-Mar 22': '', // Add your form URL here
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    },
+    2021: {
+      'Feb-Mar 22': '', // Add your form URL here
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    },
+    2020: {
+      'Feb-Mar 22': '', // Add your form URL here
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    },
+    2019: {
+      'Feb-Mar 22': '', // Add your form URL here
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    },
+    2018: {
+      'Feb-Mar 22': '', // Add your form URL here
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    },
+    2017: {
+      'Feb-Mar 22': '', // Add your form URL here
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    },
+    2016: {
+      'Feb-Mar 22': '', // Add your form URL here
+      'May-June 21': '', // Add your form URL here
+      'May-June 22': '', // Add your form URL here
+      'May-June 23': '', // Add your form URL here
+      'Oct-Nov 21': '', // Add your form URL here
+      'Oct-Nov 22': '', // Add your form URL here
+      'Oct-Nov 23': '', // Add your form URL here
+    }
+  };
+
+  const handleFormClick = (year: number, period: string) => {
+    const url = formUrls[year as keyof typeof formUrls]?.[period as keyof typeof formUrls[2025]];
+    if (url) {
+      window.location.href = url;
+    } else {
+      alert('Form URL not available for this period yet.');
+    }
+  };
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -67,6 +160,7 @@ const Physics = () => {
                           variant="outline" 
                           size="sm"
                           className="hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600 hover:text-white hover:border-blue-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                          onClick={() => handleFormClick(year, period)}
                         >
                           {period}
                         </Button>
@@ -100,6 +194,7 @@ const Physics = () => {
                           variant="outline" 
                           size="sm"
                           className="hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600 hover:text-white hover:border-blue-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                          onClick={() => handleFormClick(year, period)}
                         >
                           {period}
                         </Button>
@@ -133,6 +228,7 @@ const Physics = () => {
                           variant="outline" 
                           size="sm"
                           className="hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600 hover:text-white hover:border-blue-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                          onClick={() => handleFormClick(year, period)}
                         >
                           {period}
                         </Button>
