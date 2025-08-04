@@ -26,7 +26,7 @@ const FreeTestSeries = () => {
             Free Test Series
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Test your knowledge with our comprehensive practice tests for AP, IBDP, IGCSE & AS-A Level subjects
+            Challenge yourself with our comprehensive practice tests — tailore for IGCSE, IBDP success!"
           </p>
           <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
