@@ -15,23 +15,22 @@ const Testimonials = () => {
       image: '/api/placeholder/80/80'
     },
     {
-      name: 'Manas',
+      name: 'Alex Chen',
       achievement: 'Perfect Score',
-      subject: 'IBMYP 4 Physics',
-      school: 'Edubridge International School',
-      period: 'May 2025',
-      quote: 'Thanks to IVYDon, I scored a perfect 7 in Physics. The problem-solving techniques were game-changing.',
+      subject: 'IBDP Mathematics HL',
+      school: 'International School Singapore',
+      period: 'May 2023',
+      quote: 'Thanks to IVYDon, I scored a perfect 7 in Math HL. The problem-solving techniques were game-changing.',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
     {
-      name: 'Aadit Sureka',
-      achievement: '7/7 Perfect Score',
-      subject: 'IBDP Physics HL',
-      school: 'Jumeira Baccalaureate IB School',
-      period: 'June 2023',
-      quote: 'It would be a crime to post this award without credits to my favourite teacher, PROF. RAHUL YADAV, who was the reason I was able to understand every physics concept and tackle even the most difficult of questions.
-',
+      name: 'Aadit',
+      achievement: 'Outstanding Student Of the Year Award',
+      subject: 'IGCSE Chemistry',
+      school: 'British School Delhi',
+      period: 'June 2025',
+      quote: 'It would be a crime to post this award without credits to my favourite teacher, PROF. RAHUL YADAV, who was the reason I was able to understand every physics concept and tackle even the most difficult of questions',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
