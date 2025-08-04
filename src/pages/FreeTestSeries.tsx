@@ -58,14 +58,15 @@ const FreeTestSeries = () => {
           {/* Subjects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {subjects.map((subject, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="text-center">
-                  <div className="text-4xl mb-4">{subject.icon}</div>
-                  <CardTitle className="text-xl">{subject.name}</CardTitle>
+              <Card key={index} className="group hover:shadow-hero transition-all duration-300 hover:scale-105 border-0 bg-gradient-card overflow-hidden animate-fade-in">
+                <CardHeader className="text-center bg-gradient-to-br from-primary to-secondary text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
+                  <div className="text-4xl mb-4 relative z-10">{subject.icon}</div>
+                  <CardTitle className="text-xl text-white relative z-10">{subject.name}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-6">
                   <Button 
-                    className="w-full" 
+                    className="w-full bg-gradient-primary text-white hover:shadow-hero hover:scale-105 transition-smooth" 
                     variant="default"
                     onClick={() => navigate(`/free-test-series/${subject.name.toLowerCase()}`)}
                   >
