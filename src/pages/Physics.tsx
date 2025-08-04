@@ -9,21 +9,21 @@ const Physics = () => {
   const formUrls = {
     2025: {
       'Feb-Mar 22': 'https://forms.gle/uNby3XpyX4PoR6648',
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'May-June 21': '', 
+      'May-June 22': '', 
+      'May-June 23': '', 
+      'Oct-Nov 21': '', 
+      'Oct-Nov 22': '', 
+      'Oct-Nov 23': '' 
     },
     2024: {
-      'Feb-Mar 22': 'https://forms.gle/1d6ecL3T3viQ81Tp6',
+      'Feb-Mar 22': 'https://forms.gle/1d6ecL3T3viQ81Tp6', 
       'May-June 21': 'https://forms.gle/LctXASwXwrhHfGd77',
-      'May-June 22': 'https://forms.gle/wKaK9hogi35UkbCr9',
-      'May-June 23': 'https://forms.gle/2JeZsT67s2hbMEEE6',
-      'Oct-Nov 21': 'https://forms.gle/ZUn1rY4ten41W9aT8',
-      'Oct-Nov 22': 'https://forms.gle/DeZmpaztHwnGr9Fd7',
-      'Oct-Nov 23': 'https://forms.gle/q26mQ6RTTgxLwxwGA',
+      'May-June 22': 'https://forms.gle/wKaK9hogi35UkbCr9', 
+      'May-June 23': 'https://forms.gle/2JeZsT67s2hbMEEE6', 
+      'Oct-Nov 21': 'https://forms.gle/ZUn1rY4ten41W9aT8', 
+      'Oct-Nov 22': 'https://forms.gle/DeZmpaztHwnGr9Fd7', 
+      'Oct-Nov 23': 'https://forms.gle/q26mQ6RTTgxLwxwGA'
     },
     2023: {
       'Feb-Mar 22': '', // Add your form URL here
@@ -100,10 +100,9 @@ const Physics = () => {
   };
 
   const handleFormClick = (year: number, period: string) => {
-    const yearForms = formUrls[year as keyof typeof formUrls];
-    const url = yearForms?.[period as keyof typeof yearForms];
+    const url = formUrls[year as keyof typeof formUrls]?.[period as keyof typeof formUrls[2025]];
     if (url) {
-      window.open(url, '_blank');
+      window.location.href = url;
     } else {
       alert('Form URL not available for this period yet.');
     }
