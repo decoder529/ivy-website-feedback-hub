@@ -102,7 +102,7 @@ const Physics = () => {
   const handleFormClick = (year: number, period: string) => {
     const url = formUrls[year as keyof typeof formUrls]?.[period as keyof typeof formUrls[2025]];
     if (url) {
-      window.location.href = url;
+     window.open(url, '_blank');
     } else {
       alert('Form URL not available for this period yet.');
     }
