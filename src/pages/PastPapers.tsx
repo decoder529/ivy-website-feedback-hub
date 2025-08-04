@@ -32,9 +32,9 @@ const PastPapers = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSubject, setSelectedSubject] = useState('');
-  const [selectedBoard, setSelectedBoard] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
-  const [selectedLevel, setSelectedLevel] = useState('');
+  const [paperCode, setPaperCode] = useState('');
+  const [selectedSeason, setSelectedSeason] = useState('');
   const { toast } = useToast();
 
   // Fetch question papers from database
@@ -73,7 +73,8 @@ const PastPapers = () => {
       filtered = filtered.filter(paper =>
         paper.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         paper.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        paper.board.toLowerCase().includes(searchTerm.toLowerCase())
+        paper.paper_number.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (paper.variant && paper.variant.toLowerCase().includes(searchTerm.toLowerCase()))
       );
     }
 
@@ -81,16 +82,25 @@ const PastPapers = () => {
       filtered = filtered.filter(paper => paper.subject === selectedSubject);
     }
 
-    if (selectedBoard && selectedBoard !== 'all') {
-      filtered = filtered.filter(paper => paper.board === selectedBoard);
-    }
-
     if (selectedYear && selectedYear !== 'all') {
       filtered = filtered.filter(paper => paper.year.toString() === selectedYear);
     }
 
+    if (paperCode) {
+      filtered = filtered.filter(paper => {
+        const fullPaperCode = `${paper.paper_number}${paper.variant ? '/' + paper.variant : ''}`;
+        return fullPaperCode.toLowerCase().includes(paperCode.toLowerCase()) ||
+               paper.paper_number.toLowerCase().includes(paperCode.toLowerCase()) ||
+               (paper.variant && paper.variant.toLowerCase().includes(paperCode.toLowerCase()));
+      });
+    }
+
+    if (selectedSeason && selectedSeason !== 'all') {
+      filtered = filtered.filter(paper => paper.session === selectedSeason);
+    }
+
     setFilteredPapers(filtered);
-  }, [papers, searchTerm, selectedSubject, selectedBoard, selectedYear]);
+  }, [papers, searchTerm, selectedSubject, selectedYear, paperCode, selectedSeason]);
 
   // Download paper function
   const downloadPaper = async (paper: QuestionPaper) => {
@@ -131,14 +141,20 @@ const PastPapers = () => {
   const clearFilters = () => {
     setSearchTerm('');
     setSelectedSubject('');
-    setSelectedBoard('');
     setSelectedYear('');
+    setPaperCode('');
+    setSelectedSeason('');
   };
 
   // Get unique values for filter options
-  const uniqueSubjects = ["Physics", "Chemistry", "Maths", "Biology"];
-  const uniqueBoards = ["IGCSE"];
-  const uniqueYears = ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"];
+  const igcseSubjects = [
+    "Physics", "Chemistry", "Mathematics", "Biology", "English Language", 
+    "English Literature", "Geography", "History", "Economics", "Business Studies",
+    "Computer Science", "Information Technology", "Art & Design", "Music",
+    "French", "Spanish", "German", "Mandarin Chinese"
+  ];
+  const availableYears = ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015"];
+  const examSeasons = ["February/March", "May/June", "October/November"];
 
   if (loading) {
     return (
@@ -163,10 +179,10 @@ const PastPapers = () => {
       <section className="pt-24 pb-12 bg-gradient-to-br from-secondary/10 via-background to-primary/10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Past Question Papers
+            IGCSE Past Papers
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Download past 10 years question papers from various exam boards and subjects
+            Download Cambridge IGCSE past papers, mark schemes, and grade thresholds with our user-friendly filter system
           </p>
           <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -202,44 +218,66 @@ const PastPapers = () => {
               </div>
             </div>
 
-            {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-              <Select value={selectedSubject} onValueChange={setSelectedSubject}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Subjects" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Subjects</SelectItem>
-                  {uniqueSubjects.map(subject => (
-                    <SelectItem key={subject} value={subject}>{subject}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            {/* Enhanced Filters */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              {/* Year Filter */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">Year</label>
+                <Select value={selectedYear} onValueChange={setSelectedYear}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select Year" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Years</SelectItem>
+                    {availableYears.map(year => (
+                      <SelectItem key={year} value={year}>{year}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-              <Select value={selectedBoard} onValueChange={setSelectedBoard}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Boards" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Boards</SelectItem>
-                  {uniqueBoards.map(board => (
-                    <SelectItem key={board} value={board}>{board}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              {/* Subject Filter */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">Subject</label>
+                <Select value={selectedSubject} onValueChange={setSelectedSubject}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select Subject" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Subjects</SelectItem>
+                    {igcseSubjects.map(subject => (
+                      <SelectItem key={subject} value={subject}>{subject}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-              <Select value={selectedYear} onValueChange={setSelectedYear}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Years" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Years</SelectItem>
-                  {uniqueYears.map(year => (
-                    <SelectItem key={year} value={year}>{year}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              {/* Paper Code Filter */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">Paper Code</label>
+                <Input
+                  placeholder="e.g., 0625/21, 0625/22"
+                  value={paperCode}
+                  onChange={(e) => setPaperCode(e.target.value)}
+                  className="w-full"
+                />
+              </div>
 
+              {/* Season Filter */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground">Season</label>
+                <Select value={selectedSeason} onValueChange={setSelectedSeason}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select Season" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Seasons</SelectItem>
+                    {examSeasons.map(season => (
+                      <SelectItem key={season} value={season}>{season}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             {/* Clear Filters */}
@@ -298,10 +336,9 @@ const PastPapers = () => {
                           <span className="font-medium">{paper.session}</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Paper:</span>
+                          <span className="text-muted-foreground">Paper Code:</span>
                           <span className="font-medium">
-                            Paper {paper.paper_number}
-                            {paper.variant && ` Variant ${paper.variant}`}
+                            {paper.paper_number}{paper.variant && `/${paper.variant}`}
                           </span>
                         </div>
                         <div className="flex justify-between text-sm">
