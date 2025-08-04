@@ -56,7 +56,7 @@ const FreeTestSeries = () => {
           </p>
           
           {/* Subjects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {subjects.map((subject, index) => (
               <Card key={index} className="group hover:shadow-hero transition-all duration-300 hover:scale-105 border-0 bg-gradient-card overflow-hidden animate-fade-in">
                 <CardHeader className={`text-center bg-gradient-to-br ${subject.gradient} text-white relative overflow-hidden`}>
