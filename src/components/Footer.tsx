@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { 
   GraduationCap, 
   Mail, 
@@ -174,12 +175,12 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
-              <a href="/privacy" className="text-background/70 hover:text-primary transition-colors">
+              <Link to="/privacy" className="text-background/70 hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="/terms" className="text-background/70 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/terms" className="text-background/70 hover:text-primary transition-colors">
                 Terms of Service
-              </a>
+              </Link>
               <a href="#" className="text-background/70 hover:text-primary transition-colors">
                 Cookie Policy
               </a>
