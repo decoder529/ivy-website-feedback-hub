@@ -9,7 +9,16 @@ const FreeTestSeries = () => {
   const navigate = useNavigate();
 
   const subjects = [
-    { name: 'Physics', icon: '⚛️', gradient: 'from-blue-500 to-indigo-600' },
+    { 
+      name: 'Physics', 
+      icon: '⚛️', 
+      gradient: 'from-blue-500 to-indigo-600',
+      chapters: [
+        'Forces & Motion', 'Energy & Power', 'Thermal Physics',
+        'Waves & Sound', 'Electricity', 'Magnetism',
+        'Atomic Physics', 'Radioactivity', 'Space Physics'
+      ]
+    },
     { name: 'Chemistry', icon: '🧪', gradient: 'from-green-500 to-emerald-600' },
     { name: 'Biology', icon: '🧬', gradient: 'from-teal-500 to-cyan-600' },
     { name: 'Maths', icon: '📐', gradient: 'from-purple-500 to-violet-600' }
@@ -22,7 +31,7 @@ const FreeTestSeries = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 animate-fade-in hover:scale-105 transition-smooth">
             Free Test Series
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
@@ -48,7 +57,7 @@ const FreeTestSeries = () => {
       {/* IGCSE Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-5xl md:text-7xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4 animate-scale-in">
             IGCSE
           </h2>
           <p className="text-lg text-muted-foreground mb-12">
@@ -65,6 +74,20 @@ const FreeTestSeries = () => {
                   <CardTitle className="text-xl text-white relative z-10">{subject.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
+                  {subject.name === 'Physics' && subject.chapters && (
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
+                        Curriculum 2025-27 Chapters
+                      </h4>
+                      <div className="grid grid-cols-3 gap-2 text-xs text-muted-foreground">
+                        {subject.chapters.map((chapter, chapterIndex) => (
+                          <div key={chapterIndex} className="text-center p-1 bg-muted/30 rounded">
+                            {chapter}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   <Button 
                     className="w-full bg-gradient-primary text-white hover:shadow-hero hover:scale-105 transition-smooth" 
                     variant="default"
