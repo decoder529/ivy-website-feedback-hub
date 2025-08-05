@@ -75,7 +75,7 @@ const Hero = () => {
               </div>
               
               {/* Student Name and School */}
-              <div className="text-center mt-4">
+              <div className="text-left mt-4">
                 <p className="text-white font-semibold text-lg">Ishnavi Mahesh</p>
                 <p className="text-white/80 text-sm">Don Bosco International School, Matunga</p>
               </div>
@@ -90,7 +90,7 @@ const Hero = () => {
               
               <div className="absolute -bottom-6 -left-6 bg-white rounded-lg p-4 shadow-hero">
                 <div className="text-center">
-                  <div className="text-m font-bold text-primary">AS-Level Physics, 2023</div>
+                  <div className="text-2xl font-bold text-primary">AS-Level Physics, 2023</div>
                   <div className="text-xs text-muted-foreground">Average Grade</div>
                 </div>
               </div>
