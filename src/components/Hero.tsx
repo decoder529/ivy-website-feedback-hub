@@ -77,7 +77,8 @@ const Hero = () => {
               {/* Student Name and School */}
               <div className="text-center mt-4">
                 <p className="text-white font-semibold text-lg">Ishnavi Mahesh</p>
-                <p className="text-white/80 text-sm">DBIS, Matunga</p>
+                <div className="absolute -bottom-6 right-6">
+                <p className="text-white/80 text-sm">Don Bosco International School, Matunga</p>
               </div>
               
               {/* Floating Achievement Cards */}
