@@ -75,7 +75,7 @@ const Hero = () => {
               </div>
               
               {/* Student Name and School */}
-              <div className="text-left mt-4">
+              <div className="text-center mt-4">
                 <p className="text-white font-semibold text-lg">Ishnavi Mahesh</p>
                 <p className="text-white/80 text-sm">Don Bosco International School, Matunga</p>
               </div>
