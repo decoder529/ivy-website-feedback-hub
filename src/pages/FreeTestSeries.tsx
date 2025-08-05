@@ -55,9 +55,9 @@ const FreeTestSeries = () => {
       </section>
 
       {/* IGCSE Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent mb-4 animate-scale-in hover:scale-105 transition-all duration-300">
+          <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent mb-4 animate-scale-in hover:scale-105 transition-all duration-300">
             IGCSE
           </h2>
           <p className="text-lg text-muted-foreground mb-12">
