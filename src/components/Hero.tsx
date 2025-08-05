@@ -90,7 +90,7 @@ const Hero = () => {
               
               <div className="absolute -bottom-6 -left-6 bg-white rounded-lg p-4 shadow-hero">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">A*</div>
+                  <div className="text-2xl font-bold text-primary">AS-Level Physics, 2023</div>
                   <div className="text-xs text-muted-foreground">Average Grade</div>
                 </div>
               </div>
