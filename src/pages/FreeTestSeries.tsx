@@ -31,7 +31,7 @@ const FreeTestSeries = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 animate-fade-in hover:scale-105 transition-smooth">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 animate-fade-in hover:scale-105 transition-all duration-300">
             Free Test Series
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
@@ -57,7 +57,7 @@ const FreeTestSeries = () => {
       {/* IGCSE Section */}
       <section className="py-16 bg-gradient-to-br from-muted/20 via-background to-muted/10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4 animate-scale-in hover:scale-105 transition-smooth">
+          <h2 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4 animate-scale-in hover:scale-105 transition-all duration-300">
             IGCSE
           </h2>
           <p className="text-lg text-muted-foreground mb-12">
@@ -89,7 +89,7 @@ const FreeTestSeries = () => {
                     </div>
                   )}
                   <Button 
-                    className="w-full bg-gradient-primary text-white hover:shadow-hero hover:scale-105 transition-smooth" 
+                    className="w-full bg-gradient-primary text-white hover:shadow-hero hover:scale-105 transition-all duration-300" 
                     variant="default"
                     onClick={() => navigate(`/free-test-series/${subject.name.toLowerCase()}`)}
                   >
