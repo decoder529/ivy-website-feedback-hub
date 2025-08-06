@@ -20,6 +20,7 @@ import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
 import Biology from "./pages/Biology";
 import Maths from "./pages/Maths";
+import Worksheet from "./pages/Worksheet";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/free-test-series/chemistry" element={<Chemistry />} />
           <Route path="/free-test-series/biology" element={<Biology />} />
           <Route path="/free-test-series/maths" element={<Maths />} />
+          <Route path="/worksheet" element={<Worksheet />} />
           <Route path="/past-papers" element={<PastPapers />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
