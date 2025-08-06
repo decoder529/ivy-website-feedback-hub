@@ -32,7 +32,7 @@ const FreeTestSeries = () => {
       <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 animate-fade-in hover:scale-105 transition-all duration-300">
-            Free Test Series
+            Test Series
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Challenge yourself with our comprehensive practice tests — tailore for IGCSE, IBDP success!"
@@ -93,7 +93,7 @@ const FreeTestSeries = () => {
                     variant="default"
                     onClick={() => navigate(`/free-test-series/${subject.name.toLowerCase()}`)}
                   >
-                    Start Test
+                    Take Test
                   </Button>
                 </CardContent>
               </Card>
