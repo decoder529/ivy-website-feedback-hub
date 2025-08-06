@@ -12,16 +12,35 @@ const FreeTestSeries = () => {
     { 
       name: 'Physics', 
       icon: '⚛️', 
-      gradient: 'from-blue-500 to-indigo-600',
-      chapters: [
-        'Motion, Forces & Energy', 'Thermal Physics',
-        'Waves & Light', 'Electricity & Magnetism',
-        'Nuclear Physics', 'Space Physics'
-      ]
+      title: 'Master Physics Concepts',
+      description: 'Explore the fundamental laws that govern our universe through interactive problem-solving.',
+      bgColor: 'bg-blue-50',
+      gradient: 'from-blue-500 to-indigo-600'
     },
-    { name: 'Chemistry', icon: '🧪', gradient: 'from-green-500 to-emerald-600' },
-    { name: 'Biology', icon: '🧬', gradient: 'from-teal-500 to-cyan-600' },
-    { name: 'Maths', icon: '📐', gradient: 'from-purple-500 to-violet-600' }
+    { 
+      name: 'Chemistry', 
+      icon: '🧪', 
+      title: 'Chemical Reactions Made Easy',
+      description: 'Discover the fascinating world of atoms, molecules, and chemical transformations.',
+      bgColor: 'bg-green-50',
+      gradient: 'from-green-500 to-emerald-600'
+    },
+    { 
+      name: 'Biology', 
+      icon: '🧬', 
+      title: 'Life Sciences Simplified',
+      description: 'Understand living organisms and biological processes through engaging examples.',
+      bgColor: 'bg-teal-50',
+      gradient: 'from-teal-500 to-cyan-600'
+    },
+    { 
+      name: 'Maths', 
+      icon: '📐', 
+      title: 'Mathematical Problem Solving',
+      description: 'Build confidence in mathematics with step-by-step guided practice.',
+      bgColor: 'bg-purple-50',
+      gradient: 'from-purple-500 to-violet-600'
+    }
   ];
 
   return (
@@ -65,35 +84,19 @@ const FreeTestSeries = () => {
           </p>
           
           {/* Subjects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {subjects.map((subject, index) => (
-              <Card key={index} className="group hover:shadow-hero transition-all duration-300 hover:scale-105 border-0 bg-gradient-card overflow-hidden animate-fade-in">
-                <CardHeader className={`text-center bg-gradient-to-br ${subject.gradient} text-white relative overflow-hidden`}>
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
-                  <div className="text-4xl mb-4 relative z-10">{subject.icon}</div>
-                  <CardTitle className="text-xl text-white relative z-10">{subject.name}</CardTitle>
-                </CardHeader>
-                <CardContent className="p-6">
-                  {subject.name === 'Physics' && subject.chapters && (
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
-                        Curriculum 2025-27 Chapters
-                      </h4>
-                      <div className="grid grid-cols-3 gap-2 text-xs text-muted-foreground">
-                        {subject.chapters.map((chapter, chapterIndex) => (
-                          <div key={chapterIndex} className="text-center p-1 bg-muted/30 rounded">
-                            {chapter}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+              <Card key={index} className={`group hover:shadow-hero transition-all duration-300 hover:scale-105 border-0 overflow-hidden animate-fade-in ${subject.bgColor}`}>
+                <CardContent className="p-8 text-center">
+                  <div className="text-6xl mb-6">{subject.icon}</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">{subject.title}</h3>
+                  <p className="text-muted-foreground mb-8 leading-relaxed">{subject.description}</p>
                   <Button 
-                    className="w-full bg-gradient-primary text-white hover:shadow-hero hover:scale-105 transition-all duration-300" 
+                    className={`w-full bg-gradient-to-r ${subject.gradient} text-white hover:shadow-hero hover:scale-105 transition-all duration-300 py-3`} 
                     variant="default"
                     onClick={() => navigate(`/free-test-series/${subject.name.toLowerCase()}`)}
                   >
-                    Take Test
+                    Start {subject.name} Test
                   </Button>
                 </CardContent>
               </Card>
