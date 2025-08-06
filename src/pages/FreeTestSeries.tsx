@@ -15,7 +15,7 @@ const FreeTestSeries = () => {
       gradient: 'from-blue-500 to-indigo-600',
       chapters: [
         'Motion, Forces & Energy', 'Thermal Physics',
-        'Waves & Light', 'Electricity & Magnetism,
+        'Waves & Light', 'Electricity & Magnetism',
         'Nuclear Physics', 'Space Physics'
       ]
     },
