@@ -12,7 +12,7 @@ const FreeTestSeries = () => {
     { 
       name: 'Physics', 
       icon: '⚛️', 
-      title: 'Physics Test Series',
+      title: 'Physics Test Series (0625)',
       description: 'Explore the fundamental laws that govern our universe through interactive problem-solving.',
       bgColor: 'bg-blue-50',
       gradient: 'from-blue-500 to-indigo-600'
@@ -20,7 +20,7 @@ const FreeTestSeries = () => {
     { 
       name: 'Chemistry', 
       icon: '🧪', 
-      title: 'Chemistry Test Series',
+      title: 'Chemistry Test Series (0620)',
       description: 'Discover the fascinating world of atoms, molecules, and chemical transformations.',
       bgColor: 'bg-green-50',
       gradient: 'from-green-500 to-emerald-600'
@@ -28,7 +28,7 @@ const FreeTestSeries = () => {
     { 
       name: 'Biology', 
       icon: '🧬', 
-      title: 'Biology Test Series',
+      title: 'Biology Test Series(0610)',
       description: 'Understand living organisms and biological processes through engaging examples.',
       bgColor: 'bg-teal-50',
       gradient: 'from-teal-500 to-cyan-600'
@@ -36,7 +36,7 @@ const FreeTestSeries = () => {
     { 
       name: 'Maths', 
       icon: '📐', 
-      title: 'Maths Test Series',
+      title: 'Maths Test Series(0580)',
       description: 'Build confidence in mathematics with step-by-step guided practice.',
       bgColor: 'bg-purple-50',
       gradient: 'from-purple-500 to-violet-600'
