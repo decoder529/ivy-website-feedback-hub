@@ -14,9 +14,9 @@ const FreeTestSeries = () => {
       icon: '⚛️', 
       gradient: 'from-blue-500 to-indigo-600',
       chapters: [
-        'Forces & Motion', 'Energy & Power', 'Thermal Physics',
-        'Waves & Sound', 'Electricity', 'Magnetism',
-        'Atomic Physics', 'Radioactivity', 'Space Physics'
+        'Motion, Forces & Energy', 'Thermal Physics',
+        'Waves & Light', 'Electricity & Magnetism,
+        'Nuclear Physics', 'Space Physics'
       ]
     },
     { name: 'Chemistry', icon: '🧪', gradient: 'from-green-500 to-emerald-600' },
