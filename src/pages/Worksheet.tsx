@@ -94,7 +94,7 @@ const Worksheet = () => {
                   <Button 
                     className={`w-full bg-gradient-to-r ${subject.gradient} text-white hover:shadow-hero hover:scale-105 transition-all duration-300 py-3`} 
                     variant="default"
-                    onClick={() => navigate(`/worksheet/${subject.name.toLowerCase()}`)}
+                    onClick={() => navigate(`/worksheets/${subject.name.toLowerCase()}`)}
                   >
                     Download {subject.name} Worksheets
                   </Button>
