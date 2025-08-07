@@ -59,47 +59,53 @@ const WorksheetPhysics = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 animate-fade-in">Worksheets by Chapter</h2>
           
-          {/* Chapters Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {/* Chapters Grid - 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {chapters.map((chapter) => (
               <Card key={chapter.id} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
                 <CardHeader className="text-center bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
                   <CardTitle className="text-lg">{chapter.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <div className="grid grid-cols-2 gap-3">
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600 hover:text-white hover:border-blue-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                      onClick={() => handleResourceClick(chapter.name, 'SubTopic')}
-                    >
-                      SubTopic
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                      onClick={() => handleResourceClick(chapter.name, 'QP')}
-                    >
-                      QP
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-violet-600 hover:text-white hover:border-purple-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                      onClick={() => handleResourceClick(chapter.name, 'MS')}
-                    >
-                      MS
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-600 hover:text-white hover:border-orange-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                      onClick={() => handleResourceClick(chapter.name, 'Practice')}
-                    >
-                      Practice
-                    </Button>
+                  {/* Subtopic header */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-muted-foreground mb-3">Subtopic</h4>
+                  </div>
+                  
+                  {/* Topics and buttons grid */}
+                  <div className="space-y-3">
+                    {/* Topic rows */}
+                    {[1, 2, 3, 4].map((topicNum) => (
+                      <div key={topicNum} className="border rounded-lg p-3 bg-card">
+                        <div className="text-sm font-medium mb-2">Topic {topicNum}</div>
+                        <div className="grid grid-cols-3 gap-2">
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                            onClick={() => handleResourceClick(chapter.name, `Topic ${topicNum} QP`)}
+                          >
+                            QP
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-violet-600 hover:text-white hover:border-purple-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                            onClick={() => handleResourceClick(chapter.name, `Topic ${topicNum} MS`)}
+                          >
+                            MS
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-600 hover:text-white hover:border-orange-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                            onClick={() => handleResourceClick(chapter.name, `Topic ${topicNum} Practice`)}
+                          >
+                            Pract
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
