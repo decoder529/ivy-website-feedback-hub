@@ -94,7 +94,7 @@ const FreeTestSeries = () => {
                   <Button 
                     className={`w-full bg-gradient-to-r ${subject.gradient} text-white hover:shadow-hero hover:scale-105 transition-all duration-300 py-3`} 
                     variant="default"
-                    onClick={() => navigate(`/free-test-series/${subject.name.toLowerCase()}`)}
+                    onClick={() => navigate(`/test-series/${subject.name.toLowerCase()}`)}
                   >
                     Start {subject.name} Test
                   </Button>

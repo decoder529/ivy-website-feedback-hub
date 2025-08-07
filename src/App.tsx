@@ -40,10 +40,10 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/test-series/:subject" element={<TestSeries />} />
           <Route path="/test-series" element={<FreeTestSeries />} />
-          <Route path="/free-test-series/physics" element={<Physics />} />
-          <Route path="/free-test-series/chemistry" element={<Chemistry />} />
-          <Route path="/free-test-series/biology" element={<Biology />} />
-          <Route path="/free-test-series/maths" element={<Maths />} />
+          <Route path="/test-series/physics" element={<Physics />} />
+          <Route path="/test-series/chemistry" element={<Chemistry />} />
+          <Route path="/test-series/biology" element={<Biology />} />
+          <Route path="/test-series/maths" element={<Maths />} />
           <Route path="/worksheet" element={<Worksheet />} />
           <Route path="/worksheets/physics" element={<WorksheetPhysics />} />
           <Route path="/worksheets/chemistry" element={<WorksheetChemistry />} />
