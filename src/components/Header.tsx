@@ -46,9 +46,9 @@ const Header = () => {
             <Button 
               variant="hero" 
               size="sm"
-              onClick={() => window.open('https://forms.gle/ULYCY4VLyXHyHhfh6', '_blank')}
+              onClick={() => window.open('https://chat.whatsapp.com/EZZ6mf7i917D9IublfZZay', '_blank')}
             >
-              Work With Us
+              Resources
             </Button>
           </div>
 
@@ -82,9 +82,9 @@ const Header = () => {
                 <Button 
                   variant="hero" 
                   className="w-full"
-                  onClick={() => window.open('https://forms.gle/ULYCY4VLyXHyHhfh6', '_blank')}
+                  onClick={() => window.open('https://chat.whatsapp.com/EZZ6mf7i917D9IublfZZay', '_blank')}
                 >
-                  Work With Us
+                  Resources
                 </Button>
               </div>
             </nav>

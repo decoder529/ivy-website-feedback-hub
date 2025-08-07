@@ -58,10 +58,10 @@ const Footer = () => {
               variant="hero" 
               size="lg" 
               className="bg-primary hover:bg-primary-hover"
-              onClick={() => window.open('https://chat.whatsapp.com/EZZ6mf7i917D9IublfZZay', '_blank')}
+              onClick={() => window.open('https://forms.gle/p6NmDG6EuBmr81788', '_blank')}
             >
               <MessageCircle className="w-4 h-4 mr-2" />
-              Join Group
+              Work with us
             </Button>
           </div>
         </div>
