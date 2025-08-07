@@ -19,8 +19,10 @@ const Footer = () => {
     {
       title: 'Resources',
       links: [
-        'Study Materials',
-        'Practice Tests'
+        'Physics Worksheets',
+        'Chemistry Worksheets',
+        'Biology Worksheets',
+        'Maths Worksheets'
       ]
     },
     {
