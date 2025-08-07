@@ -14,7 +14,7 @@ import ContactUs from "./pages/ContactUs";
 import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
-import FreeTestSeries from "./pages/FreeTestSeries";
+import FreeTestSeries from "./pages/TestSeries";
 import PastPapers from "./pages/PastPapers";
 import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
