@@ -63,7 +63,7 @@ const Teachers = () => {
                       <AvatarImage 
                         src="/lovable-uploads/4f214e62-98c1-4f36-8da4-01155392c1a6.png" 
                         alt={teacher.name} 
-                        className="object-contain object-center"
+                        className="object-cover object-center"
                       />
                       <AvatarFallback className="bg-white/20 text-white text-2xl font-bold">
                         {teacher.name.split(' ').map(n => n[0]).join('')}
