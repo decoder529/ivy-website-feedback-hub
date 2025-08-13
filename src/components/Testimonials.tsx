@@ -114,8 +114,21 @@ const Testimonials = () => {
                   </blockquote>
                   
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const img = e.currentTarget;
+                          const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
+                          img.style.display = 'none';
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </div>
                     </div>
                     <div>
                       <div className="font-semibold text-foreground">{testimonial.name}</div>
@@ -141,8 +154,21 @@ const Testimonials = () => {
                   </blockquote>
                   
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const img = e.currentTarget;
+                          const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
+                          img.style.display = 'none';
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </div>
                     </div>
                     <div>
                       <div className="font-semibold text-foreground">{testimonial.name}</div>

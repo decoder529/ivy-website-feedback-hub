@@ -28,7 +28,7 @@ const Teachers = () => {
       image: '/api/placeholder/150/150'
     },
     {
-      name: 'Dr. Sarah Chen',
+      name: 'Mr. Sachin Salunkhe',
       role: 'Chemistry Specialist',
       experience: '10+ Years',
       specialization: 'IBDP, IGCSE AS-A Level & AP Chemistry',
@@ -64,6 +64,17 @@ const Teachers = () => {
                         src="/lovable-uploads/d7d7eb86-bf17-4f78-8101-3f8e6d7fe5a1.png" 
                         alt={teacher.name} 
                         className="object-contain object-center"
+                      />
+                      <AvatarFallback className="bg-white/20 text-white text-2xl font-bold">
+                        {teacher.name.split(' ').map(n => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                  ) : index === 1 ? (
+                    <Avatar className="w-32 h-32 mx-auto mb-4 relative z-10 border-4 border-white/30">
+                      <AvatarImage 
+                        src="/api/placeholder/150/150" 
+                        alt={teacher.name} 
+                        className="object-cover"
                       />
                       <AvatarFallback className="bg-white/20 text-white text-2xl font-bold">
                         {teacher.name.split(' ').map(n => n[0]).join('')}
