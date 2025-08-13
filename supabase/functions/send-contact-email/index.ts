@@ -52,10 +52,10 @@ const handler = async (req: Request): Promise<Response> => {
       // Continue with email sending even if DB insert fails
     }
 
-    // Send email to contact@ivydon.com
+    // Send email to verified email address
     const emailResponse = await resend.emails.send({
       from: "IVYDon Contact Form <onboarding@resend.dev>",
-      to: ["contact@ivydon.com"],
+      to: ["ivydon.official@gmail.com"],
       subject: `New Contact Form Submission: ${formData.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
