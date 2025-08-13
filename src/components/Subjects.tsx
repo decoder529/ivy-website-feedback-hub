@@ -87,7 +87,7 @@ const Subjects = () => {
                     className={`w-full ${subject.color} text-white hover:opacity-90 transition-smooth hover:scale-105`}
                     onClick={() => navigate('/test-series')}
                   >
-                    Free Test Series
+                    Test Series
                   </Button>
                 </div>
               </CardContent>
