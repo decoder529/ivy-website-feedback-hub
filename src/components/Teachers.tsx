@@ -15,7 +15,7 @@ const Teachers = () => {
       education: 'B.E. Mechanical Engineering, Mumbai University',
       achievements: ['1000+ Students Taught', '95% A*/A Grade Rate', 'Country Topper Mentor'],
       description: 'A dedicated Physics educator with over 12 years of experience. His teaching style combines humor with deep conceptual understanding.',
-      image: '/api/placeholder/150/150'
+      image: '/api/placeholder/170/170'
     },
     {
       name: 'Mr. Deepak Yadav',
@@ -61,9 +61,9 @@ const Teachers = () => {
                   {index === 0 ? (
                     <Avatar className="w-32 h-32 mx-auto mb-4 relative z-10 border-4 border-white/30">
                       <AvatarImage 
-                        src="/lovable-uploads/4f214e62-98c1-4f36-8da4-01155392c1a6.png" 
+                        src="/lovable-uploads/d7d7eb86-bf17-4f78-8101-3f8e6d7fe5a1.png" 
                         alt={teacher.name} 
-                        className="object-cover object-center"
+                        className="object-contain object-center"
                       />
                       <AvatarFallback className="bg-white/20 text-white text-2xl font-bold">
                         {teacher.name.split(' ').map(n => n[0]).join('')}
