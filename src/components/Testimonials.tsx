@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Trophy, Quote } from 'lucide-react';
+import { Star, Trophy, Quote, Play, Pause } from 'lucide-react';
 
 const Testimonials = () => {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const testimonials = [
     {
       name: 'Ishanvi Mahesh',
@@ -97,93 +99,126 @@ const Testimonials = () => {
         </div>
 
         {/* Moving Testimonials */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-[slide_30s_linear_infinite] space-x-6">
-            {/* First set */}
-            {testimonials.slice(1).map((testimonial, index) => (
-              <Card key={`first-${index}`} className="flex-shrink-0 w-80 shadow-card hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  
-                  <blockquote className="text-muted-foreground italic mb-6 leading-relaxed">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 relative">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const parent = target.parentElement;
-                          if (parent) {
-                            const fallback = document.createElement('div');
-                            fallback.className = 'w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm';
-                            fallback.textContent = testimonial.name.split(' ').map(n => n[0]).join('');
-                            parent.appendChild(fallback);
-                          }
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">{testimonial.name}</div>
-                      <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {testimonials.slice(1).map((testimonial, index) => (
-              <Card key={`second-${index}`} className="flex-shrink-0 w-80 shadow-card hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  
-                  <blockquote className="text-muted-foreground italic mb-6 leading-relaxed">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 relative">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const parent = target.parentElement;
-                          if (parent) {
-                            const fallback = document.createElement('div');
-                            fallback.className = 'w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm';
-                            fallback.textContent = testimonial.name.split(' ').map(n => n[0]).join('');
-                            parent.appendChild(fallback);
-                          }
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">{testimonial.name}</div>
-                      <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="relative">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-xl font-semibold text-foreground">More Success Stories</h3>
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="flex items-center space-x-2 px-3 py-2 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors"
+            >
+              {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+              <span className="text-sm">{isPlaying ? 'Pause' : 'Play'}</span>
+            </button>
           </div>
+          
+          <div className="overflow-hidden">
+            <div 
+              ref={scrollContainerRef}
+              className={`flex space-x-6 ${isPlaying ? 'animate-[slide_30s_linear_infinite]' : ''}`}
+              style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
+            >
+              {/* First set */}
+              {testimonials.slice(1).map((testimonial, index) => (
+                <Card 
+                  key={`first-${index}`} 
+                  className="flex-shrink-0 w-80 shadow-card hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+                  onClick={() => setIsPlaying(false)}
+                >
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  
+                  <blockquote className="text-muted-foreground italic mb-6 leading-relaxed">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 relative">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            const fallback = document.createElement('div');
+                            fallback.className = 'w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm';
+                            fallback.textContent = testimonial.name.split(' ').map(n => n[0]).join('');
+                            parent.appendChild(fallback);
+                          }
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
+                      <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+              {/* Duplicate set for seamless loop */}
+              {testimonials.slice(1).map((testimonial, index) => (
+                <Card 
+                  key={`second-${index}`} 
+                  className="flex-shrink-0 w-80 shadow-card hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+                  onClick={() => setIsPlaying(false)}
+                >
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  
+                  <blockquote className="text-muted-foreground italic mb-6 leading-relaxed">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 relative">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            const fallback = document.createElement('div');
+                            fallback.className = 'w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm';
+                            fallback.textContent = testimonial.name.split(' ').map(n => n[0]).join('');
+                            parent.appendChild(fallback);
+                          }
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
+                      <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+            </div>
+          </div>
+          
+          {!isPlaying && (
+            <div className="mt-4 text-center">
+              <p className="text-sm text-muted-foreground">
+                Animation paused. Use your mouse to scroll horizontally or click Play to resume auto-scroll.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Achievement Stats */}
