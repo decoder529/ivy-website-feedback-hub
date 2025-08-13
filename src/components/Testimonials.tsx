@@ -75,7 +75,7 @@ const Testimonials = () => {
 
         {/* Featured Testimonial */}
         <div className="mb-16">
-          <Card className="bg-gradient-primary border-0 shadow-hero max-w-4xl mx-auto">
+          <Card className="bg-gradient-to-br from-primary to-secondary border-0 shadow-lg max-w-4xl mx-auto">
             <CardContent className="p-8 md:p-12 text-center text-white">
               <Quote className="w-12 h-12 mx-auto mb-6 opacity-80" />
               <h3 className="text-2xl md:text-3xl font-bold mb-4">Country Topper Achievement</h3>
@@ -98,10 +98,10 @@ const Testimonials = () => {
 
         {/* Moving Testimonials */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-[slide_20s_linear_infinite] space-x-8">
+          <div className="flex animate-[slide_30s_linear_infinite] space-x-6">
             {/* First set */}
             {testimonials.slice(1).map((testimonial, index) => (
-              <Card key={`first-${index}`} className="flex-shrink-0 w-80 hover:shadow-card transition-all duration-300 hover:scale-105">
+              <Card key={`first-${index}`} className="flex-shrink-0 w-80 shadow-card hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -109,26 +109,28 @@ const Testimonials = () => {
                     ))}
                   </div>
                   
-                  <blockquote className="text-muted-foreground italic mb-6">
+                  <blockquote className="text-muted-foreground italic mb-6 leading-relaxed">
                     "{testimonial.quote}"
                   </blockquote>
                   
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 relative">
                       <img 
                         src={testimonial.image} 
                         alt={testimonial.name}
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          const img = e.currentTarget;
-                          const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
-                          img.style.display = 'none';
-                          if (fallback) fallback.style.display = 'flex';
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            const fallback = document.createElement('div');
+                            fallback.className = 'w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm';
+                            fallback.textContent = testimonial.name.split(' ').map(n => n[0]).join('');
+                            parent.appendChild(fallback);
+                          }
                         }}
                       />
-                      <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
-                      </div>
                     </div>
                     <div>
                       <div className="font-semibold text-foreground">{testimonial.name}</div>
@@ -141,7 +143,7 @@ const Testimonials = () => {
             ))}
             {/* Duplicate set for seamless loop */}
             {testimonials.slice(1).map((testimonial, index) => (
-              <Card key={`second-${index}`} className="flex-shrink-0 w-80 hover:shadow-card transition-all duration-300 hover:scale-105">
+              <Card key={`second-${index}`} className="flex-shrink-0 w-80 shadow-card hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -149,26 +151,28 @@ const Testimonials = () => {
                     ))}
                   </div>
                   
-                  <blockquote className="text-muted-foreground italic mb-6">
+                  <blockquote className="text-muted-foreground italic mb-6 leading-relaxed">
                     "{testimonial.quote}"
                   </blockquote>
                   
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 relative">
                       <img 
                         src={testimonial.image} 
                         alt={testimonial.name}
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          const img = e.currentTarget;
-                          const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
-                          img.style.display = 'none';
-                          if (fallback) fallback.style.display = 'flex';
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            const fallback = document.createElement('div');
+                            fallback.className = 'w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm';
+                            fallback.textContent = testimonial.name.split(' ').map(n => n[0]).join('');
+                            parent.appendChild(fallback);
+                          }
                         }}
                       />
-                      <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
-                      </div>
                     </div>
                     <div>
                       <div className="font-semibold text-foreground">{testimonial.name}</div>
