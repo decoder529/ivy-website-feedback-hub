@@ -5,107 +5,21 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Clock, Users, Award } from 'lucide-react';
 
 const WorksheetChemistry = () => {
-  // Form URLs for each year and exam period
-  const formUrls = {
-    2025: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2024: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2023: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2022: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2021: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2020: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2019: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2018: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2017: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    },
-    2016: {
-      'Feb-Mar 22': '',
-      'May-June 21': '',
-      'May-June 22': '',
-      'May-June 23': '',
-      'Oct-Nov 21': '',
-      'Oct-Nov 22': '',
-      'Oct-Nov 23': '',
-    }
-  };
+  // IGCSE Chemistry Chapters and their resources
+  const chapters = [
+    { name: "Principles of Chemistry", id: "principles-chemistry" },
+    { name: "Chemistry of the Elements", id: "chemistry-elements" },
+    { name: "Organic Chemistry", id: "organic-chemistry" },
+    { name: "Physical Chemistry", id: "physical-chemistry" },
+    { name: "Chemistry in Society", id: "chemistry-society" },
+    { name: "Practical Work", id: "practical-work" },
+    { name: "Mathematical Skills", id: "mathematical-skills" },
+    { name: "Analysis and Evaluation", id: "analysis-evaluation" }
+  ];
 
-  const handleFormClick = (year: number, period: string) => {
-    const url = formUrls[year as keyof typeof formUrls]?.[period as keyof typeof formUrls[2025]];
-    if (url) {
-      window.open(url, '_blank');
-    } else {
-      alert('Form URL not available for this period yet.');
-    }
+  const handleResourceClick = (chapterName: string, resourceType: string) => {
+    // For now, show an alert. In the future, these would link to specific resources
+    alert(`${resourceType} for ${chapterName} - Coming Soon!`);
   };
 
   return (
@@ -140,148 +54,62 @@ const WorksheetChemistry = () => {
         </div>
       </section>
 
-      {/* Years Grid */}
+      {/* Chapters Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 animate-fade-in">Worksheets by Year</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 animate-fade-in">Worksheets by Chapter</h2>
           
-          {/* Years Grid - 3 rows */}
-          <div className="space-y-8 max-w-6xl mx-auto">
-            {/* Row 1: 2025, 2024, 2023 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[2025, 2024, 2023].map((year) => (
-                <Card key={year} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
-                  <CardHeader className="text-center bg-gradient-to-br from-green-500 to-emerald-600 text-white">
-                    <CardTitle className="text-2xl">{year}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <div className="grid grid-cols-1 gap-3">
-                      {[
-                        'Feb-Mar 22',
-                        'May-June 21', 
-                        'May-June 22',
-                        'May-June 23',
-                        'Oct-Nov 21',
-                        'Oct-Nov 22',
-                        'Oct-Nov 23'
-                      ].map((period) => (
-                        <Button 
-                          key={period}
-                          variant="outline" 
-                          size="sm"
-                          className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                          onClick={() => handleFormClick(year, period)}
-                        >
-                          {period}
-                        </Button>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Row 2: 2022, 2021, 2020 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[2022, 2021, 2020].map((year) => (
-                <Card key={year} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
-                  <CardHeader className="text-center bg-gradient-to-br from-green-500 to-emerald-600 text-white">
-                    <CardTitle className="text-2xl">{year}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <div className="grid grid-cols-1 gap-3">
-                      {[
-                        'Feb-Mar 22',
-                        'May-June 21', 
-                        'May-June 22',
-                        'May-June 23',
-                        'Oct-Nov 21',
-                        'Oct-Nov 22',
-                        'Oct-Nov 23'
-                      ].map((period) => (
-                        <Button 
-                          key={period}
-                          variant="outline" 
-                          size="sm"
-                          className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                          onClick={() => handleFormClick(year, period)}
-                        >
-                          {period}
-                        </Button>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Row 3: 2019, 2018, 2017 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[2019, 2018, 2017].map((year) => (
-                <Card key={year} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
-                  <CardHeader className="text-center bg-gradient-to-br from-green-500 to-emerald-600 text-white">
-                    <CardTitle className="text-2xl">{year}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <div className="grid grid-cols-1 gap-3">
-                      {[
-                        'Feb-Mar 22',
-                        'May-June 21', 
-                        'May-June 22',
-                        'May-June 23',
-                        'Oct-Nov 21',
-                        'Oct-Nov 22',
-                        'Oct-Nov 23'
-                      ].map((period) => (
-                        <Button 
-                          key={period}
-                          variant="outline" 
-                          size="sm"
-                          className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                          onClick={() => handleFormClick(year, period)}
-                        >
-                          {period}
-                        </Button>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Row 4: 2016 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[2016].map((year) => (
-                <Card key={year} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
-                  <CardHeader className="text-center bg-gradient-to-br from-green-500 to-emerald-600 text-white">
-                    <CardTitle className="text-2xl">{year}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <div className="grid grid-cols-1 gap-3">
-                      {[
-                        'Feb-Mar 22',
-                        'May-June 21', 
-                        'May-June 22',
-                        'May-June 23',
-                        'Oct-Nov 21',
-                        'Oct-Nov 22',
-                        'Oct-Nov 23'
-                      ].map((period) => (
-                        <Button 
-                          key={period}
-                          variant="outline" 
-                          size="sm"
-                          className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                          onClick={() => handleFormClick(year, period)}
-                        >
-                          {period}
-                        </Button>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          {/* Chapters Grid - 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {chapters.map((chapter) => (
+              <Card key={chapter.id} className="shadow-hero hover:scale-105 transition-smooth animate-fade-in">
+                <CardHeader className="text-center bg-gradient-to-br from-green-500 to-emerald-600 text-white">
+                  <CardTitle className="text-lg">{chapter.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6">
+                  {/* Subtopic header */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-muted-foreground mb-3">Subtopic</h4>
+                  </div>
+                  
+                  {/* Topics and buttons grid */}
+                  <div className="space-y-3">
+                    {/* Topic rows */}
+                    {[1, 2, 3, 4].map((topicNum) => (
+                      <div key={topicNum} className="border rounded-lg p-3 bg-card">
+                        <div className="text-sm font-medium mb-2">Topic {topicNum}</div>
+                        <div className="grid grid-cols-3 gap-2">
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                            onClick={() => handleResourceClick(chapter.name, `Topic ${topicNum} QP`)}
+                          >
+                            QP
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-violet-600 hover:text-white hover:border-purple-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                            onClick={() => handleResourceClick(chapter.name, `Topic ${topicNum} MS`)}
+                          >
+                            MS
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-600 hover:text-white hover:border-orange-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                            onClick={() => handleResourceClick(chapter.name, `Topic ${topicNum} Practice`)}
+                          >
+                            Pract
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
