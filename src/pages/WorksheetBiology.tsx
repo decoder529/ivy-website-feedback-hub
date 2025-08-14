@@ -41,7 +41,7 @@ const WorksheetBiology = () => {
       
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/d9f0ec3f-7006-4a12-9aee-06383e66374f.png')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/d9f0ec3f-7006-4a12-9aee-06383e66374f.png')] bg-cover bg-center opacity-10"></div>
         <div className="container mx-auto px-4 text-center relative z-10 animate-fade-in">
           <div className="text-6xl mb-6">🧬</div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">

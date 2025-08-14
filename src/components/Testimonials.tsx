@@ -15,7 +15,7 @@ const Testimonials = () => {
       period: 'Nov 2023',
       quote: 'The personalized approach and expert guidance helped me achieve the country topper position. The tutors understood my learning style perfectly.',
       rating: 5,
-      image: '/lovable-uploads/'
+      image: '/images/'
     },
     {
       name: 'Manas',
@@ -25,7 +25,7 @@ const Testimonials = () => {
       period: 'May 2023',
       quote: 'Thanks to IVYDon, I scored a perfect 7 in Physics. The problem-solving techniques & Concept teaching method were game-changing.',
       rating: 5,
-      image: '/lovable-uploads/77cfd222-b743-4e15-947f-8bba9964615f.png'
+      image: '/images/77cfd222-b743-4e15-947f-8bba9964615f.png'
     },
     {
       name: 'Aadit',
@@ -35,7 +35,7 @@ const Testimonials = () => {
       period: 'June 2025',
       quote: 'It would be a crime to post this award without credits to my favourite teacher, PROF. RAHUL YADAV, who was the reason I was able to understand every physics concept and tackle even the most difficult of questions',
       rating: 5,
-      image: '/lovable-uploads/033f1c15-8481-48b4-a5a6-5e905563c4a3.png'
+      image: '/images/033f1c15-8481-48b4-a5a6-5e905563c4a3.png'
     },
     {
       name: 'Akshat',
@@ -45,7 +45,7 @@ const Testimonials = () => {
       period: 'May 2024',
       quote: 'Achieving 7/7 in Physics HL seemed impossible until I joined IVYDon. The structured approach and personalized attention made all the difference.',
       rating: 5,
-      image: '/lovable-uploads/6fa76825-e39c-4193-9940-68c1f33fe12a.png'
+      image: '/images/6fa76825-e39c-4193-9940-68c1f33fe12a.png'
     },
     {
       name: 'Arnav',
@@ -55,7 +55,7 @@ const Testimonials = () => {
       period: 'May 2024',
       quote: 'The expert guidance helped me master Physics SL completely. The teaching methodology is exceptional and results-oriented.',
       rating: 5,
-      image: 'lovable-uploads/b176f57d-47ca-4640-8789-e791a9ec8276.png'
+      image: '/images/b176f57d-47ca-4640-8789-e791a9ec8276.png'
     }
   ];
 

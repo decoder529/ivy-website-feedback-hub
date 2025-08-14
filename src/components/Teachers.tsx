@@ -15,7 +15,7 @@ const Teachers = () => {
       education: 'B.E. Mechanical Engineering, Mumbai University',
       achievements: ['1000+ Students Taught', '95% A*/A Grade Rate', 'Country Topper Mentor'],
       description: 'A dedicated Physics educator with over 12 years of experience. His teaching style combines humor with deep conceptual understanding.',
-      image: '/lovable-uploads/4f214e62-98c1-4f36-8da4-01155392c1a6.png'
+      image: '/images/4f214e62-98c1-4f36-8da4-01155392c1a6.png'
     },
     {
       name: 'Mr. Deepak Yadav',
@@ -50,8 +50,8 @@ const Teachers = () => {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
                   <Avatar className="w-32 h-32 mx-auto mb-4 relative z-10 border-4 border-white/30">
                     <AvatarImage 
-                      src={index === 0 ? "/lovable-uploads/4f214e62-98c1-4f36-8da4-01155392c1a6.png" : "/lovable-uploads/4091eeb5-bc1f-4a88-b3a9-435377d1be6b.png"} 
-                      alt={teacher.name} 
+                      src={index === 0 ? "/images/4f214e62-98c1-4f36-8da4-01155392c1a6.png" : "/images/4091eeb5-bc1f-4a88-b3a9-435377d1be6b.png"} 
+                      alt={teacher.name}
                       className="object-cover"
                     />
                     <AvatarFallback className="bg-white/20 text-white text-2xl font-bold">
