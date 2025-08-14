@@ -15,7 +15,7 @@ const Teachers = () => {
       education: 'B.E. Mechanical Engineering, Mumbai University',
       achievements: ['1000+ Students Taught', '95% A*/A Grade Rate', 'Country Topper Mentor'],
       description: 'A dedicated Physics educator with over 12 years of experience. His teaching style combines humor with deep conceptual understanding.',
-      
+      image: '/api/placeholder/150/150'
     },
     {
       name: 'Mr. Deepak Yadav',
@@ -29,12 +29,11 @@ const Teachers = () => {
     },
     {
       name: 'Mr. Sachin Salunkhe',
-      role: 'Chemistry Specialist',
+      role: 'IGCSE Maths Specialist',
       experience: '10+ Years',
-      specialization: 'IBDP, IGCSE AS-A Level & AP Chemistry',
-      education: 'Ph.D. Chemistry, Cambridge University',
-      achievements: ['Former Cambridge Researcher', '200+ Perfect Scores', 'Curriculum Developer'],
-      description: 'Former Cambridge researcher who makes complex chemistry concepts accessible and engaging for all students.',
+      specialization: 'IBDP, IGCSE AS-A Level Maths',
+      education: 'B.E Electronics & Communication',
+      description: 'building foundational skills to high achievers aiming for A* grades',
       image: '/api/placeholder/150/150'
     }
   ];
