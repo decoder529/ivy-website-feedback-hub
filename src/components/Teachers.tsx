@@ -112,17 +112,19 @@ const Teachers = () => {
                   </p>
 
                   {/* Achievements */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3">Key Achievements:</h4>
-                    <div className="space-y-2">
-                      {teacher.achievements.map((achievement, achIndex) => (
-                        <div key={achIndex} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-success rounded-full"></div>
-                          <span className="text-sm text-muted-foreground">{achievement}</span>
-                        </div>
-                      ))}
+                  {teacher.achievements && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3">Key Achievements:</h4>
+                      <div className="space-y-2">
+                        {teacher.achievements.map((achievement, achIndex) => (
+                          <div key={achIndex} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-success rounded-full"></div>
+                            <span className="text-sm text-muted-foreground">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                 </div>
               </CardContent>
