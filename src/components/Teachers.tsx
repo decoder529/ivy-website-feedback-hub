@@ -71,7 +71,7 @@ const Teachers = () => {
                   ) : index === 1 ? (
                     <Avatar className="w-32 h-32 mx-auto mb-4 relative z-10 border-4 border-white/30">
                       <AvatarImage 
-                        src="/api/placeholder/150/150" 
+                        src="/lovable-uploads/4091eeb5-bc1f-4a88-b3a9-435377d1be6b.png" 
                         alt={teacher.name} 
                         className="object-cover"
                       />
@@ -80,9 +80,16 @@ const Teachers = () => {
                       </AvatarFallback>
                     </Avatar>
                   ) : (
-                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center relative z-10">
-                      <GraduationCap className="w-12 h-12 text-white" />
-                    </div>
+                    <Avatar className="w-32 h-32 mx-auto mb-4 relative z-10 border-4 border-white/30">
+                      <AvatarImage 
+                        src="/lovable-uploads/6fa76825-e39c-4193-9940-68c1f33fe12a.png" 
+                        alt={teacher.name} 
+                        className="object-cover"
+                      />
+                      <AvatarFallback className="bg-white/20 text-white text-2xl font-bold">
+                        <GraduationCap className="w-12 h-12 text-white" />
+                      </AvatarFallback>
+                    </Avatar>
                   )}
                   <h3 className="text-xl font-bold mb-1 relative z-10">{teacher.name}</h3>
                   <p className="text-white/90 text-sm relative z-10">{teacher.role}</p>
