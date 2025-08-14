@@ -170,6 +170,7 @@ const Chemistry = () => {
                           variant="outline" 
                           size="sm"
                           className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                          onClick={() => handleFormClick(year, period)}
                         >
                           {period}
                         </Button>
@@ -203,6 +204,7 @@ const Chemistry = () => {
                           variant="outline" 
                           size="sm"
                           className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                          onClick={() => handleFormClick(year, period)}
                         >
                           {period}
                         </Button>
@@ -236,6 +238,7 @@ const Chemistry = () => {
                           variant="outline" 
                           size="sm"
                           className="hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white hover:border-green-500 hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
+                          onClick={() => handleFormClick(year, period)}
                         >
                           {period}
                         </Button>
