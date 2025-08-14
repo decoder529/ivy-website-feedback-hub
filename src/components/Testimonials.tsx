@@ -32,7 +32,7 @@ const Testimonials = () => {
       period: 'June 2025',
       quote: 'It would be a crime to post this award without credits to my favourite teacher, PROF. RAHUL YADAV, who was the reason I was able to understand every physics concept and tackle even the most difficult of questions',
       rating: 5,
-      image: '/api/placeholder/80/80'
+      image: '/api/placeholder/80/80',
       image: '/lovable-uploads/033f1c15-8481-48b4-a5a6-5e905563c4a3.png'
     },
     {
