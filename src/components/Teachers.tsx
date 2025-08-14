@@ -29,12 +29,11 @@ const Teachers = () => {
     },
     {
       name: 'Mr. Sachin Salunkhe',
-      role: 'Chemistry Specialist',
+      role: 'Maths Specialist',
       experience: '10+ Years',
-      specialization: 'IBDP, IGCSE AS-A Level & AP Chemistry',
-      education: 'Ph.D. Chemistry, Cambridge University',
+      specialization: 'IBDP, IGCSE AS-A Level Maths',
       achievements: ['Former Cambridge Researcher', '200+ Perfect Scores', 'Curriculum Developer'],
-      description: 'Former Cambridge researcher who makes complex chemistry concepts accessible and engaging for all students.',
+      description: 'Former Cambridge researcher who makes complex maths concepts accessible and engaging for all students.',
       image: '/api/placeholder/150/150'
     }
   ];
