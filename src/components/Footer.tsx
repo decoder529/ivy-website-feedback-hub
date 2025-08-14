@@ -51,10 +51,10 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Join Our Teacher's Team
+              Join Our WhatsApp Community
             </h3>
             <p className="text-background/70 mb-8 max-w-2xl mx-auto">
-              Connect with fellow collegues, get instant updates, and access exclusive study materials
+              Connect with fellow students, get instant updates, and access exclusive study materials
             </p>
             <Button 
               variant="hero" 
@@ -93,7 +93,7 @@ const Footer = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-background/70 text-sm">hello@ivydon.com</span>
+                <span className="text-background/70 text-sm">contact@ivydon.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primary" />
