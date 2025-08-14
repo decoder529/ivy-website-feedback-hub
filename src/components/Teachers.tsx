@@ -15,7 +15,7 @@ const Teachers = () => {
       education: 'B.E. Mechanical Engineering, Mumbai University',
       achievements: ['1000+ Students Taught', '95% A*/A Grade Rate', 'Country Topper Mentor'],
       description: 'A dedicated Physics educator with over 12 years of experience. His teaching style combines humor with deep conceptual understanding.',
-      image: '/api/placeholder/150/150'
+      image: '/lovable-uploads/4f214e62-98c1-4f36-8da4-01155392c1a6.png'
     },
     {
       name: 'Mr. Deepak Yadav',
@@ -29,11 +29,12 @@ const Teachers = () => {
     },
     {
       name: 'Mr. Sachin Salunkhe',
-      role: 'IGCSE Maths Specialist',
+      role: 'Chemistry Specialist',
       experience: '10+ Years',
-      specialization: 'IBDP, IGCSE AS-A Level Maths',
-      education: 'B.E Electronics & Communication',
-      description: 'building foundational skills to high achievers aiming for A* grades',
+      specialization: 'IBDP, IGCSE AS-A Level & AP Chemistry',
+      education: 'Ph.D. Chemistry, Cambridge University',
+      achievements: ['Former Cambridge Researcher', '200+ Perfect Scores', 'Curriculum Developer'],
+      description: 'Former Cambridge researcher who makes complex chemistry concepts accessible and engaging for all students.',
       image: '/api/placeholder/150/150'
     }
   ];
@@ -69,12 +70,12 @@ const Teachers = () => {
                       </AvatarFallback>
                     </Avatar>
                   ) : index === 1 ? (
-                     <Avatar className="w-32 h-32 mx-auto mb-4 relative z-10 border-4 border-white/30">
-                       <AvatarImage 
-                         src="/lovable-uploads/4091eeb5-bc1f-4a88-b3a9-435377d1be6b.png" 
-                         alt={teacher.name} 
-                         className="object-cover"
-                       />
+                    <Avatar className="w-32 h-32 mx-auto mb-4 relative z-10 border-4 border-white/30">
+                      <AvatarImage 
+                        src="/api/placeholder/150/150" 
+                        alt={teacher.name} 
+                        className="object-cover"
+                      />
                       <AvatarFallback className="bg-white/20 text-white text-2xl font-bold">
                         {teacher.name.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
@@ -112,19 +113,17 @@ const Teachers = () => {
                   </p>
 
                   {/* Achievements */}
-                  {teacher.achievements && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">Key Achievements:</h4>
-                      <div className="space-y-2">
-                        {teacher.achievements.map((achievement, achIndex) => (
-                          <div key={achIndex} className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-success rounded-full"></div>
-                            <span className="text-sm text-muted-foreground">{achievement}</span>
-                          </div>
-                        ))}
-                      </div>
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-foreground mb-3">Key Achievements:</h4>
+                    <div className="space-y-2">
+                      {teacher.achievements.map((achievement, achIndex) => (
+                        <div key={achIndex} className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-success rounded-full"></div>
+                          <span className="text-sm text-muted-foreground">{achievement}</span>
+                        </div>
+                      ))}
                     </div>
-                  )}
+                  </div>
 
                 </div>
               </CardContent>
