@@ -153,12 +153,12 @@ const Footer = () => {
 
                   return (
                     <li key={linkIndex}>
-                      <a
-                        href={getHref()}
+                      <Link
+                        to={getHref()}
                         className="text-background/70 text-sm hover:text-primary transition-colors duration-200"
                       >
                         {link}
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}
