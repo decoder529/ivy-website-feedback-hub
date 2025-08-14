@@ -93,7 +93,7 @@ const Footer = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-background/70 text-sm">contact@ivydon.com</span>
+                <span className="text-background/70 text-sm">hello@ivydon.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primary" />
@@ -177,15 +177,12 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
-              <Link to="/privacy" className="text-background/70 hover:text-primary transition-colors">
-                Privacy Policy
-              </Link>
               <Link to="/terms" className="text-background/70 hover:text-primary transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/cookies" className="text-background/70 hover:text-primary transition-colors">
+              <a href="#" className="text-background/70 hover:text-primary transition-colors">
                 Cookie Policy
-              </Link>
+              </a>
             </div>
           </div>
         </div>
