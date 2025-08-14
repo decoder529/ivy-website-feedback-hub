@@ -28,13 +28,14 @@ const Biology = () => {
 
     },
     2023: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/dUzSFfSd883vZXHx8', // Add your form URL here
+      'May-June 21': 'https://forms.gle/VtHEpUM46BAMEiox6', // Add your form URL here
+      'May-June 22': 'https://forms.gle/cf4TjmgEUFy94kGeA', // Add your form URL here
+      'May-June 23': 'https://forms.gle/JfxAbCaSvMyFS2xq7', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/YEJyAn4bWRWwCKQJ9', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/uf85kvEBz2r4XjB2A', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/Q3KS9JXPGJVg6GoUA', // Add your form URL here
+
     },
     2022: {
       'Feb-Mar 22': '', // Add your form URL here
@@ -44,6 +45,7 @@ const Biology = () => {
       'Oct-Nov 21': '', // Add your form URL here
       'Oct-Nov 22': '', // Add your form URL here
       'Oct-Nov 23': '', // Add your form URL here
+
     },
     2021: {
       'Feb-Mar 22': '', // Add your form URL here
