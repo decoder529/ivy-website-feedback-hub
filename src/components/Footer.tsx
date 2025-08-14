@@ -51,7 +51,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Join Our WhatsApp Community
+              Join Our Teacher's Community
             </h3>
             <p className="text-background/70 mb-8 max-w-2xl mx-auto">
               Connect with fellow students, get instant updates, and access exclusive study materials
@@ -177,6 +177,9 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
+              <Link to="/privacy" className="text-background/70 hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
               <Link to="/terms" className="text-background/70 hover:text-primary transition-colors">
                 Terms of Service
               </Link>
