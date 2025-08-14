@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Star, Trophy, Quote } from 'lucide-react';
 
 const Testimonials = () => {
+  const [isPaused, setIsPaused] = useState(false);
+  
   const testimonials = [
     {
       name: 'Ishanvi Mahesh',
@@ -96,89 +99,68 @@ const Testimonials = () => {
           </Card>
         </div>
 
-        {/* Moving Testimonials */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-[slide_20s_linear_infinite] space-x-8">
-            {/* First set */}
-            {testimonials.slice(1).map((testimonial, index) => (
-              <Card key={`first-${index}`} className="flex-shrink-0 w-80 hover:shadow-card transition-all duration-300 hover:scale-105">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  
-                  <blockquote className="text-muted-foreground italic mb-6">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const img = e.currentTarget;
-                          const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
-                          img.style.display = 'none';
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                      <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+        {/* Interactive Testimonials Carousel */}
+        <div className="relative">
+          <Carousel 
+            className="w-full" 
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {testimonials.slice(1).map((testimonial, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card 
+                    className="hover:shadow-card transition-all duration-300 hover:scale-105 cursor-pointer"
+                    onClick={() => setIsPaused(!isPaused)}
+                  >
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-4">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                        ))}
                       </div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">{testimonial.name}</div>
-                      <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {testimonials.slice(1).map((testimonial, index) => (
-              <Card key={`second-${index}`} className="flex-shrink-0 w-80 hover:shadow-card transition-all duration-300 hover:scale-105">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  
-                  <blockquote className="text-muted-foreground italic mb-6">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const img = e.currentTarget;
-                          const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
-                          img.style.display = 'none';
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                      <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      
+                      <blockquote className="text-muted-foreground italic mb-6">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
+                          <img 
+                            src={testimonial.image} 
+                            alt={testimonial.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              const img = e.currentTarget;
+                              const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
+                              img.style.display = 'none';
+                              if (fallback) fallback.style.display = 'flex';
+                            }}
+                          />
+                          <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
+                            {testimonial.name.split(' ').map(n => n[0]).join('')}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">{testimonial.name}</div>
+                          <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
+                          <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">{testimonial.name}</div>
-                      <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+          
+          {/* Mobile scroll hint */}
+          <div className="text-center mt-4 md:hidden">
+            <p className="text-sm text-muted-foreground">Swipe to see more testimonials</p>
           </div>
         </div>
 
