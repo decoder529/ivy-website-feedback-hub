@@ -15,7 +15,7 @@ const Teachers = () => {
       education: 'B.E. Mechanical Engineering, Mumbai University',
       achievements: ['1000+ Students Taught', '95% A*/A Grade Rate', 'Country Topper Mentor'],
       description: 'A dedicated Physics educator with over 12 years of experience. His teaching style combines humor with deep conceptual understanding.',
-      image: '/api/placeholder/170/170'
+      
     },
     {
       name: 'Mr. Deepak Yadav',
