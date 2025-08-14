@@ -85,7 +85,10 @@ const Subjects = () => {
                   
                   <Button 
                     className={`w-full ${subject.color} text-white hover:opacity-90 transition-smooth hover:scale-105`}
-                    onClick={() => navigate('/test-series')}
+                    onClick={() => {
+                      navigate('/test-series');
+                      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+                    }}
                   >
                     Test Series
                   </Button>
