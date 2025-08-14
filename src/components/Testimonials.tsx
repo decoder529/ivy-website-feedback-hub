@@ -22,8 +22,7 @@ const Testimonials = () => {
       period: 'May 2023',
       quote: 'Thanks to IVYDon, I scored a perfect 7 in Physics. The problem-solving techniques & Concept teaching method were game-changing.',
       rating: 5,
-      image: '/api/placeholder/80/80',
-      image: '/lovable-uploads/77cfd222-b743-4e15-947f-8bba9964615f.png'
+      image: '/api/placeholder/80/80'
     },
     {
       name: 'Aadit',
@@ -43,8 +42,7 @@ const Testimonials = () => {
       period: 'May 2024',
       quote: 'Achieving 7/7 in Physics HL seemed impossible until I joined IVYDon. The structured approach and personalized attention made all the difference.',
       rating: 5,
-      image: '/api/placeholder/80/80',
-      image: '/lovable-uploads/6fa76825-e39c-4193-9940-68c1f33fe12a.png'
+      image: '/api/placeholder/80/80'
     },
     {
       name: 'Arnav',
@@ -54,8 +52,7 @@ const Testimonials = () => {
       period: 'May 2024',
       quote: 'The expert guidance helped me master Physics SL completely. The teaching methodology is exceptional and results-oriented.',
       rating: 5,
-      image: '/api/placeholder/80/80',
-      image: '/lovable-uploads/b176f57d-47ca-4640-8789-e791a9ec8276.png'
+      image: '/api/placeholder/80/80'
     }
   ];
 
