@@ -54,14 +54,14 @@ const IVYZoneSubject = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary via-primary-foreground to-accent flex items-center justify-center">
-        <div className="text-white text-xl">Loading...</div>
+      <div className="min-h-screen ivyzone-bg flex items-center justify-center">
+        <div className="ivyzone-text text-xl">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-primary-foreground to-accent">
+    <div className="min-h-screen ivyzone-bg">
       <Header />
       
       {/* Header Section */}
@@ -72,7 +72,7 @@ const IVYZoneSubject = () => {
               onClick={() => navigate('/ivyzone/dashboard')}
               variant="outline"
               size="sm"
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+              className="ivyzone-card border-2 ivyzone-text hover:opacity-80"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Dashboard
@@ -81,10 +81,10 @@ const IVYZoneSubject = () => {
           
           <div className="text-center">
             <div className="text-6xl mb-4">{getSubjectIcon(subject || '')}</div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 capitalize">
+            <h1 className="text-4xl md:text-5xl font-bold ivyzone-text mb-4 capitalize">
               {subject} Past Papers
             </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl ivyzone-text-muted max-w-2xl mx-auto">
               Complete collection of {subject} past papers organized by year and session
             </p>
           </div>
@@ -95,30 +95,30 @@ const IVYZoneSubject = () => {
       <section className="pb-8">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+            <Card className="ivyzone-card backdrop-blur-sm">
               <CardHeader className="text-center">
-                <CardTitle className="text-white text-2xl">Higher Level (HL)</CardTitle>
-                <CardDescription className="text-white/70">
+                <CardTitle className="ivyzone-text text-2xl">Higher Level (HL)</CardTitle>
+                <CardDescription className="ivyzone-text-muted">
                   Advanced level papers for deeper understanding
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-3">
                   {years.map((yearData) => (
-                    <Card key={yearData.year} className="bg-white/5 border-white/10">
+                    <Card key={yearData.year} className="ivyzone-card border-2">
                       <CardHeader className="pb-3">
-                        <CardTitle className="text-white text-lg">{yearData.year}</CardTitle>
+                        <CardTitle className="ivyzone-text text-lg">{yearData.year}</CardTitle>
                       </CardHeader>
                       <CardContent className="pt-0">
                         <div className="space-y-2">
                           {yearData.sessions.map((session) => (
-                            <div key={session} className="flex items-center justify-between p-2 bg-white/5 rounded">
-                              <span className="text-white text-sm">{session}</span>
+                            <div key={session} className="flex items-center justify-between p-2 ivyzone-card rounded">
+                              <span className="ivyzone-text text-sm">{session}</span>
                               <div className="flex gap-1">
                                 <Button
                                   size="sm"
                                   variant="outline"
-                                  className="h-7 px-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
+                                  className="h-7 px-2 ivyzone-button"
                                   onClick={() => handleDownload(session, 'qp')}
                                 >
                                   <FileText className="h-3 w-3 mr-1" />
@@ -127,7 +127,7 @@ const IVYZoneSubject = () => {
                                 <Button
                                   size="sm"
                                   variant="outline"
-                                  className="h-7 px-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
+                                  className="h-7 px-2 ivyzone-button"
                                   onClick={() => handleDownload(session, 'ms')}
                                 >
                                   <Download className="h-3 w-3 mr-1" />
@@ -144,30 +144,30 @@ const IVYZoneSubject = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+            <Card className="ivyzone-card backdrop-blur-sm">
               <CardHeader className="text-center">
-                <CardTitle className="text-white text-2xl">Standard Level (SL)</CardTitle>
-                <CardDescription className="text-white/70">
+                <CardTitle className="ivyzone-text text-2xl">Standard Level (SL)</CardTitle>
+                <CardDescription className="ivyzone-text-muted">
                   Foundation level papers for core concepts
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-3">
                   {years.map((yearData) => (
-                    <Card key={yearData.year} className="bg-white/5 border-white/10">
+                    <Card key={yearData.year} className="ivyzone-card border-2">
                       <CardHeader className="pb-3">
-                        <CardTitle className="text-white text-lg">{yearData.year}</CardTitle>
+                        <CardTitle className="ivyzone-text text-lg">{yearData.year}</CardTitle>
                       </CardHeader>
                       <CardContent className="pt-0">
                         <div className="space-y-2">
                           {yearData.sessions.map((session) => (
-                            <div key={session} className="flex items-center justify-between p-2 bg-white/5 rounded">
-                              <span className="text-white text-sm">{session}</span>
+                            <div key={session} className="flex items-center justify-between p-2 ivyzone-card rounded">
+                              <span className="ivyzone-text text-sm">{session}</span>
                               <div className="flex gap-1">
                                 <Button
                                   size="sm"
                                   variant="outline"
-                                  className="h-7 px-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
+                                  className="h-7 px-2 ivyzone-button"
                                   onClick={() => handleDownload(session, 'qp')}
                                 >
                                   <FileText className="h-3 w-3 mr-1" />
@@ -176,7 +176,7 @@ const IVYZoneSubject = () => {
                                 <Button
                                   size="sm"
                                   variant="outline"
-                                  className="h-7 px-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
+                                  className="h-7 px-2 ivyzone-button"
                                   onClick={() => handleDownload(session, 'ms')}
                                 >
                                   <Download className="h-3 w-3 mr-1" />
@@ -199,16 +199,16 @@ const IVYZoneSubject = () => {
       {/* Legend */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 max-w-2xl mx-auto">
+          <Card className="ivyzone-card backdrop-blur-sm max-w-2xl mx-auto">
             <CardContent className="pt-6">
               <div className="flex justify-center gap-8">
                 <div className="flex items-center gap-2">
-                  <FileText className="h-4 w-4 text-white" />
-                  <span className="text-white text-sm">QP = Question Paper</span>
+                  <FileText className="h-4 w-4 ivyzone-text" />
+                  <span className="ivyzone-text text-sm">QP = Question Paper</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Download className="h-4 w-4 text-white" />
-                  <span className="text-white text-sm">MS = Marking Scheme</span>
+                  <Download className="h-4 w-4 ivyzone-text" />
+                  <span className="ivyzone-text text-sm">MS = Marking Scheme</span>
                 </div>
               </div>
             </CardContent>

@@ -107,13 +107,13 @@ const IVYZoneAuth = () => {
 
   if (showOTP) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary via-primary-foreground to-accent">
+      <div className="min-h-screen ivyzone-bg">
         <Header />
         <div className="flex items-center justify-center min-h-screen pt-16">
-          <Card className="w-full max-w-md mx-4">
+          <Card className="w-full max-w-md mx-4 ivyzone-card">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl">Verify Your Email</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-2xl ivyzone-text">Verify Your Email</CardTitle>
+              <CardDescription className="ivyzone-text-muted">
                 We've sent a 6-digit code to {email}
               </CardDescription>
             </CardHeader>
@@ -137,14 +137,14 @@ const IVYZoneAuth = () => {
               <Button 
                 onClick={handleOTPVerification}
                 disabled={isLoading || otp.length !== 6}
-                className="w-full"
+                className="w-full ivyzone-button"
               >
                 {isLoading ? 'Verifying...' : 'Verify Email'}
               </Button>
               <Button 
                 variant="outline" 
                 onClick={() => setShowOTP(false)}
-                className="w-full"
+                className="w-full ivyzone-card border-2"
               >
                 Back to Sign Up
               </Button>
@@ -157,40 +157,40 @@ const IVYZoneAuth = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-primary-foreground to-accent">
+    <div className="min-h-screen ivyzone-bg">
       <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-full p-4">
-              <GraduationCap className="h-12 w-12 text-white" />
+            <div className="ivyzone-card backdrop-blur-sm rounded-full p-4">
+              <GraduationCap className="h-12 w-12 ivyzone-text" />
             </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold ivyzone-text mb-4">
             IVYZone Past Papers
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl ivyzone-text-muted mb-8 max-w-3xl mx-auto">
             Access comprehensive past papers and detailed solutions for your academic success
           </p>
           
           {/* Features */}
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <FileText className="h-8 w-8 text-white mb-3 mx-auto" />
-              <h3 className="text-lg font-semibold text-white mb-2">Past Papers</h3>
-              <p className="text-white/80">Complete collection of previous years' question papers</p>
+            <div className="ivyzone-card backdrop-blur-sm rounded-lg p-6">
+              <FileText className="h-8 w-8 ivyzone-text mb-3 mx-auto" />
+              <h3 className="text-lg font-semibold ivyzone-text mb-2">Past Papers</h3>
+              <p className="ivyzone-text-muted">Complete collection of previous years' question papers</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <BookOpen className="h-8 w-8 text-white mb-3 mx-auto" />
-              <h3 className="text-lg font-semibold text-white mb-2">Detailed Solutions</h3>
-              <p className="text-white/80">Step-by-step solutions and marking schemes</p>
+            <div className="ivyzone-card backdrop-blur-sm rounded-lg p-6">
+              <BookOpen className="h-8 w-8 ivyzone-text mb-3 mx-auto" />
+              <h3 className="text-lg font-semibold ivyzone-text mb-2">Detailed Solutions</h3>
+              <p className="ivyzone-text-muted">Step-by-step solutions and marking schemes</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <GraduationCap className="h-8 w-8 text-white mb-3 mx-auto" />
-              <h3 className="text-lg font-semibold text-white mb-2">All Subjects</h3>
-              <p className="text-white/80">Physics, Chemistry, Mathematics, and Biology</p>
+            <div className="ivyzone-card backdrop-blur-sm rounded-lg p-6">
+              <GraduationCap className="h-8 w-8 ivyzone-text mb-3 mx-auto" />
+              <h3 className="text-lg font-semibold ivyzone-text mb-2">All Subjects</h3>
+              <p className="ivyzone-text-muted">Physics, Chemistry, Mathematics, and Biology</p>
             </div>
           </div>
         </div>
@@ -199,10 +199,10 @@ const IVYZoneAuth = () => {
       {/* Auth Section */}
       <section className="pb-16">
         <div className="container mx-auto px-4 flex justify-center">
-          <Card className="w-full max-w-md">
+          <Card className="w-full max-w-md ivyzone-card">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl">Access IVYZone</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-2xl ivyzone-text">Access IVYZone</CardTitle>
+              <CardDescription className="ivyzone-text-muted">
                 Sign in to access past papers and solutions
               </CardDescription>
             </CardHeader>
@@ -229,7 +229,7 @@ const IVYZoneAuth = () => {
                         {...signInForm.register('password', { required: true })}
                       />
                     </div>
-                    <Button type="submit" disabled={isLoading} className="w-full">
+                    <Button type="submit" disabled={isLoading} className="w-full ivyzone-button">
                       {isLoading ? 'Signing In...' : 'Sign In'}
                     </Button>
                   </form>
@@ -258,7 +258,7 @@ const IVYZoneAuth = () => {
                         {...signUpForm.register('confirmPassword', { required: true })}
                       />
                     </div>
-                    <Button type="submit" disabled={isLoading} className="w-full">
+                    <Button type="submit" disabled={isLoading} className="w-full ivyzone-button">
                       {isLoading ? 'Creating Account...' : 'Create Account'}
                     </Button>
                   </form>

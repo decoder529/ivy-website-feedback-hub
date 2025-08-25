@@ -62,6 +62,21 @@
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* IVYZone specific colors */
+    --ivyzone-primary: 240 100% 50%;
+    --ivyzone-secondary: 280 100% 70%;
+    --ivyzone-accent: 200 100% 60%;
+    --ivyzone-background: 240 20% 15%;
+    --ivyzone-surface: 240 15% 20%;
+    --ivyzone-text: 0 0% 98%;
+    --ivyzone-text-muted: 240 5% 75%;
+    --ivyzone-border: 240 10% 30%;
+    
+    /* IVYZone gradients */
+    --ivyzone-gradient-main: linear-gradient(135deg, hsl(240 100% 50%), hsl(280 100% 70%));
+    --ivyzone-gradient-card: linear-gradient(145deg, hsl(240 15% 20%), hsl(240 10% 25%));
+    --ivyzone-gradient-hover: linear-gradient(135deg, hsl(240 100% 45%), hsl(280 100% 65%));
   }
   
   /* Slide animation for testimonials */
@@ -94,7 +109,13 @@
     --border: 210 40% 12%;
     --input: 210 40% 12%;
     --ring: 220 90% 60%;
+
+    /* IVYZone dark mode adjustments */
+    --ivyzone-background: 240 25% 8%;
+    --ivyzone-surface: 240 20% 12%;
+    --ivyzone-border: 240 15% 25%;
   }
+}
 }
 
 @layer base {
@@ -104,5 +125,36 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* IVYZone specific utility classes */
+@layer utilities {
+  .ivyzone-bg {
+    background: var(--ivyzone-gradient-main);
+  }
+  
+  .ivyzone-card {
+    background: hsl(var(--ivyzone-surface));
+    border: 1px solid hsl(var(--ivyzone-border));
+    color: hsl(var(--ivyzone-text));
+  }
+  
+  .ivyzone-text {
+    color: hsl(var(--ivyzone-text));
+  }
+  
+  .ivyzone-text-muted {
+    color: hsl(var(--ivyzone-text-muted));
+  }
+  
+  .ivyzone-button {
+    background: hsl(var(--ivyzone-primary));
+    color: hsl(var(--ivyzone-text));
+    border: 1px solid hsl(var(--ivyzone-border));
+  }
+  
+  .ivyzone-button:hover {
+    background: var(--ivyzone-gradient-hover);
   }
 }
