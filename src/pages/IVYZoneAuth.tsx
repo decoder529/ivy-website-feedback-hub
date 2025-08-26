@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,6 +11,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import teacherPhysics from '@/assets/teacher-physics.jpg';
 import studentsStudying from '@/assets/students-studying.jpg';
+import { createTestUser } from '@/utils/createTestUser';
 
 interface SignInForm {
   email: string;
@@ -22,6 +23,14 @@ const IVYZoneAuth = () => {
   const navigate = useNavigate();
 
   const signInForm = useForm<SignInForm>();
+
+  // Create test user on component mount
+  useEffect(() => {
+    const initTestUser = async () => {
+      await createTestUser();
+    };
+    initTestUser();
+  }, []);
 
   const handleSignIn = async (data: SignInForm) => {
     setIsLoading(true);
