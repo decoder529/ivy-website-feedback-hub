@@ -90,6 +90,7 @@ const OneToOneTutoring = () => {
                 
                 <Button 
                   className={`w-full bg-gradient-to-r ${pkg.gradient} text-white hover:shadow-lg transition-all duration-300 hover:scale-105 rounded-lg py-3 font-semibold`}
+                  onClick={() => window.open('https://forms.gle/auuCTRddJVYH8i6W7', '_blank')}
                 >
                   Find personal tutor →
                 </Button>
