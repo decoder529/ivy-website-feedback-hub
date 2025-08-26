@@ -7,7 +7,7 @@ const OneToOneTutoring = () => {
   const tutoringPackages = [
     {
       icon: BookOpen,
-      title: 'Ace your CBSE/ICSE results!',
+      title: 'Ace your ICSE results!',
       description: 'Highest personal attention, One teacher One student',
       price: '₹ 888/hr',
       color: 'bg-primary',
