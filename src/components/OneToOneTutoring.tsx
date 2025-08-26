@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Award, GraduationCap, Code } from 'lucide-react';
+import { ChalkboardTeacher, Globe, UserGroup, Cpu } from 'lucide-react';
 
 const OneToOneTutoring = () => {
   const tutoringPackages = [
     {
-      icon: BookOpen,
+      icon: ChalkboardTeacher,
       title: 'Elevate your IGCSE grades!',
       description: 'Highest personal attention, One teacher One student',
       price: '₹ 2,500/hr',
@@ -14,7 +14,7 @@ const OneToOneTutoring = () => {
       gradient: 'from-primary to-secondary'
     },
     {
-      icon: Award,
+      icon: Globe,
       title: 'Level up your IBDP game!',
       description: 'Individual Attention, Maximum Results! One teacher One student',
       price: '₹3,500/hr',
@@ -22,7 +22,7 @@ const OneToOneTutoring = () => {
       gradient: 'from-primary to-secondary'
     },
     {
-      icon: GraduationCap,
+      icon: UserGroup,
       title: 'Tailored AS-A Level learning that delivers!',
       description: 'Your path to Academic Excellence!',
       price: '₹ 3,200/hr',
@@ -30,7 +30,7 @@ const OneToOneTutoring = () => {
       gradient: 'from-primary to-secondary'
     },
     {
-      icon: Code,
+      icon: Cpu,
       title: 'Structured IBMYP learning, exceptional outcomes!',
       description: 'From Good to Great: Improve your skills!',
       price: '₹ 2,700/hr',
