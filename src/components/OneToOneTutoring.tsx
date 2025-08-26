@@ -7,33 +7,33 @@ const OneToOneTutoring = () => {
   const tutoringPackages = [
     {
       icon: BookOpen,
-      title: 'Ace your ICSE results!',
+      title: 'Ace your IGCSE results!',
       description: 'Highest personal attention, One teacher One student',
-      price: '₹ 2500/hr',
+      price: '₹ 888/hr',
       color: 'bg-primary',
       gradient: 'from-primary to-secondary'
     },
     {
       icon: Award,
-      title: 'Your best bet to IBDP',
+      title: 'Your best bet to JEE / NEET!',
       description: 'Individual Attention, Maximum Results! One teacher One student',
-      price: '₹ 35000/hr',
+      price: '₹ 1,049/hr',
       color: 'bg-primary',
       gradient: 'from-primary to-secondary'
     },
     {
       icon: GraduationCap,
-      title: 'Get tailored learning for AS-A  Level',
+      title: 'Get tailored learning for IB & IGCSE board!',
       description: 'Your path to Academic Excellence!',
-      price: '₹ 3200/hr',
+      price: '₹ 1,249/hr',
       color: 'bg-primary',
       gradient: 'from-primary to-secondary'
     },
     {
       icon: Code,
-      title: 'Learn IBMYP with IVYDon',
+      title: 'Learn Java & Python with Vedantu!',
       description: 'From Good to Great: Improve your skills!',
-      price: '₹2800/hr',
+      price: '₹ 999/hr',
       color: 'bg-primary',
       gradient: 'from-primary to-secondary'
     }
