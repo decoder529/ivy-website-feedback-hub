@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { InputOTP, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp';
 import { useForm } from 'react-hook-form';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -14,12 +12,6 @@ import Footer from '@/components/Footer';
 import teacherPhysics from '@/assets/teacher-physics.jpg';
 import studentsStudying from '@/assets/students-studying.jpg';
 
-interface SignUpForm {
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
-
 interface SignInForm {
   email: string;
   password: string;
@@ -27,41 +19,9 @@ interface SignInForm {
 
 const IVYZoneAuth = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [showOTP, setShowOTP] = useState(false);
-  const [email, setEmail] = useState('');
-  const [otp, setOtp] = useState('');
   const navigate = useNavigate();
 
-  const signUpForm = useForm<SignUpForm>();
   const signInForm = useForm<SignInForm>();
-
-  const handleSignUp = async (data: SignUpForm) => {
-    if (data.password !== data.confirmPassword) {
-      toast.error('Passwords do not match');
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      const { error } = await supabase.auth.signUp({
-        email: data.email,
-        password: data.password,
-        options: {
-          emailRedirectTo: `${window.location.origin}/ivyzone/dashboard`
-        }
-      });
-
-      if (error) throw error;
-
-      setEmail(data.email);
-      setShowOTP(true);
-      toast.success('Please check your email for the verification code');
-    } catch (error: any) {
-      toast.error(error.message || 'Failed to sign up');
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const handleSignIn = async (data: SignInForm) => {
     setIsLoading(true);
@@ -82,81 +42,6 @@ const IVYZoneAuth = () => {
     }
   };
 
-  const handleOTPVerification = async () => {
-    if (otp.length !== 6) {
-      toast.error('Please enter a valid 6-digit code');
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      const { error } = await supabase.auth.verifyOtp({
-        email,
-        token: otp,
-        type: 'signup'
-      });
-
-      if (error) throw error;
-
-      navigate('/ivyzone/dashboard');
-      toast.success('Email verified successfully! Welcome to IVYZone');
-    } catch (error: any) {
-      toast.error(error.message || 'Invalid verification code');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  if (showOTP) {
-    return (
-      <div className="min-h-screen ivyzone-bg">
-        <Header />
-        <div className="flex items-center justify-center min-h-screen pt-16">
-          <Card className="w-full max-w-md mx-4 ivyzone-card">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl ivyzone-text">Verify Your Email</CardTitle>
-              <CardDescription className="ivyzone-text-muted">
-                We've sent a 6-digit code to {email}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex justify-center">
-                <InputOTP
-                  value={otp}
-                  onChange={setOtp}
-                  maxLength={6}
-                >
-                  <InputOTPGroup>
-                    <InputOTPSlot index={0} />
-                    <InputOTPSlot index={1} />
-                    <InputOTPSlot index={2} />
-                    <InputOTPSlot index={3} />
-                    <InputOTPSlot index={4} />
-                    <InputOTPSlot index={5} />
-                  </InputOTPGroup>
-                </InputOTP>
-              </div>
-              <Button 
-                onClick={handleOTPVerification}
-                disabled={isLoading || otp.length !== 6}
-                className="w-full ivyzone-button"
-              >
-                {isLoading ? 'Verifying...' : 'Verify Email'}
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => setShowOTP(false)}
-                className="w-full ivyzone-card border-2"
-              >
-                Back to Sign Up
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen ivyzone-hero-bg">
@@ -243,64 +128,28 @@ const IVYZoneAuth = () => {
                 Sign in to access past papers and solutions
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <Tabs defaultValue="signin" className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
-                  <TabsTrigger value="signin">Sign In</TabsTrigger>
-                  <TabsTrigger value="signup">Sign Up</TabsTrigger>
-                </TabsList>
-                
-                <TabsContent value="signin" className="space-y-4">
-                  <form onSubmit={signInForm.handleSubmit(handleSignIn)} className="space-y-4">
-                    <div>
-                      <Input
-                        type="email"
-                        placeholder="Email"
-                        {...signInForm.register('email', { required: true })}
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        type="password"
-                        placeholder="Password"
-                        {...signInForm.register('password', { required: true })}
-                      />
-                    </div>
-                    <Button type="submit" disabled={isLoading} className="w-full ivyzone-button text-lg py-3 font-semibold">
-                      {isLoading ? 'Signing In...' : 'Sign In'}
-                    </Button>
-                  </form>
-                </TabsContent>
-                
-                <TabsContent value="signup" className="space-y-4">
-                  <form onSubmit={signUpForm.handleSubmit(handleSignUp)} className="space-y-4">
-                    <div>
-                      <Input
-                        type="email"
-                        placeholder="Email"
-                        {...signUpForm.register('email', { required: true })}
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        type="password"
-                        placeholder="Password"
-                        {...signUpForm.register('password', { required: true, minLength: 6 })}
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        type="password"
-                        placeholder="Confirm Password"
-                        {...signUpForm.register('confirmPassword', { required: true })}
-                      />
-                    </div>
-                    <Button type="submit" disabled={isLoading} className="w-full ivyzone-button text-lg py-3 font-semibold">
-                      {isLoading ? 'Creating Account...' : 'Create Account'}
-                    </Button>
-                  </form>
-                </TabsContent>
-              </Tabs>
+            <CardContent className="space-y-6 p-8">
+              <form onSubmit={signInForm.handleSubmit(handleSignIn)} className="space-y-6">
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    {...signInForm.register('email', { required: true })}
+                    className="h-12 text-lg"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="password"
+                    placeholder="Password"
+                    {...signInForm.register('password', { required: true })}
+                    className="h-12 text-lg"
+                  />
+                </div>
+                <Button type="submit" disabled={isLoading} className="w-full ivyzone-button text-lg py-4 font-semibold">
+                  {isLoading ? 'Signing In...' : 'Sign In'}
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>
