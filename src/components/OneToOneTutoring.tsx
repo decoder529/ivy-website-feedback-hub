@@ -10,32 +10,32 @@ const OneToOneTutoring = () => {
       title: 'Ace your CBSE/ICSE results!',
       description: 'Highest personal attention, One teacher One student',
       price: '₹ 888/hr',
-      color: 'bg-orange-500',
-      gradient: 'from-orange-500 to-red-500'
+      color: 'bg-primary',
+      gradient: 'from-primary to-secondary'
     },
     {
       icon: Award,
       title: 'Your best bet to JEE / NEET!',
       description: 'Individual Attention, Maximum Results! One teacher One student',
       price: '₹ 1,049/hr',
-      color: 'bg-orange-500',
-      gradient: 'from-orange-500 to-red-500'
+      color: 'bg-primary',
+      gradient: 'from-primary to-secondary'
     },
     {
       icon: GraduationCap,
       title: 'Get tailored learning for IB & IGCSE board!',
       description: 'Your path to Academic Excellence!',
       price: '₹ 1,249/hr',
-      color: 'bg-orange-500',
-      gradient: 'from-orange-500 to-red-500'
+      color: 'bg-primary',
+      gradient: 'from-primary to-secondary'
     },
     {
       icon: Code,
       title: 'Learn Java & Python with Vedantu!',
       description: 'From Good to Great: Improve your skills!',
       price: '₹ 999/hr',
-      color: 'bg-orange-500',
-      gradient: 'from-orange-500 to-red-500'
+      color: 'bg-primary',
+      gradient: 'from-primary to-secondary'
     }
   ];
 
@@ -45,27 +45,27 @@ const OneToOneTutoring = () => {
         <div className="flex items-center justify-between mb-16">
           <div className="flex-1">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              <span className="text-orange-500">One-to-One</span> Tutoring
+              <span className="text-primary">One-to-One</span> Tutoring
             </h2>
             <div className="relative">
               <p className="text-xl text-muted-foreground">
                 Highest Personal Attention
               </p>
-              <div className="absolute -bottom-1 left-0 w-48 h-1 bg-gradient-to-r from-orange-500 to-orange-300 rounded-full"></div>
+              <div className="absolute -bottom-1 left-0 w-48 h-1 bg-gradient-primary rounded-full"></div>
             </div>
           </div>
           
           {/* Illustration placeholder - matching the style from the image */}
           <div className="hidden lg:block flex-shrink-0 ml-8">
-            <div className="w-64 h-40 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center">
-              <div className="text-orange-500 text-6xl">👨‍🏫👩‍🎓</div>
+            <div className="w-64 h-40 bg-gradient-card rounded-xl flex items-center justify-center border border-border">
+              <div className="text-primary text-6xl">👨‍🏫👩‍🎓</div>
             </div>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {tutoringPackages.map((pkg, index) => (
-            <Card key={index} className="group hover:shadow-hero transition-all duration-300 hover:scale-105 border border-orange-200 bg-white overflow-hidden">
+            <Card key={index} className="group hover:shadow-hero transition-all duration-300 hover:scale-105 border-border bg-card overflow-hidden">
               <CardContent className="p-8">
                 <div className="flex items-start mb-6">
                   <div className={`p-3 rounded-lg ${pkg.color} text-white mr-4 flex-shrink-0`}>
@@ -83,7 +83,7 @@ const OneToOneTutoring = () => {
                 
                 <div className="mb-6">
                   <div className="flex items-baseline mb-4">
-                    <span className="text-sm text-green-600 font-medium mr-2">Starts At</span>
+                    <span className="text-sm text-success font-medium mr-2">Starts At</span>
                     <span className="text-2xl font-bold text-foreground">{pkg.price}</span>
                   </div>
                 </div>
