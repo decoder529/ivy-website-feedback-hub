@@ -23,12 +23,17 @@ serve(async (req) => {
       }
     )
 
-    // Create the test user
-    const { data, error } = await supabaseAdmin.auth.admin.createUser({
-      email: 'students@ivydon.com',
-      password: 'Ivydon@2026',
-      email_confirm: true, // Skip email confirmation
-    })
+    // This function is deprecated for security reasons
+    // Test users should be created manually by admins through Supabase dashboard
+    return new Response(
+      JSON.stringify({ 
+        error: 'This function has been disabled for security reasons. Please create test users manually through the Supabase dashboard.' 
+      }),
+      { 
+        status: 403,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      }
+    )
 
     if (error) {
       return new Response(
