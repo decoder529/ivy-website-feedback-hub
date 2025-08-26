@@ -64,11 +64,11 @@ const TestSeriesPopup: React.FC<TestSeriesPopupProps> = ({ isOpen, onClose }) =>
           <div className="text-center mb-6">
             <div className="text-4xl mb-3 animate-bounce">🚀</div>
             <h2 className="text-2xl font-bold text-foreground mb-2 bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent">
-              Take the 2025 Board Challenge!
+              Take the 2026 Board Challenge!
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Try Physics, Chemistry, Biology & Math Tests<br />
-              <span className="font-medium">Based on Feb–Mar 2025 Papers</span>
+              <span className="font-medium">Based on Feb–Mar May–June Oct–Nov Past Papers</span>
             </p>
           </div>
 
