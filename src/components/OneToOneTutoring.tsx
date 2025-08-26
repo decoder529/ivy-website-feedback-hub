@@ -7,35 +7,27 @@ const OneToOneTutoring = () => {
   const tutoringPackages = [
     {
       icon: BookOpen,
-      title: 'Ace your IGCSE results!',
+      title: 'Ace your ICSE results!',
       description: 'Highest personal attention, One teacher One student',
-      price: '₹ 888/hr',
-      color: 'bg-primary',
-      gradient: 'from-primary to-secondary'
+      price: '₹ 888/hr'
     },
     {
       icon: Award,
       title: 'Your best bet to JEE / NEET!',
       description: 'Individual Attention, Maximum Results! One teacher One student',
-      price: '₹ 1,049/hr',
-      color: 'bg-primary',
-      gradient: 'from-primary to-secondary'
+      price: '₹ 1,049/hr'
     },
     {
       icon: GraduationCap,
       title: 'Get tailored learning for IB & IGCSE board!',
       description: 'Your path to Academic Excellence!',
-      price: '₹ 1,249/hr',
-      color: 'bg-primary',
-      gradient: 'from-primary to-secondary'
+      price: '₹ 1,249/hr'
     },
     {
       icon: Code,
       title: 'Learn Java & Python with Vedantu!',
       description: 'From Good to Great: Improve your skills!',
-      price: '₹ 999/hr',
-      color: 'bg-primary',
-      gradient: 'from-primary to-secondary'
+      price: '₹ 999/hr'
     }
   ];
 
@@ -68,7 +60,7 @@ const OneToOneTutoring = () => {
             <Card key={index} className="group hover:shadow-hero transition-all duration-300 hover:scale-105 border-border bg-card overflow-hidden">
               <CardContent className="p-8">
                 <div className="flex items-start mb-6">
-                  <div className={`p-3 rounded-lg ${pkg.color} text-white mr-4 flex-shrink-0`}>
+                  <div className="p-3 rounded-lg bg-primary text-white mr-4 flex-shrink-0">
                     <pkg.icon className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -89,7 +81,7 @@ const OneToOneTutoring = () => {
                 </div>
                 
                 <Button 
-                  className={`w-full bg-gradient-to-r ${pkg.gradient} text-white hover:shadow-lg transition-all duration-300 hover:scale-105 rounded-lg py-3 font-semibold`}
+                  className="w-full bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg transition-all duration-300 hover:scale-105 rounded-lg py-3 font-semibold"
                 >
                   Find personal tutor →
                 </Button>
