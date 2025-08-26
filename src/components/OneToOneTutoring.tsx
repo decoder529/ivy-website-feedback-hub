@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChalkboardTeacher, Globe, UserGroup, Cpu } from 'lucide-react';
+import { GraduationCap, Globe, Users, Cpu } from 'lucide-react';
 
 const OneToOneTutoring = () => {
   const tutoringPackages = [
     {
-      icon: ChalkboardTeacher,
+      icon: GraduationCap,
       title: 'Elevate your IGCSE grades!',
       description: 'Highest personal attention, One teacher One student',
       price: '₹ 2,500/hr',
@@ -22,7 +22,7 @@ const OneToOneTutoring = () => {
       gradient: 'from-primary to-secondary'
     },
     {
-      icon: UserGroup,
+      icon: Users,
       title: 'Tailored AS-A Level learning that delivers!',
       description: 'Your path to Academic Excellence!',
       price: '₹ 3,200/hr',
