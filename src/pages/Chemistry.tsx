@@ -17,13 +17,13 @@ const Chemistry = () => {
       'Oct-Nov 23': '', // Add your form URL here
     },
     2024: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/RB2XgEW4zdEmc4556', // Add your form URL here
+      'May-June 21': 'https://forms.gle/W7sfXhr84dpkY6x18', // Add your form URL here
+      'May-June 22': 'https://forms.gle/7VHKLMwx77x9gzqj9', // Add your form URL here
+      'May-June 23': 'https://forms.gle/WAVMD75EPFoiK6QVA', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/ogmUAH1k5PnbG92c9', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/wqgACn81y3zD86yG6', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/LJL8pmVia3REv14m8', // Add your form URL here
     },
     2023: {
       'Feb-Mar 22': '', // Add your form URL here
