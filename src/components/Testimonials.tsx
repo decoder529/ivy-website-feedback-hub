@@ -76,7 +76,7 @@ const Testimonials = () => {
       period: 'May 2025',
       quote: 'Rahul Sir truly transformed my journey in physics. I went from struggling with D’s and C’s to achieving an A (87%). His teaching style is not only motivating but also makes learning fun. I’ve gone from dreading physics to genuinely enjoying it. I’m incredibly grateful for his constant support and guidance. Thank you so much, Sir!',
       rating: 5,
-      image: '/images/'
+      image: '/lovable-uploads/32f418d5-6e76-4e74-96dd-46437c602874.png'
     },
     {
       name: 'Akangsha',
