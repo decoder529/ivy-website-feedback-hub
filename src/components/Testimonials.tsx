@@ -117,8 +117,21 @@ const Testimonials = () => {
                 "Rahul Sir truly transformed my journey in physics. I went from struggling with D’s and C’s to achieving an A (87%). His teaching style is not only motivating but also makes learning fun. I’ve gone from dreading physics to genuinely enjoying it. I’m incredibly grateful for his constant support and guidance. Thank you so much, Sir!🤍"
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                  <Trophy className="w-8 h-8 text-yellow-300" />
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
+                  <img 
+                    src="/lovable-uploads/32f418d5-6e76-4e74-96dd-46437c602874.png" 
+                    alt="Tushita"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
+                      img.style.display = 'none';
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="fallback-avatar w-full h-full bg-white/20 rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
+                    T
+                  </div>
                 </div>
                 <div className="text-left">
                   <div className="font-bold text-lg">Tushita</div>
