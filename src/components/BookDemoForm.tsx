@@ -33,8 +33,6 @@ const BookDemoForm = ({ trigger }: BookDemoFormProps) => {
     '10th Grade',
     '11th Grade',
     '12th Grade',
-    'Pre-University',
-    'Undergraduate',
     'Other'
   ];
 
