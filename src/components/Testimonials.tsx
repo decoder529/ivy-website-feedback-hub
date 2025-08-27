@@ -10,9 +10,10 @@ const Testimonials = () => {
     {
       name: 'Ishanvi Mahesh',
       achievement: 'Country Topper',
-      subject: 'AS Level Physics',
+      subject: 'Physics',
       school: 'Don Bosco International Mumbai',
       period: 'Nov 2023',
+      Board: 'AS Level'
       quote: 'The personalized approach and expert guidance helped me achieve the country topper position. The tutors understood my learning style perfectly.',
       rating: 5,
       image: '/images/'
@@ -22,15 +23,15 @@ const Testimonials = () => {
       achievement: 'Perfect Score',
       subject: 'IBMYP4 Physics',
       school: 'Edubridge International School, Mumbai',
-      period: 'May 2023',
-      quote: 'Thanks to IVYDon, I scored a perfect 7 in Physics. The problem-solving techniques & Concept teaching method were game-changing.',
+      period: 'May 2024',
+      quote: 'Thanks to IVYDON i achieved a perfect 7/7 score in MYP 4 Physics. PROF, Rahul Yadav was the core to my success and without him this transformation would not be possible. IVYDON has been the backbone to my academic success, i can not be more thankful.',
       rating: 5,
       image: '/images/77cfd222-b743-4e15-947f-8bba9964615f.png'
     },
     {
       name: 'Aadit',
       achievement: 'Outstanding Student Of the Year Award',
-      subject: 'IGCSE Chemistry',
+      subject: 'IBDP Physics',
       school: 'Jumeira Baccalaureate IB School',
       period: 'June 2025',
       quote: 'It would be a crime to post this award without credits to my favourite teacher, PROF. RAHUL YADAV, who was the reason I was able to understand every physics concept and tackle even the most difficult of questions',
@@ -41,9 +42,9 @@ const Testimonials = () => {
       name: 'Akshat',
       achievement: '7/7 Score',
       subject: 'IBDP Physics HL',
-      school: 'International School',
-      period: 'May 2024',
-      quote: 'Achieving 7/7 in Physics HL seemed impossible until I joined IVYDon. The structured approach and personalized attention made all the difference.',
+      school: 'Oberai International School',
+      period: 'May 2025',
+      quote: 'Studying DP Physics with you was one of the best parts of my IB journey. After learning from you for 2 years, the way you contruct explanations concisely and clearly truly exemplifiy your experience in the field—especially during tricky topics like rigid body mechanics, special relativity, and current and circuits. The constant support and structured resources really helped me stay on track (especially savemyexams). Thanks to your teaching, and of course the resources you provided, I scored a 7 in Physics with a 71/100, well above the grade boundary. I would definitely recommend your classes to any serious IB student. I truly dont think i would have achieved a 7 without your help!',
       rating: 5,
       image: '/images/6fa76825-e39c-4193-9940-68c1f33fe12a.png'
     },
@@ -51,12 +52,42 @@ const Testimonials = () => {
       name: 'Arnav',
       achievement: '7/7 Score',
       subject: 'IBDP Physics SL',
-      school: 'International School',
-      period: 'May 2024',
+      school: 'Oberai International School',
+      period: 'May 2025',
       quote: 'The expert guidance helped me master Physics SL completely. The teaching methodology is exceptional and results-oriented.',
       rating: 5,
       image: '/images/b176f57d-47ca-4640-8789-e791a9ec8276.png'
-    }
+    },
+    {
+      name: 'Vrisha',
+      achievement: 'A*',
+      subject: 'IGCSE GRADE 10',
+      school: 'Singapur International School',
+      period: 'May 2025',
+      quote: 'hi sir i just wanted to thank you for all the help throughout the year, i coudnt have gotten that A* without you',
+      rating: 5,
+      image: '/images/'
+    },
+    {
+      name: 'Tushita',
+      achievement: 'A',
+      subject: 'IGCSE GRADE 10',
+      school: 'Singapur International School',
+      period: 'May 2025',
+      quote: 'Rahul Sir truly transformed my journey in physics. I went from struggling with D’s and C’s to achieving an A (87%). His teaching style is not only motivating but also makes learning fun. I’ve gone from dreading physics to genuinely enjoying it. I’m incredibly grateful for his constant support and guidance. Thank you so much, Sir!',
+      rating: 5,
+      image: '/images/'
+    },
+    {
+      name: 'Akangsha',
+      achievement: 'A',
+      subject: 'IBDP Physics',
+      school: 'Nahar International School',
+      period: 'May 2025',
+      quote: 'Dear sir I just wanted to say that every student deserves a rahul sir in their life. Someone to guide them, support them and build them up even when they are falling. Your optimism is a true gift sir and I hope you carry it with you for all your future endeavours. Thank you so much for always having faith and confidence in my abilities over the last two years, even when I have sometimes not given you the reason to. The last two years have been let’s just say a complicated journey but to have you to navigate me and support me through it all makes me truly grateful. Please stay in touch sir, because your days of giving me advice are not over yet :)) it’s just the beginning. Alas, I just wanted to say, (stands on a chair for dramatic impact) “Oh captain, my captain”,PS: could you please watch the movie Love you so much sir (you know I’m writer so couldn’t help myself)',
+      rating: 5,
+      image: '/images/'
+    },
   ];
 
   return (
