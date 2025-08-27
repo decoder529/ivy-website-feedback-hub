@@ -112,18 +112,18 @@ const Testimonials = () => {
           <Card className="bg-gradient-primary border-0 shadow-hero max-w-4xl mx-auto">
             <CardContent className="p-8 md:p-12 text-center text-white">
               <Quote className="w-12 h-12 mx-auto mb-6 opacity-80" />
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Country Topper Achievement</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">Grade D To A </h3>
               <blockquote className="text-xl md:text-2xl italic mb-6 leading-relaxed">
-                "The guidance I received was exceptional. Every concept was explained with such clarity that Physics became my strongest subject."
+                "Rahul Sir truly transformed my journey in physics. I went from struggling with D’s and C’s to achieving an A (87%). His teaching style is not only motivating but also makes learning fun. I’ve gone from dreading physics to genuinely enjoying it. I’m incredibly grateful for his constant support and guidance. Thank you so much, Sir!🤍"
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
                   <Trophy className="w-8 h-8 text-yellow-300" />
                 </div>
                 <div className="text-left">
-                  <div className="font-bold text-lg">Ishanvi Mahesh</div>
-                  <div className="text-white/80">AS Level Country Topper</div>
-                  <div className="text-white/60 text-sm">Don Bosco International Mumbai</div>
+                  <div className="font-bold text-lg">Tushita</div>
+                  <div className="text-white/80">IGCSE 10 </div>
+                  <div className="text-white/60 text-sm">Singapore International School 2025</div>
                 </div>
               </div>
             </CardContent>
@@ -178,8 +178,6 @@ const Testimonials = () => {
                           <div className="font-semibold text-foreground">{testimonial.name}</div>
                           <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
                           <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
-                          <div className="text-xs text-muted-foreground">{testimonial.school}</div>
-                          <div className="text-xs text-muted-foreground">{testimonial.period}</div>
                         </div>
                       </div>
                     </CardContent>
