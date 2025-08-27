@@ -53,49 +53,49 @@ const Chemistry = () => {
       'Oct-Nov 23': 'https://forms.gle/pJFwQmKpwJxmFQGx5', // Add your form URL here
     },
     2020: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/7iuJBxqhRKSm7X47A', // Add your form URL here
+      'May-June 21': 'https://forms.gle/m6GreCWJGsA77Ktk7', // Add your form URL here
+      'May-June 22': 'https://forms.gle/bdg9yg3nEf1WXHrw9', // Add your form URL here
+      'May-June 23': 'https://forms.gle/9AvXRauCuMNsF97R8', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/cH88mYosEF25s5Ge6', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/qVrxknq6k23nhBJz5', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/2H4FcyKC867BL4fG9', // Add your form URL here
     },
     2019: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/MRXGdnedGmoLYQq18', // Add your form URL here
+      'May-June 21': 'https://forms.gle/mAAmZPooaYucHMVK7', // Add your form URL here
+      'May-June 22': 'https://forms.gle/NsEwDSrhfnnpHpgc6', // Add your form URL here
+      'May-June 23': 'https://forms.gle/EkLvNihV1g3qQsBz6', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/VTbfPWhyJsvTkFet5', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/jxeRmTR7xaRqinMP6', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/5KLYqPCyU9bz47pKA', // Add your form URL here
     },
     2018: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/8WMonYJXpLrwqUU5A', // Add your form URL here
+      'May-June 21': 'https://forms.gle/fnxDTrB81b5KaLU1A', // Add your form URL here
+      'May-June 22': 'https://forms.gle/xfPRysWt8jTFGE6g6', // Add your form URL here
+      'May-June 23': 'https://forms.gle/cgNyDqZJ2ziaUxok9', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/rirqedC1PweThBKP8', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/Ywk8nUFMsYnt7Meo7', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/JXZ9y2bRn27gt7CcA', // Add your form URL here
     },
     2017: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/o7XgBhq4eaqDfGTJA', // Add your form URL here
+      'May-June 21': 'https://forms.gle/8c44Qc14jQwAsQ149', // Add your form URL here
+      'May-June 22': 'https://forms.gle/9Wy2yfSKficv33KM6', // Add your form URL here
+      'May-June 23': 'https://forms.gle/fBhgFQek5a6UeJPi8', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/yY558qxWasdvC45d6', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/E1SupEAbAtBkFaSN7', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/7S2w3rSKgnfSyZFV6', // Add your form URL here
     },
     2016: {
-      'Feb-Mar 22': '', // Add your form URL here
-      'May-June 21': '', // Add your form URL here
-      'May-June 22': '', // Add your form URL here
-      'May-June 23': '', // Add your form URL here
-      'Oct-Nov 21': '', // Add your form URL here
-      'Oct-Nov 22': '', // Add your form URL here
-      'Oct-Nov 23': '', // Add your form URL here
+      'Feb-Mar 22': 'https://forms.gle/hMvMCBn9qhcZ7fVp9', // Add your form URL here
+      'May-June 21': 'https://forms.gle/6HimqHt7Rp731CRC9', // Add your form URL here
+      'May-June 22': 'https://forms.gle/scTMafJDeyygUMgj9', // Add your form URL here
+      'May-June 23': 'https://forms.gle/9xj8zuybBC5RL1vE9', // Add your form URL here
+      'Oct-Nov 21': 'https://forms.gle/YksiYQ37wj9PhWTY7', // Add your form URL here
+      'Oct-Nov 22': 'https://forms.gle/NsFFbN6L3mjgToHV9', // Add your form URL here
+      'Oct-Nov 23': 'https://forms.gle/uzmQVAJzY7UBAWHb7', // Add your form URL here
     }
   };
 
