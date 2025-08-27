@@ -178,6 +178,8 @@ const Testimonials = () => {
                           <div className="font-semibold text-foreground">{testimonial.name}</div>
                           <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
                           <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
+                          <div className="text-xs text-muted-foreground">{testimonial.school}</div>
+                          <div className="text-xs text-muted-foreground">{testimonial.period}</div>
                         </div>
                       </div>
                     </CardContent>
