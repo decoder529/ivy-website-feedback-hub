@@ -116,8 +116,8 @@ const Testimonials = () => {
               <blockquote className="text-xl md:text-2xl italic mb-6 leading-relaxed">
                 "Rahul Sir truly transformed my journey in physics. I went from struggling with D’s and C’s to achieving an A (87%). His teaching style is not only motivating but also makes learning fun. I’ve gone from dreading physics to genuinely enjoying it. I’m incredibly grateful for his constant support and guidance. Thank you so much, Sir!🤍"
               </blockquote>
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
+              <div className="flex items-center justify-center space-x-6">
+                <div className="w-24 h-32 rounded-lg overflow-hidden border-2 border-white/20">
                   <img 
                     src="/lovable-uploads/32f418d5-6e76-4e74-96dd-46437c602874.png" 
                     alt="Tushita"
@@ -129,7 +129,7 @@ const Testimonials = () => {
                       if (fallback) fallback.style.display = 'flex';
                     }}
                   />
-                  <div className="fallback-avatar w-full h-full bg-white/20 rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
+                  <div className="fallback-avatar w-full h-full bg-white/20 rounded-lg flex items-center justify-center text-white font-bold text-2xl" style={{display: 'none'}}>
                     T
                   </div>
                 </div>
