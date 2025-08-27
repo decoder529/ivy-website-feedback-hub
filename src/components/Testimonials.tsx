@@ -13,7 +13,7 @@ const Testimonials = () => {
       subject: 'Physics',
       school: 'Don Bosco International Mumbai',
       period: 'Nov 2023',
-      Board: 'AS Level'
+      Board: 'AS Level',
       quote: 'The personalized approach and expert guidance helped me achieve the country topper position. The tutors understood my learning style perfectly.',
       rating: 5,
       image: '/images/'
