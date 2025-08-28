@@ -54,7 +54,7 @@ const IVYZoneSubject = () => {
   };
 
   // Subject-specific paper options
-  const physicsPapers = [
+  const physicsPapersHL = [
     'Physics_paper_1__TZ1_HL',
     'Physics_paper_1__TZ2_HL',
     'Physics_paper_2__TZ1_HL',
@@ -63,7 +63,16 @@ const IVYZoneSubject = () => {
     'Physics_paper_3__TZ2_HL'
   ];
 
-  const chemistryPapers = [
+  const physicsPapersSL = [
+    'Physics_paper_1__TZ1_SL',
+    'Physics_paper_1__TZ2_SL',
+    'Physics_paper_2__TZ1_SL',
+    'Physics_paper_2__TZ2_SL',
+    'Physics_paper_3__TZ1_SL',
+    'Physics_paper_3__TZ2_SL'
+  ];
+
+  const chemistryPapersHL = [
     'Chemistry_paper_1__TZ1_HL',
     'Chemistry_paper_1__TZ2_HL',
     'Chemistry_paper_2__TZ1_HL',
@@ -72,7 +81,16 @@ const IVYZoneSubject = () => {
     'Chemistry_paper_3__TZ2_HL'
   ];
 
-  const biologyPapers = [
+  const chemistryPapersSL = [
+    'Chemistry_paper_1__TZ1_SL',
+    'Chemistry_paper_1__TZ2_SL',
+    'Chemistry_paper_2__TZ1_SL',
+    'Chemistry_paper_2__TZ2_SL',
+    'Chemistry_paper_3__TZ1_SL',
+    'Chemistry_paper_3__TZ2_SL'
+  ];
+
+  const biologyPapersHL = [
     'Biology_paper_1__TZ1_HL',
     'Biology_paper_1__TZ2_HL',
     'Biology_paper_2__TZ1_HL',
@@ -81,17 +99,24 @@ const IVYZoneSubject = () => {
     'Biology_paper_3__TZ2_HL'
   ];
 
-  const getSubjectPapers = (subjectName: string) => {
+  const biologyPapersSL = [
+    'Biology_paper_1__TZ1_SL',
+    'Biology_paper_1__TZ2_SL',
+    'Biology_paper_2__TZ1_SL',
+    'Biology_paper_2__TZ2_SL',
+    'Biology_paper_3__TZ1_SL',
+    'Biology_paper_3__TZ2_SL'
+  ];
+
+  const getSubjectPapers = (subjectName: string, level: 'HL' | 'SL') => {
     switch (subjectName?.toLowerCase()) {
-      case 'physics': return physicsPapers;
-      case 'chemistry': return chemistryPapers;
-      case 'biology': return biologyPapers;
-      case 'mathematics': return physicsPapers; // Using physics as default for now
-      default: return physicsPapers;
+      case 'physics': return level === 'HL' ? physicsPapersHL : physicsPapersSL;
+      case 'chemistry': return level === 'HL' ? chemistryPapersHL : chemistryPapersSL;
+      case 'biology': return level === 'HL' ? biologyPapersHL : biologyPapersSL;
+      case 'mathematics': return level === 'HL' ? physicsPapersHL : physicsPapersSL; // Using physics as default for now
+      default: return level === 'HL' ? physicsPapersHL : physicsPapersSL;
     }
   };
-
-  const currentPapers = getSubjectPapers(subject || '');
 
   const handleDownload = (session: string, type: 'qp' | 'ms', paperName?: string) => {
     // This would typically download the file
@@ -178,7 +203,7 @@ const IVYZoneSubject = () => {
                                     </Button>
                                   </DropdownMenuTrigger>
                                    <DropdownMenuContent className="bg-popover border shadow-md">
-                                     {currentPapers.map((paper) => (
+                                     {getSubjectPapers(subject || '', 'HL').map((paper) => (
                                        <DropdownMenuItem
                                          key={paper}
                                          onClick={() => handleDownload(session, 'qp', paper)}
@@ -202,7 +227,7 @@ const IVYZoneSubject = () => {
                                     </Button>
                                   </DropdownMenuTrigger>
                                    <DropdownMenuContent className="bg-popover border shadow-md">
-                                     {currentPapers.map((paper) => (
+                                     {getSubjectPapers(subject || '', 'HL').map((paper) => (
                                        <DropdownMenuItem
                                          key={paper}
                                          onClick={() => handleDownload(session, 'ms', paper)}
@@ -257,7 +282,7 @@ const IVYZoneSubject = () => {
                                     </Button>
                                   </DropdownMenuTrigger>
                                    <DropdownMenuContent className="bg-popover border shadow-md">
-                                     {currentPapers.map((paper) => (
+                                     {getSubjectPapers(subject || '', 'SL').map((paper) => (
                                        <DropdownMenuItem
                                          key={paper}
                                          onClick={() => handleDownload(session, 'qp', paper)}
@@ -281,7 +306,7 @@ const IVYZoneSubject = () => {
                                     </Button>
                                   </DropdownMenuTrigger>
                                    <DropdownMenuContent className="bg-popover border shadow-md">
-                                     {currentPapers.map((paper) => (
+                                     {getSubjectPapers(subject || '', 'SL').map((paper) => (
                                        <DropdownMenuItem
                                          key={paper}
                                          onClick={() => handleDownload(session, 'ms', paper)}
