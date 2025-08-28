@@ -53,142 +53,275 @@ const IVYZoneSubject = () => {
     navigate(`/ivyzone/${subject}/${session.toLowerCase().replace(/\s+/g, '-')}`);
   };
 
-  // Subject-specific paper options with URLs
+  // Subject-specific paper options with year-specific URLs
   const paperData = {
     physics: {
-      HL: {
-        qp: {
-          'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-p1-tz1-hl-qp/view',
-          'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-p1-tz2-hl-qp/view',
-          'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-p2-tz1-hl-qp/view',
-          'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-p2-tz2-hl-qp/view',
-          'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-p3-tz1-hl-qp/view',
-          'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-p3-tz2-hl-qp/view'
+      2023: {
+        'MAY-JUNE-2023': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
         },
-        ms: {
-          'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-p1-tz1-hl-ms/view',
-          'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-p1-tz2-hl-ms/view',
-          'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-p2-tz1-hl-ms/view',
-          'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-p2-tz2-hl-ms/view',
-          'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-p3-tz1-hl-ms/view',
-          'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-p3-tz2-hl-ms/view'
+        'OCT-NOV-2023': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
         }
       },
-      SL: {
-        qp: {
-          'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-p1-tz1-sl-qp/view',
-          'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-p1-tz2-sl-qp/view',
-          'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-p2-tz1-sl-qp/view',
-          'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-p2-tz2-sl-qp/view',
-          'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-p3-tz1-sl-qp/view',
-          'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-p3-tz2-sl-qp/view'
-        },
-        ms: {
-          'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-p1-tz1-sl-ms/view',
-          'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-p1-tz2-sl-ms/view',
-          'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-p2-tz1-sl-ms/view',
-          'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-p2-tz2-sl-ms/view',
-          'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-p3-tz1-sl-ms/view',
-          'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-p3-tz2-sl-ms/view'
-        }
-      }
+      // Add similar structure for years 2022, 2021, 2020, 2019, 2018, 2017, 2016
     },
     chemistry: {
-      HL: {
-        qp: {
-          'Chemistry_paper_1__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p1-tz1-hl-qp/view',
-          'Chemistry_paper_1__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p1-tz2-hl-qp/view',
-          'Chemistry_paper_2__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p2-tz1-hl-qp/view',
-          'Chemistry_paper_2__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p2-tz2-hl-qp/view',
-          'Chemistry_paper_3__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p3-tz1-hl-qp/view',
-          'Chemistry_paper_3__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p3-tz2-hl-qp/view'
+      2023: {
+        'MAY-JUNE-2023': {
+          HL: {
+            qp: {
+              'Chemistry_paper_1__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p1-tz1-hl-qp/view',
+              'Chemistry_paper_1__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p1-tz2-hl-qp/view',
+              'Chemistry_paper_2__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p2-tz1-hl-qp/view',
+              'Chemistry_paper_2__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p2-tz2-hl-qp/view',
+              'Chemistry_paper_3__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p3-tz1-hl-qp/view',
+              'Chemistry_paper_3__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Chemistry_paper_1__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p1-tz1-hl-ms/view',
+              'Chemistry_paper_1__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p1-tz2-hl-ms/view',
+              'Chemistry_paper_2__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p2-tz1-hl-ms/view',
+              'Chemistry_paper_2__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p2-tz2-hl-ms/view',
+              'Chemistry_paper_3__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p3-tz1-hl-ms/view',
+              'Chemistry_paper_3__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Chemistry_paper_1__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p1-tz1-sl-qp/view',
+              'Chemistry_paper_1__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p1-tz2-sl-qp/view',
+              'Chemistry_paper_2__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p2-tz1-sl-qp/view',
+              'Chemistry_paper_2__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p2-tz2-sl-qp/view',
+              'Chemistry_paper_3__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p3-tz1-sl-qp/view',
+              'Chemistry_paper_3__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Chemistry_paper_1__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p1-tz1-sl-ms/view',
+              'Chemistry_paper_1__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p1-tz2-sl-ms/view',
+              'Chemistry_paper_2__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p2-tz1-sl-ms/view',
+              'Chemistry_paper_2__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p2-tz2-sl-ms/view',
+              'Chemistry_paper_3__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p3-tz1-sl-ms/view',
+              'Chemistry_paper_3__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
         },
-        ms: {
-          'Chemistry_paper_1__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p1-tz1-hl-ms/view',
-          'Chemistry_paper_1__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p1-tz2-hl-ms/view',
-          'Chemistry_paper_2__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p2-tz1-hl-ms/view',
-          'Chemistry_paper_2__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p2-tz2-hl-ms/view',
-          'Chemistry_paper_3__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p3-tz1-hl-ms/view',
-          'Chemistry_paper_3__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p3-tz2-hl-ms/view'
+        'OCT-NOV-2023': {
+          HL: {
+            qp: {
+              'Chemistry_paper_1__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p1-tz1-hl-qp/view',
+              'Chemistry_paper_1__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p1-tz2-hl-qp/view',
+              'Chemistry_paper_2__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p2-tz1-hl-qp/view',
+              'Chemistry_paper_2__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p2-tz2-hl-qp/view',
+              'Chemistry_paper_3__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p3-tz1-hl-qp/view',
+              'Chemistry_paper_3__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Chemistry_paper_1__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p1-tz1-hl-ms/view',
+              'Chemistry_paper_1__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p1-tz2-hl-ms/view',
+              'Chemistry_paper_2__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p2-tz1-hl-ms/view',
+              'Chemistry_paper_2__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p2-tz2-hl-ms/view',
+              'Chemistry_paper_3__TZ1_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p3-tz1-hl-ms/view',
+              'Chemistry_paper_3__TZ2_HL': 'https://drive.google.com/file/d/chemistry-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Chemistry_paper_1__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p1-tz1-sl-qp/view',
+              'Chemistry_paper_1__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p1-tz2-sl-qp/view',
+              'Chemistry_paper_2__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p2-tz1-sl-qp/view',
+              'Chemistry_paper_2__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p2-tz2-sl-qp/view',
+              'Chemistry_paper_3__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p3-tz1-sl-qp/view',
+              'Chemistry_paper_3__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Chemistry_paper_1__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p1-tz1-sl-ms/view',
+              'Chemistry_paper_1__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p1-tz2-sl-ms/view',
+              'Chemistry_paper_2__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p2-tz1-sl-ms/view',
+              'Chemistry_paper_2__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p2-tz2-sl-ms/view',
+              'Chemistry_paper_3__TZ1_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p3-tz1-sl-ms/view',
+              'Chemistry_paper_3__TZ2_SL': 'https://drive.google.com/file/d/chemistry-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
         }
       },
-      SL: {
-        qp: {
-          'Chemistry_paper_1__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p1-tz1-sl-qp/view',
-          'Chemistry_paper_1__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p1-tz2-sl-qp/view',
-          'Chemistry_paper_2__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p2-tz1-sl-qp/view',
-          'Chemistry_paper_2__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p2-tz2-sl-qp/view',
-          'Chemistry_paper_3__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p3-tz1-sl-qp/view',
-          'Chemistry_paper_3__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p3-tz2-sl-qp/view'
-        },
-        ms: {
-          'Chemistry_paper_1__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p1-tz1-sl-ms/view',
-          'Chemistry_paper_1__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p1-tz2-sl-ms/view',
-          'Chemistry_paper_2__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p2-tz1-sl-ms/view',
-          'Chemistry_paper_2__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p2-tz2-sl-ms/view',
-          'Chemistry_paper_3__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p3-tz1-sl-ms/view',
-          'Chemistry_paper_3__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p3-tz2-sl-ms/view'
-        }
-      }
+      // Add similar structure for years 2022, 2021, 2020, 2019, 2018, 2017, 2016
     },
     biology: {
-      HL: {
-        qp: {
-          'Biology_paper_1__TZ1_HL': 'https://drive.google.com/file/d/biology-p1-tz1-hl-qp/view',
-          'Biology_paper_1__TZ2_HL': 'https://drive.google.com/file/d/biology-p1-tz2-hl-qp/view',
-          'Biology_paper_2__TZ1_HL': 'https://drive.google.com/file/d/biology-p2-tz1-hl-qp/view',
-          'Biology_paper_2__TZ2_HL': 'https://drive.google.com/file/d/biology-p2-tz2-hl-qp/view',
-          'Biology_paper_3__TZ1_HL': 'https://drive.google.com/file/d/biology-p3-tz1-hl-qp/view',
-          'Biology_paper_3__TZ2_HL': 'https://drive.google.com/file/d/biology-p3-tz2-hl-qp/view'
+      2023: {
+        'MAY-JUNE-2023': {
+          HL: {
+            qp: {
+              'Biology_paper_1__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-mj-p1-tz1-hl-qp/view',
+              'Biology_paper_1__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-mj-p1-tz2-hl-qp/view',
+              'Biology_paper_2__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-mj-p2-tz1-hl-qp/view',
+              'Biology_paper_2__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-mj-p2-tz2-hl-qp/view',
+              'Biology_paper_3__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-mj-p3-tz1-hl-qp/view',
+              'Biology_paper_3__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Biology_paper_1__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-mj-p1-tz1-hl-ms/view',
+              'Biology_paper_1__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-mj-p1-tz2-hl-ms/view',
+              'Biology_paper_2__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-mj-p2-tz1-hl-ms/view',
+              'Biology_paper_2__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-mj-p2-tz2-hl-ms/view',
+              'Biology_paper_3__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-mj-p3-tz1-hl-ms/view',
+              'Biology_paper_3__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Biology_paper_1__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-mj-p1-tz1-sl-qp/view',
+              'Biology_paper_1__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-mj-p1-tz2-sl-qp/view',
+              'Biology_paper_2__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-mj-p2-tz1-sl-qp/view',
+              'Biology_paper_2__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-mj-p2-tz2-sl-qp/view',
+              'Biology_paper_3__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-mj-p3-tz1-sl-qp/view',
+              'Biology_paper_3__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Biology_paper_1__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-mj-p1-tz1-sl-ms/view',
+              'Biology_paper_1__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-mj-p1-tz2-sl-ms/view',
+              'Biology_paper_2__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-mj-p2-tz1-sl-ms/view',
+              'Biology_paper_2__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-mj-p2-tz2-sl-ms/view',
+              'Biology_paper_3__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-mj-p3-tz1-sl-ms/view',
+              'Biology_paper_3__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
         },
-        ms: {
-          'Biology_paper_1__TZ1_HL': 'https://drive.google.com/file/d/biology-p1-tz1-hl-ms/view',
-          'Biology_paper_1__TZ2_HL': 'https://drive.google.com/file/d/biology-p1-tz2-hl-ms/view',
-          'Biology_paper_2__TZ1_HL': 'https://drive.google.com/file/d/biology-p2-tz1-hl-ms/view',
-          'Biology_paper_2__TZ2_HL': 'https://drive.google.com/file/d/biology-p2-tz2-hl-ms/view',
-          'Biology_paper_3__TZ1_HL': 'https://drive.google.com/file/d/biology-p3-tz1-hl-ms/view',
-          'Biology_paper_3__TZ2_HL': 'https://drive.google.com/file/d/biology-p3-tz2-hl-ms/view'
+        'OCT-NOV-2023': {
+          HL: {
+            qp: {
+              'Biology_paper_1__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-on-p1-tz1-hl-qp/view',
+              'Biology_paper_1__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-on-p1-tz2-hl-qp/view',
+              'Biology_paper_2__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-on-p2-tz1-hl-qp/view',
+              'Biology_paper_2__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-on-p2-tz2-hl-qp/view',
+              'Biology_paper_3__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-on-p3-tz1-hl-qp/view',
+              'Biology_paper_3__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Biology_paper_1__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-on-p1-tz1-hl-ms/view',
+              'Biology_paper_1__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-on-p1-tz2-hl-ms/view',
+              'Biology_paper_2__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-on-p2-tz1-hl-ms/view',
+              'Biology_paper_2__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-on-p2-tz2-hl-ms/view',
+              'Biology_paper_3__TZ1_HL': 'https://drive.google.com/file/d/biology-2023-on-p3-tz1-hl-ms/view',
+              'Biology_paper_3__TZ2_HL': 'https://drive.google.com/file/d/biology-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Biology_paper_1__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-on-p1-tz1-sl-qp/view',
+              'Biology_paper_1__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-on-p1-tz2-sl-qp/view',
+              'Biology_paper_2__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-on-p2-tz1-sl-qp/view',
+              'Biology_paper_2__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-on-p2-tz2-sl-qp/view',
+              'Biology_paper_3__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-on-p3-tz1-sl-qp/view',
+              'Biology_paper_3__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Biology_paper_1__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-on-p1-tz1-sl-ms/view',
+              'Biology_paper_1__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-on-p1-tz2-sl-ms/view',
+              'Biology_paper_2__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-on-p2-tz1-sl-ms/view',
+              'Biology_paper_2__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-on-p2-tz2-sl-ms/view',
+              'Biology_paper_3__TZ1_SL': 'https://drive.google.com/file/d/biology-2023-on-p3-tz1-sl-ms/view',
+              'Biology_paper_3__TZ2_SL': 'https://drive.google.com/file/d/biology-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
         }
       },
-      SL: {
-        qp: {
-          'Biology_paper_1__TZ1_SL': 'https://drive.google.com/file/d/biology-p1-tz1-sl-qp/view',
-          'Biology_paper_1__TZ2_SL': 'https://drive.google.com/file/d/biology-p1-tz2-sl-qp/view',
-          'Biology_paper_2__TZ1_SL': 'https://drive.google.com/file/d/biology-p2-tz1-sl-qp/view',
-          'Biology_paper_2__TZ2_SL': 'https://drive.google.com/file/d/biology-p2-tz2-sl-qp/view',
-          'Biology_paper_3__TZ1_SL': 'https://drive.google.com/file/d/biology-p3-tz1-sl-qp/view',
-          'Biology_paper_3__TZ2_SL': 'https://drive.google.com/file/d/biology-p3-tz2-sl-qp/view'
-        },
-        ms: {
-          'Biology_paper_1__TZ1_SL': 'https://drive.google.com/file/d/biology-p1-tz1-sl-ms/view',
-          'Biology_paper_1__TZ2_SL': 'https://drive.google.com/file/d/biology-p1-tz2-sl-ms/view',
-          'Biology_paper_2__TZ1_SL': 'https://drive.google.com/file/d/biology-p2-tz1-sl-ms/view',
-          'Biology_paper_2__TZ2_SL': 'https://drive.google.com/file/d/biology-p2-tz2-sl-ms/view',
-          'Biology_paper_3__TZ1_SL': 'https://drive.google.com/file/d/biology-p3-tz1-sl-ms/view',
-          'Biology_paper_3__TZ2_SL': 'https://drive.google.com/file/d/biology-p3-tz2-sl-ms/view'
-        }
-      }
+      // Add similar structure for years 2022, 2021, 2020, 2019, 2018, 2017, 2016
     }
   };
 
-  const getSubjectPapers = (subjectName: string, level: 'HL' | 'SL') => {
+  const getSubjectPapers = (subjectName: string, level: 'HL' | 'SL', year: string, session: string) => {
     const normalizedSubject = subjectName?.toLowerCase() as keyof typeof paperData;
-    if (paperData[normalizedSubject]) {
-      return Object.keys(paperData[normalizedSubject][level].qp);
+    if (paperData[normalizedSubject] && paperData[normalizedSubject][year] && paperData[normalizedSubject][year][session]) {
+      return Object.keys(paperData[normalizedSubject][year][session][level].qp);
     }
-    return Object.keys(paperData.physics[level].qp); // Default fallback
+    // Fallback to default physics papers if specific year/session not found
+    return ['Physics_paper_1__TZ1_' + level, 'Physics_paper_1__TZ2_' + level, 'Physics_paper_2__TZ1_' + level, 'Physics_paper_2__TZ2_' + level, 'Physics_paper_3__TZ1_' + level, 'Physics_paper_3__TZ2_' + level];
   };
 
-  const handleDownload = (session: string, type: 'qp' | 'ms', paperName?: string) => {
-    if (paperName && subject) {
+  const handleDownload = (session: string, type: 'qp' | 'ms', paperName?: string, year?: string) => {
+    if (paperName && subject && year) {
       const normalizedSubject = subject.toLowerCase() as keyof typeof paperData;
       const level = paperName.includes('_HL') ? 'HL' : 'SL';
       
-      if (paperData[normalizedSubject] && paperData[normalizedSubject][level][type][paperName]) {
-        const url = paperData[normalizedSubject][level][type][paperName];
+      if (paperData[normalizedSubject] && 
+          paperData[normalizedSubject][year] && 
+          paperData[normalizedSubject][year][session] &&
+          paperData[normalizedSubject][year][session][level][type][paperName]) {
+        const url = paperData[normalizedSubject][year][session][level][type][paperName];
         window.open(url, '_blank');
       } else {
-        console.log(`URL not found for ${paperName}`);
+        console.log(`URL not found for ${paperName} in ${year} ${session}`);
       }
     } else {
       console.log(`Downloading ${type.toUpperCase()} for ${session}`);
@@ -271,10 +404,10 @@ const IVYZoneSubject = () => {
                                     </Button>
                                   </DropdownMenuTrigger>
                                    <DropdownMenuContent className="bg-popover border shadow-md">
-                                     {getSubjectPapers(subject || '', 'HL').map((paper) => (
+                                     {getSubjectPapers(subject || '', 'HL', yearData.year, session).map((paper) => (
                                        <DropdownMenuItem
                                          key={paper}
-                                         onClick={() => handleDownload(session, 'qp', paper)}
+                                         onClick={() => handleDownload(session, 'qp', paper, yearData.year)}
                                          className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
                                        >
                                          {paper}
@@ -295,10 +428,10 @@ const IVYZoneSubject = () => {
                                     </Button>
                                   </DropdownMenuTrigger>
                                    <DropdownMenuContent className="bg-popover border shadow-md">
-                                     {getSubjectPapers(subject || '', 'HL').map((paper) => (
+                                     {getSubjectPapers(subject || '', 'HL', yearData.year, session).map((paper) => (
                                        <DropdownMenuItem
                                          key={paper}
-                                         onClick={() => handleDownload(session, 'ms', paper)}
+                                         onClick={() => handleDownload(session, 'ms', paper, yearData.year)}
                                          className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
                                        >
                                          {paper}
@@ -350,10 +483,10 @@ const IVYZoneSubject = () => {
                                     </Button>
                                   </DropdownMenuTrigger>
                                    <DropdownMenuContent className="bg-popover border shadow-md">
-                                     {getSubjectPapers(subject || '', 'SL').map((paper) => (
+                                     {getSubjectPapers(subject || '', 'SL', yearData.year, session).map((paper) => (
                                        <DropdownMenuItem
                                          key={paper}
-                                         onClick={() => handleDownload(session, 'qp', paper)}
+                                         onClick={() => handleDownload(session, 'qp', paper, yearData.year)}
                                          className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
                                        >
                                          {paper}
@@ -374,10 +507,10 @@ const IVYZoneSubject = () => {
                                     </Button>
                                   </DropdownMenuTrigger>
                                    <DropdownMenuContent className="bg-popover border shadow-md">
-                                     {getSubjectPapers(subject || '', 'SL').map((paper) => (
+                                     {getSubjectPapers(subject || '', 'SL', yearData.year, session).map((paper) => (
                                        <DropdownMenuItem
                                          key={paper}
-                                         onClick={() => handleDownload(session, 'ms', paper)}
+                                         onClick={() => handleDownload(session, 'ms', paper, yearData.year)}
                                          className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
                                        >
                                          {paper}
