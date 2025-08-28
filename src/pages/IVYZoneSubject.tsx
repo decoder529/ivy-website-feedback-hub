@@ -135,7 +135,6 @@ const IVYZoneSubject = () => {
           }
         }
       },
-    physics: {
       2024: {
         'MAY-JUNE-2024': {
           HL: {
