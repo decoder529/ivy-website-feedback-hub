@@ -53,75 +53,143 @@ const IVYZoneSubject = () => {
     navigate(`/ivyzone/${subject}/${session.toLowerCase().replace(/\s+/g, '-')}`);
   };
 
-  // Subject-specific paper options
-  const physicsPapersHL = [
-    'Physics_paper_1__TZ1_HL',
-    'Physics_paper_1__TZ2_HL',
-    'Physics_paper_2__TZ1_HL',
-    'Physics_paper_2__TZ2_HL',
-    'Physics_paper_3__TZ1_HL',
-    'Physics_paper_3__TZ2_HL'
-  ];
-
-  const physicsPapersSL = [
-    'Physics_paper_1__TZ1_SL',
-    'Physics_paper_1__TZ2_SL',
-    'Physics_paper_2__TZ1_SL',
-    'Physics_paper_2__TZ2_SL',
-    'Physics_paper_3__TZ1_SL',
-    'Physics_paper_3__TZ2_SL'
-  ];
-
-  const chemistryPapersHL = [
-    'Chemistry_paper_1__TZ1_HL',
-    'Chemistry_paper_1__TZ2_HL',
-    'Chemistry_paper_2__TZ1_HL',
-    'Chemistry_paper_2__TZ2_HL',
-    'Chemistry_paper_3__TZ1_HL',
-    'Chemistry_paper_3__TZ2_HL'
-  ];
-
-  const chemistryPapersSL = [
-    'Chemistry_paper_1__TZ1_SL',
-    'Chemistry_paper_1__TZ2_SL',
-    'Chemistry_paper_2__TZ1_SL',
-    'Chemistry_paper_2__TZ2_SL',
-    'Chemistry_paper_3__TZ1_SL',
-    'Chemistry_paper_3__TZ2_SL'
-  ];
-
-  const biologyPapersHL = [
-    'Biology_paper_1__TZ1_HL',
-    'Biology_paper_1__TZ2_HL',
-    'Biology_paper_2__TZ1_HL',
-    'Biology_paper_2__TZ2_HL',
-    'Biology_paper_3__TZ1_HL',
-    'Biology_paper_3__TZ2_HL'
-  ];
-
-  const biologyPapersSL = [
-    'Biology_paper_1__TZ1_SL',
-    'Biology_paper_1__TZ2_SL',
-    'Biology_paper_2__TZ1_SL',
-    'Biology_paper_2__TZ2_SL',
-    'Biology_paper_3__TZ1_SL',
-    'Biology_paper_3__TZ2_SL'
-  ];
-
-  const getSubjectPapers = (subjectName: string, level: 'HL' | 'SL') => {
-    switch (subjectName?.toLowerCase()) {
-      case 'physics': return level === 'HL' ? physicsPapersHL : physicsPapersSL;
-      case 'chemistry': return level === 'HL' ? chemistryPapersHL : chemistryPapersSL;
-      case 'biology': return level === 'HL' ? biologyPapersHL : biologyPapersSL;
-      case 'mathematics': return level === 'HL' ? physicsPapersHL : physicsPapersSL; // Using physics as default for now
-      default: return level === 'HL' ? physicsPapersHL : physicsPapersSL;
+  // Subject-specific paper options with URLs
+  const paperData = {
+    physics: {
+      HL: {
+        qp: {
+          'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-p1-tz1-hl-qp/view',
+          'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-p1-tz2-hl-qp/view',
+          'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-p2-tz1-hl-qp/view',
+          'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-p2-tz2-hl-qp/view',
+          'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-p3-tz1-hl-qp/view',
+          'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-p3-tz2-hl-qp/view'
+        },
+        ms: {
+          'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-p1-tz1-hl-ms/view',
+          'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-p1-tz2-hl-ms/view',
+          'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-p2-tz1-hl-ms/view',
+          'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-p2-tz2-hl-ms/view',
+          'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-p3-tz1-hl-ms/view',
+          'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-p3-tz2-hl-ms/view'
+        }
+      },
+      SL: {
+        qp: {
+          'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-p1-tz1-sl-qp/view',
+          'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-p1-tz2-sl-qp/view',
+          'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-p2-tz1-sl-qp/view',
+          'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-p2-tz2-sl-qp/view',
+          'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-p3-tz1-sl-qp/view',
+          'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-p3-tz2-sl-qp/view'
+        },
+        ms: {
+          'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-p1-tz1-sl-ms/view',
+          'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-p1-tz2-sl-ms/view',
+          'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-p2-tz1-sl-ms/view',
+          'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-p2-tz2-sl-ms/view',
+          'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-p3-tz1-sl-ms/view',
+          'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-p3-tz2-sl-ms/view'
+        }
+      }
+    },
+    chemistry: {
+      HL: {
+        qp: {
+          'Chemistry_paper_1__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p1-tz1-hl-qp/view',
+          'Chemistry_paper_1__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p1-tz2-hl-qp/view',
+          'Chemistry_paper_2__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p2-tz1-hl-qp/view',
+          'Chemistry_paper_2__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p2-tz2-hl-qp/view',
+          'Chemistry_paper_3__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p3-tz1-hl-qp/view',
+          'Chemistry_paper_3__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p3-tz2-hl-qp/view'
+        },
+        ms: {
+          'Chemistry_paper_1__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p1-tz1-hl-ms/view',
+          'Chemistry_paper_1__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p1-tz2-hl-ms/view',
+          'Chemistry_paper_2__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p2-tz1-hl-ms/view',
+          'Chemistry_paper_2__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p2-tz2-hl-ms/view',
+          'Chemistry_paper_3__TZ1_HL': 'https://drive.google.com/file/d/chemistry-p3-tz1-hl-ms/view',
+          'Chemistry_paper_3__TZ2_HL': 'https://drive.google.com/file/d/chemistry-p3-tz2-hl-ms/view'
+        }
+      },
+      SL: {
+        qp: {
+          'Chemistry_paper_1__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p1-tz1-sl-qp/view',
+          'Chemistry_paper_1__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p1-tz2-sl-qp/view',
+          'Chemistry_paper_2__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p2-tz1-sl-qp/view',
+          'Chemistry_paper_2__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p2-tz2-sl-qp/view',
+          'Chemistry_paper_3__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p3-tz1-sl-qp/view',
+          'Chemistry_paper_3__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p3-tz2-sl-qp/view'
+        },
+        ms: {
+          'Chemistry_paper_1__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p1-tz1-sl-ms/view',
+          'Chemistry_paper_1__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p1-tz2-sl-ms/view',
+          'Chemistry_paper_2__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p2-tz1-sl-ms/view',
+          'Chemistry_paper_2__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p2-tz2-sl-ms/view',
+          'Chemistry_paper_3__TZ1_SL': 'https://drive.google.com/file/d/chemistry-p3-tz1-sl-ms/view',
+          'Chemistry_paper_3__TZ2_SL': 'https://drive.google.com/file/d/chemistry-p3-tz2-sl-ms/view'
+        }
+      }
+    },
+    biology: {
+      HL: {
+        qp: {
+          'Biology_paper_1__TZ1_HL': 'https://drive.google.com/file/d/biology-p1-tz1-hl-qp/view',
+          'Biology_paper_1__TZ2_HL': 'https://drive.google.com/file/d/biology-p1-tz2-hl-qp/view',
+          'Biology_paper_2__TZ1_HL': 'https://drive.google.com/file/d/biology-p2-tz1-hl-qp/view',
+          'Biology_paper_2__TZ2_HL': 'https://drive.google.com/file/d/biology-p2-tz2-hl-qp/view',
+          'Biology_paper_3__TZ1_HL': 'https://drive.google.com/file/d/biology-p3-tz1-hl-qp/view',
+          'Biology_paper_3__TZ2_HL': 'https://drive.google.com/file/d/biology-p3-tz2-hl-qp/view'
+        },
+        ms: {
+          'Biology_paper_1__TZ1_HL': 'https://drive.google.com/file/d/biology-p1-tz1-hl-ms/view',
+          'Biology_paper_1__TZ2_HL': 'https://drive.google.com/file/d/biology-p1-tz2-hl-ms/view',
+          'Biology_paper_2__TZ1_HL': 'https://drive.google.com/file/d/biology-p2-tz1-hl-ms/view',
+          'Biology_paper_2__TZ2_HL': 'https://drive.google.com/file/d/biology-p2-tz2-hl-ms/view',
+          'Biology_paper_3__TZ1_HL': 'https://drive.google.com/file/d/biology-p3-tz1-hl-ms/view',
+          'Biology_paper_3__TZ2_HL': 'https://drive.google.com/file/d/biology-p3-tz2-hl-ms/view'
+        }
+      },
+      SL: {
+        qp: {
+          'Biology_paper_1__TZ1_SL': 'https://drive.google.com/file/d/biology-p1-tz1-sl-qp/view',
+          'Biology_paper_1__TZ2_SL': 'https://drive.google.com/file/d/biology-p1-tz2-sl-qp/view',
+          'Biology_paper_2__TZ1_SL': 'https://drive.google.com/file/d/biology-p2-tz1-sl-qp/view',
+          'Biology_paper_2__TZ2_SL': 'https://drive.google.com/file/d/biology-p2-tz2-sl-qp/view',
+          'Biology_paper_3__TZ1_SL': 'https://drive.google.com/file/d/biology-p3-tz1-sl-qp/view',
+          'Biology_paper_3__TZ2_SL': 'https://drive.google.com/file/d/biology-p3-tz2-sl-qp/view'
+        },
+        ms: {
+          'Biology_paper_1__TZ1_SL': 'https://drive.google.com/file/d/biology-p1-tz1-sl-ms/view',
+          'Biology_paper_1__TZ2_SL': 'https://drive.google.com/file/d/biology-p1-tz2-sl-ms/view',
+          'Biology_paper_2__TZ1_SL': 'https://drive.google.com/file/d/biology-p2-tz1-sl-ms/view',
+          'Biology_paper_2__TZ2_SL': 'https://drive.google.com/file/d/biology-p2-tz2-sl-ms/view',
+          'Biology_paper_3__TZ1_SL': 'https://drive.google.com/file/d/biology-p3-tz1-sl-ms/view',
+          'Biology_paper_3__TZ2_SL': 'https://drive.google.com/file/d/biology-p3-tz2-sl-ms/view'
+        }
+      }
     }
   };
 
+  const getSubjectPapers = (subjectName: string, level: 'HL' | 'SL') => {
+    const normalizedSubject = subjectName?.toLowerCase() as keyof typeof paperData;
+    if (paperData[normalizedSubject]) {
+      return Object.keys(paperData[normalizedSubject][level].qp);
+    }
+    return Object.keys(paperData.physics[level].qp); // Default fallback
+  };
+
   const handleDownload = (session: string, type: 'qp' | 'ms', paperName?: string) => {
-    // This would typically download the file
-    if (paperName) {
-      console.log(`Downloading ${type.toUpperCase()} for ${session} - ${paperName}`);
+    if (paperName && subject) {
+      const normalizedSubject = subject.toLowerCase() as keyof typeof paperData;
+      const level = paperName.includes('_HL') ? 'HL' : 'SL';
+      
+      if (paperData[normalizedSubject] && paperData[normalizedSubject][level][type][paperName]) {
+        const url = paperData[normalizedSubject][level][type][paperName];
+        window.open(url, '_blank');
+      } else {
+        console.log(`URL not found for ${paperName}`);
+      }
     } else {
       console.log(`Downloading ${type.toUpperCase()} for ${session}`);
     }
