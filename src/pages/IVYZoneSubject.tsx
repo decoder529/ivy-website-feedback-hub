@@ -53,7 +53,7 @@ const IVYZoneSubject = () => {
     navigate(`/ivyzone/${subject}/${session.toLowerCase().replace(/\s+/g, '-')}`);
   };
 
-  // Physics paper options
+  // Subject-specific paper options
   const physicsPapers = [
     'Physics_paper_1__TZ1_HL',
     'Physics_paper_1__TZ2_HL',
@@ -62,6 +62,36 @@ const IVYZoneSubject = () => {
     'Physics_paper_3__TZ1_HL',
     'Physics_paper_3__TZ2_HL'
   ];
+
+  const chemistryPapers = [
+    'Chemistry_paper_1__TZ1_HL',
+    'Chemistry_paper_1__TZ2_HL',
+    'Chemistry_paper_2__TZ1_HL',
+    'Chemistry_paper_2__TZ2_HL',
+    'Chemistry_paper_3__TZ1_HL',
+    'Chemistry_paper_3__TZ2_HL'
+  ];
+
+  const biologyPapers = [
+    'Biology_paper_1__TZ1_HL',
+    'Biology_paper_1__TZ2_HL',
+    'Biology_paper_2__TZ1_HL',
+    'Biology_paper_2__TZ2_HL',
+    'Biology_paper_3__TZ1_HL',
+    'Biology_paper_3__TZ2_HL'
+  ];
+
+  const getSubjectPapers = (subjectName: string) => {
+    switch (subjectName?.toLowerCase()) {
+      case 'physics': return physicsPapers;
+      case 'chemistry': return chemistryPapers;
+      case 'biology': return biologyPapers;
+      case 'mathematics': return physicsPapers; // Using physics as default for now
+      default: return physicsPapers;
+    }
+  };
+
+  const currentPapers = getSubjectPapers(subject || '');
 
   const handleDownload = (session: string, type: 'qp' | 'ms', paperName?: string) => {
     // This would typically download the file
@@ -147,17 +177,17 @@ const IVYZoneSubject = () => {
                                       <ChevronDown className="h-3 w-3 ml-1" />
                                     </Button>
                                   </DropdownMenuTrigger>
-                                  <DropdownMenuContent className="bg-popover border shadow-md">
-                                    {physicsPapers.map((paper) => (
-                                      <DropdownMenuItem
-                                        key={paper}
-                                        onClick={() => handleDownload(session, 'qp', paper)}
-                                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
-                                      >
-                                        {paper}
-                                      </DropdownMenuItem>
-                                    ))}
-                                  </DropdownMenuContent>
+                                   <DropdownMenuContent className="bg-popover border shadow-md">
+                                     {currentPapers.map((paper) => (
+                                       <DropdownMenuItem
+                                         key={paper}
+                                         onClick={() => handleDownload(session, 'qp', paper)}
+                                         className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                                       >
+                                         {paper}
+                                       </DropdownMenuItem>
+                                     ))}
+                                   </DropdownMenuContent>
                                 </DropdownMenu>
                                 <DropdownMenu>
                                   <DropdownMenuTrigger asChild>
@@ -171,17 +201,17 @@ const IVYZoneSubject = () => {
                                       <ChevronDown className="h-3 w-3 ml-1" />
                                     </Button>
                                   </DropdownMenuTrigger>
-                                  <DropdownMenuContent className="bg-popover border shadow-md">
-                                    {physicsPapers.map((paper) => (
-                                      <DropdownMenuItem
-                                        key={paper}
-                                        onClick={() => handleDownload(session, 'ms', paper)}
-                                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
-                                      >
-                                        {paper}
-                                      </DropdownMenuItem>
-                                    ))}
-                                  </DropdownMenuContent>
+                                   <DropdownMenuContent className="bg-popover border shadow-md">
+                                     {currentPapers.map((paper) => (
+                                       <DropdownMenuItem
+                                         key={paper}
+                                         onClick={() => handleDownload(session, 'ms', paper)}
+                                         className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                                       >
+                                         {paper}
+                                       </DropdownMenuItem>
+                                     ))}
+                                   </DropdownMenuContent>
                                 </DropdownMenu>
                               </div>
                             </div>
@@ -226,17 +256,17 @@ const IVYZoneSubject = () => {
                                       <ChevronDown className="h-3 w-3 ml-1" />
                                     </Button>
                                   </DropdownMenuTrigger>
-                                  <DropdownMenuContent className="bg-popover border shadow-md">
-                                    {physicsPapers.map((paper) => (
-                                      <DropdownMenuItem
-                                        key={paper}
-                                        onClick={() => handleDownload(session, 'qp', paper)}
-                                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
-                                      >
-                                        {paper}
-                                      </DropdownMenuItem>
-                                    ))}
-                                  </DropdownMenuContent>
+                                   <DropdownMenuContent className="bg-popover border shadow-md">
+                                     {currentPapers.map((paper) => (
+                                       <DropdownMenuItem
+                                         key={paper}
+                                         onClick={() => handleDownload(session, 'qp', paper)}
+                                         className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                                       >
+                                         {paper}
+                                       </DropdownMenuItem>
+                                     ))}
+                                   </DropdownMenuContent>
                                 </DropdownMenu>
                                 <DropdownMenu>
                                   <DropdownMenuTrigger asChild>
@@ -250,17 +280,17 @@ const IVYZoneSubject = () => {
                                       <ChevronDown className="h-3 w-3 ml-1" />
                                     </Button>
                                   </DropdownMenuTrigger>
-                                  <DropdownMenuContent className="bg-popover border shadow-md">
-                                    {physicsPapers.map((paper) => (
-                                      <DropdownMenuItem
-                                        key={paper}
-                                        onClick={() => handleDownload(session, 'ms', paper)}
-                                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
-                                      >
-                                        {paper}
-                                      </DropdownMenuItem>
-                                    ))}
-                                  </DropdownMenuContent>
+                                   <DropdownMenuContent className="bg-popover border shadow-md">
+                                     {currentPapers.map((paper) => (
+                                       <DropdownMenuItem
+                                         key={paper}
+                                         onClick={() => handleDownload(session, 'ms', paper)}
+                                         className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                                       >
+                                         {paper}
+                                       </DropdownMenuItem>
+                                     ))}
+                                   </DropdownMenuContent>
                                 </DropdownMenu>
                               </div>
                             </div>
