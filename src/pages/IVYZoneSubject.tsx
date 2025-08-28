@@ -370,6 +370,474 @@ const IVYZoneSubject = () => {
         }
       },
 
+            2021: {
+        'MAY-JUNE-2021': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
+        },
+        'OCT-NOV-2021': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
+        }
+      },
+            2020: {
+        'MAY-JUNE-2020': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
+        },
+        'OCT-NOV-2020': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
+        }
+      },
+            2019: {
+        'MAY-JUNE-2019': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
+        },
+        'OCT-NOV-2019': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
+        }
+      },
+            2018: {
+        'MAY-JUNE-2018': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
+        },
+        'OCT-NOV-2018': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
+        }
+      },
+            2017: {
+        'MAY-JUNE-2017': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
+        },
+        'OCT-NOV-2017': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
+        }
+      },
+            2016: {
+        'MAY-JUNE-2016': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-sl-ms/view'
+            }
+          }
+        },
+        'OCT-NOV-2016': {
+          HL: {
+            qp: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-qp/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-qp/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-qp/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-qp/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-qp/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-hl-ms/view',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-hl-ms/view',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-hl-ms/view',
+              'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-hl-ms/view',
+              'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-hl-ms/view',
+              'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-hl-ms/view'
+            }
+          },
+          SL: {
+            qp: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-qp/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-qp/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-qp/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-qp/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-qp/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-qp/view'
+            },
+            ms: {
+              'Physics_paper_1__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz1-sl-ms/view',
+              'Physics_paper_1__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p1-tz2-sl-ms/view',
+              'Physics_paper_2__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz1-sl-ms/view',
+              'Physics_paper_2__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p2-tz2-sl-ms/view',
+              'Physics_paper_3__TZ1_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz1-sl-ms/view',
+              'Physics_paper_3__TZ2_SL': 'https://drive.google.com/file/d/physics-2023-on-p3-tz2-sl-ms/view'
+            }
+          }
+        }
+      },
       // Add similar structure for years 2022, 2021, 2020, 2019, 2018, 2017, 2016
     },
     chemistry: {
