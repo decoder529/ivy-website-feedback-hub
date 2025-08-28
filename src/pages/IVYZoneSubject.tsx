@@ -4,7 +4,13 @@ import { useAuth } from '@/components/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Download, FileText, Eye } from 'lucide-react';
+import { ArrowLeft, Download, FileText, Eye, ChevronDown } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -47,9 +53,23 @@ const IVYZoneSubject = () => {
     navigate(`/ivyzone/${subject}/${session.toLowerCase().replace(/\s+/g, '-')}`);
   };
 
-  const handleDownload = (session: string, type: 'qp' | 'ms') => {
+  // Physics paper options
+  const physicsPapers = [
+    'Physics_paper_1__TZ1_HL',
+    'Physics_paper_1__TZ2_HL',
+    'Physics_paper_2__TZ1_HL',
+    'Physics_paper_2__TZ2_HL',
+    'Physics_paper_3__TZ1_HL',
+    'Physics_paper_3__TZ2_HL'
+  ];
+
+  const handleDownload = (session: string, type: 'qp' | 'ms', paperName?: string) => {
     // This would typically download the file
-    console.log(`Downloading ${type.toUpperCase()} for ${session}`);
+    if (paperName) {
+      console.log(`Downloading ${type.toUpperCase()} for ${session} - ${paperName}`);
+    } else {
+      console.log(`Downloading ${type.toUpperCase()} for ${session}`);
+    }
   };
 
   if (loading) {
@@ -115,24 +135,54 @@ const IVYZoneSubject = () => {
                             <div key={session} className="flex items-center justify-between p-3 ivyzone-card rounded-lg border-2 border-orange-100 hover:border-orange-300 transition-colors">
                               <span className="ivyzone-text text-sm font-medium">{session}</span>
                               <div className="flex gap-2">
-                                <Button
-                                  size="sm"
-                                  variant="outline"
-                                  className="h-8 px-3 ivyzone-button text-xs font-semibold"
-                                  onClick={() => handleDownload(session, 'qp')}
-                                >
-                                  <FileText className="h-3 w-3 mr-1" />
-                                  QP
-                                </Button>
-                                <Button
-                                  size="sm"
-                                  variant="outline"
-                                  className="h-8 px-3 ivyzone-button text-xs font-semibold"
-                                  onClick={() => handleDownload(session, 'ms')}
-                                >
-                                  <Download className="h-3 w-3 mr-1" />
-                                  MS
-                                </Button>
+                                <DropdownMenu>
+                                  <DropdownMenuTrigger asChild>
+                                    <Button
+                                      size="sm"
+                                      variant="outline"
+                                      className="h-8 px-3 ivyzone-button text-xs font-semibold"
+                                    >
+                                      <FileText className="h-3 w-3 mr-1" />
+                                      QP
+                                      <ChevronDown className="h-3 w-3 ml-1" />
+                                    </Button>
+                                  </DropdownMenuTrigger>
+                                  <DropdownMenuContent className="bg-popover border shadow-md">
+                                    {physicsPapers.map((paper) => (
+                                      <DropdownMenuItem
+                                        key={paper}
+                                        onClick={() => handleDownload(session, 'qp', paper)}
+                                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                                      >
+                                        {paper}
+                                      </DropdownMenuItem>
+                                    ))}
+                                  </DropdownMenuContent>
+                                </DropdownMenu>
+                                <DropdownMenu>
+                                  <DropdownMenuTrigger asChild>
+                                    <Button
+                                      size="sm"
+                                      variant="outline"
+                                      className="h-8 px-3 ivyzone-button text-xs font-semibold"
+                                    >
+                                      <Download className="h-3 w-3 mr-1" />
+                                      MS
+                                      <ChevronDown className="h-3 w-3 ml-1" />
+                                    </Button>
+                                  </DropdownMenuTrigger>
+                                  <DropdownMenuContent className="bg-popover border shadow-md">
+                                    {physicsPapers.map((paper) => (
+                                      <DropdownMenuItem
+                                        key={paper}
+                                        onClick={() => handleDownload(session, 'ms', paper)}
+                                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                                      >
+                                        {paper}
+                                      </DropdownMenuItem>
+                                    ))}
+                                  </DropdownMenuContent>
+                                </DropdownMenu>
                               </div>
                             </div>
                           ))}
@@ -164,24 +214,54 @@ const IVYZoneSubject = () => {
                             <div key={session} className="flex items-center justify-between p-3 ivyzone-card rounded-lg border-2 border-orange-100 hover:border-orange-300 transition-colors">
                               <span className="ivyzone-text text-sm font-medium">{session}</span>
                               <div className="flex gap-2">
-                                <Button
-                                  size="sm"
-                                  variant="outline"
-                                  className="h-8 px-3 ivyzone-button text-xs font-semibold"
-                                  onClick={() => handleDownload(session, 'qp')}
-                                >
-                                  <FileText className="h-3 w-3 mr-1" />
-                                  QP
-                                </Button>
-                                <Button
-                                  size="sm"
-                                  variant="outline"
-                                  className="h-8 px-3 ivyzone-button text-xs font-semibold"
-                                  onClick={() => handleDownload(session, 'ms')}
-                                >
-                                  <Download className="h-3 w-3 mr-1" />
-                                  MS
-                                </Button>
+                                <DropdownMenu>
+                                  <DropdownMenuTrigger asChild>
+                                    <Button
+                                      size="sm"
+                                      variant="outline"
+                                      className="h-8 px-3 ivyzone-button text-xs font-semibold"
+                                    >
+                                      <FileText className="h-3 w-3 mr-1" />
+                                      QP
+                                      <ChevronDown className="h-3 w-3 ml-1" />
+                                    </Button>
+                                  </DropdownMenuTrigger>
+                                  <DropdownMenuContent className="bg-popover border shadow-md">
+                                    {physicsPapers.map((paper) => (
+                                      <DropdownMenuItem
+                                        key={paper}
+                                        onClick={() => handleDownload(session, 'qp', paper)}
+                                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                                      >
+                                        {paper}
+                                      </DropdownMenuItem>
+                                    ))}
+                                  </DropdownMenuContent>
+                                </DropdownMenu>
+                                <DropdownMenu>
+                                  <DropdownMenuTrigger asChild>
+                                    <Button
+                                      size="sm"
+                                      variant="outline"
+                                      className="h-8 px-3 ivyzone-button text-xs font-semibold"
+                                    >
+                                      <Download className="h-3 w-3 mr-1" />
+                                      MS
+                                      <ChevronDown className="h-3 w-3 ml-1" />
+                                    </Button>
+                                  </DropdownMenuTrigger>
+                                  <DropdownMenuContent className="bg-popover border shadow-md">
+                                    {physicsPapers.map((paper) => (
+                                      <DropdownMenuItem
+                                        key={paper}
+                                        onClick={() => handleDownload(session, 'ms', paper)}
+                                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                                      >
+                                        {paper}
+                                      </DropdownMenuItem>
+                                    ))}
+                                  </DropdownMenuContent>
+                                </DropdownMenu>
                               </div>
                             </div>
                           ))}
