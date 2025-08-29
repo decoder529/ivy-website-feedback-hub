@@ -110,7 +110,6 @@ const Testimonials = () => {
     },
     {
       name: 'Akangsha',
-      achievement: 'A',
       subject: 'IBDP Physics',
       school: 'Nahar International School',
       period: 'May 2025',
