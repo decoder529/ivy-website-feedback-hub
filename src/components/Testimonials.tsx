@@ -194,13 +194,13 @@ const Testimonials = () => {
               {testimonials.slice(1).map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <Card 
-                    className="hover:shadow-card transition-all duration-500 hover:scale-105 cursor-pointer group relative overflow-hidden border border-border/50 hover:border-primary/20"
+                    className="h-full hover:shadow-card transition-all duration-500 hover:scale-105 cursor-pointer group relative border border-border/50 hover:border-primary/20"
                     onClick={handleTestimonialClick}
                   >
                     {/* Premium gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
-                    <CardContent className="p-6 relative z-10">
+                    <CardContent className="p-6 relative z-10 h-full flex flex-col">
                       <div className="flex items-center mb-4">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star 
@@ -211,12 +211,12 @@ const Testimonials = () => {
                         ))}
                       </div>
                       
-                      <blockquote className="text-muted-foreground italic mb-6 line-clamp-4 group-hover:text-foreground transition-colors duration-300">
+                      <blockquote className="text-muted-foreground italic mb-6 flex-grow group-hover:text-foreground transition-colors duration-300 text-sm leading-relaxed">
                         "{testimonial.quote}"
                       </blockquote>
                       
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 group-hover:border-primary/40 transition-colors duration-300">
+                      <div className="flex items-start space-x-4 mt-auto">
+                        <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 group-hover:border-primary/40 transition-colors duration-300 flex-shrink-0">
                           <img 
                             src={testimonial.image} 
                             alt={testimonial.name}
@@ -232,10 +232,12 @@ const Testimonials = () => {
                             {testimonial.name.split(' ').map(n => n[0]).join('')}
                           </div>
                         </div>
-                        <div className="flex-1">
-                          <div className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{testimonial.name}</div>
-                          <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
-                          <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300 text-sm">{testimonial.name}</div>
+                          <div className="text-xs text-success font-medium mb-1">{testimonial.achievement}</div>
+                          <div className="text-xs text-muted-foreground mb-1">{testimonial.subject}</div>
+                          <div className="text-xs text-muted-foreground">{testimonial.school}</div>
+                          <div className="text-xs text-muted-foreground">{testimonial.period} {testimonial.Board && `• ${testimonial.Board}`}</div>
                         </div>
                       </div>
                     </CardContent>
