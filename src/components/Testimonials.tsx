@@ -1,10 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
 import { Star, Trophy, Quote } from 'lucide-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const Testimonials = () => {
   const [isPaused, setIsPaused] = useState(false);
+  const [api, setApi] = useState<CarouselApi>();
+  
+  const autoplay = Autoplay({
+    delay: 3000,
+    stopOnInteraction: false,
+    stopOnMouseEnter: true,
+  });
+
+  useEffect(() => {
+    if (!api) return;
+
+    const handleSelect = () => {
+      if (isPaused && autoplay) {
+        autoplay.stop();
+      }
+    };
+
+    api.on("select", handleSelect);
+    return () => {
+      api.off("select", handleSelect);
+    };
+  }, [api, isPaused, autoplay]);
+
+  const handleTestimonialClick = useCallback(() => {
+    setIsPaused(true);
+    if (autoplay) {
+      autoplay.stop();
+    }
+  }, [autoplay]);
   
   const testimonials = [
     {
@@ -145,37 +175,53 @@ const Testimonials = () => {
 
         {/* Interactive Testimonials Carousel */}
         <div className="relative">
+          {/* Auto-scroll indicator */}
+          {!isPaused && (
+            <div className="absolute top-0 right-0 z-10 bg-primary/90 text-primary-foreground px-3 py-1 rounded-bl-lg text-xs font-medium animate-pulse">
+              Auto-scrolling • Click to pause
+            </div>
+          )}
+          
           <Carousel 
+            setApi={setApi}
             className="w-full" 
             opts={{
               align: "start",
               loop: true,
             }}
+            plugins={!isPaused ? [autoplay] : []}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {testimonials.slice(1).map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <Card 
-                    className="hover:shadow-card transition-all duration-300 hover:scale-105 cursor-pointer"
-                    onClick={() => setIsPaused(!isPaused)}
+                    className="hover:shadow-card transition-all duration-500 hover:scale-105 cursor-pointer group relative overflow-hidden border border-border/50 hover:border-primary/20"
+                    onClick={handleTestimonialClick}
                   >
-                    <CardContent className="p-6">
+                    {/* Premium gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <CardContent className="p-6 relative z-10">
                       <div className="flex items-center mb-4">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                          <Star 
+                            key={i} 
+                            className="w-5 h-5 text-yellow-400 fill-current transform transition-transform duration-200 group-hover:scale-110" 
+                            style={{ animationDelay: `${i * 100}ms` }}
+                          />
                         ))}
                       </div>
                       
-                      <blockquote className="text-muted-foreground italic mb-6">
+                      <blockquote className="text-muted-foreground italic mb-6 line-clamp-4 group-hover:text-foreground transition-colors duration-300">
                         "{testimonial.quote}"
                       </blockquote>
                       
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20">
+                        <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border-2 border-primary/20 group-hover:border-primary/40 transition-colors duration-300">
                           <img 
                             src={testimonial.image} 
                             alt={testimonial.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             onError={(e) => {
                               const img = e.currentTarget;
                               const fallback = img.parentElement?.querySelector('.fallback-avatar') as HTMLElement;
@@ -183,12 +229,12 @@ const Testimonials = () => {
                               if (fallback) fallback.style.display = 'flex';
                             }}
                           />
-                          <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold" style={{display: 'none'}}>
+                          <div className="fallback-avatar w-full h-full bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold transition-transform duration-300 group-hover:scale-110" style={{display: 'none'}}>
                             {testimonial.name.split(' ').map(n => n[0]).join('')}
                           </div>
                         </div>
-                        <div>
-                          <div className="font-semibold text-foreground">{testimonial.name}</div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{testimonial.name}</div>
                           <div className="text-sm text-success font-medium">{testimonial.achievement}</div>
                           <div className="text-sm text-muted-foreground">{testimonial.subject}</div>
                         </div>
@@ -198,13 +244,15 @@ const Testimonials = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="hidden md:flex hover:bg-primary hover:text-primary-foreground transition-all duration-300" />
+            <CarouselNext className="hidden md:flex hover:bg-primary hover:text-primary-foreground transition-all duration-300" />
           </Carousel>
           
           {/* Mobile scroll hint */}
           <div className="text-center mt-4 md:hidden">
-            <p className="text-sm text-muted-foreground">Swipe to see more testimonials</p>
+            <p className="text-sm text-muted-foreground">
+              {!isPaused ? "Auto-scrolling • Tap testimonial to pause" : "Swipe to see more testimonials"}
+            </p>
           </div>
         </div>
 
