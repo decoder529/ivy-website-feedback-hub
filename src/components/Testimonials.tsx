@@ -66,7 +66,7 @@ const Testimonials = () => {
       period: 'May 2025',
       quote: 'hi sir i just wanted to thank you for all the help throughout the year, i coudnt have gotten that A* without you',
       rating: 5,
-      image: '/images/'
+      image: '/lovable-uploads/80eb233b-e951-4cbe-8f1c-e4e90d7e880f.png'
     },
     {
       name: 'Tushita',
