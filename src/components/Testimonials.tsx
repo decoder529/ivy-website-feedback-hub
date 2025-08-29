@@ -86,7 +86,7 @@ const Testimonials = () => {
       period: 'May 2025',
       quote: 'Dear sir I just wanted to say that every student deserves a rahul sir in their life. Someone to guide them, support them and build them up even when they are falling. Your optimism is a true gift sir and I hope you carry it with you for all your future endeavours. Thank you so much for always having faith and confidence in my abilities over the last two years, even when I have sometimes not given you the reason to. The last two years have been let’s just say a complicated journey but to have you to navigate me and support me through it all makes me truly grateful. Please stay in touch sir, because your days of giving me advice are not over yet :)) it’s just the beginning. Alas, I just wanted to say, (stands on a chair for dramatic impact) “Oh captain, my captain”,PS: could you please watch the movie Love you so much sir (you know I’m writer so couldn’t help myself)',
       rating: 5,
-      image: '/images/'
+      image: '/lovable-uploads/d3a29228-3421-49b8-9a78-e8d62109e53c.png'
     },
   ];
 
