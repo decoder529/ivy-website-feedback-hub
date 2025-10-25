@@ -69,7 +69,7 @@ const IVYZoneDashboard = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl font-bold ivyzone-text mb-3 drop-shadow-sm">
-              Welcome to IBDP Past Papers
+              Welcome to IBDP
             </h1>
             <p className="ivyzone-text-muted text-lg">
               Access comprehensive past papers and detailed solutions
