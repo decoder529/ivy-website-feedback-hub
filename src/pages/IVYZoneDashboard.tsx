@@ -80,7 +80,7 @@ const IVYZoneDashboard = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card className="ivyzone-feature-card">
               <CardContent className="pt-8 text-center">
-                <div className="bg-gradient-to-br from-orange-400 to-orange-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gradient-to-br from-primary to-secondary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <FileText className="h-8 w-8 text-white" />
                 </div>
                 <div>
@@ -92,7 +92,7 @@ const IVYZoneDashboard = () => {
             </Card>
             <Card className="ivyzone-feature-card">
               <CardContent className="pt-8 text-center">
-                <div className="bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gradient-to-br from-secondary to-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="h-8 w-8 text-white" />
                 </div>
                 <div>
@@ -104,7 +104,7 @@ const IVYZoneDashboard = () => {
             </Card>
             <Card className="ivyzone-feature-card">
               <CardContent className="pt-8 text-center">
-                <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gradient-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Download className="h-8 w-8 text-white" />
                 </div>
                 <div>
@@ -149,7 +149,7 @@ const IVYZoneDashboard = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center relative z-10 pt-0">
-                  <Badge className="bg-gradient-to-r from-orange-400 to-yellow-400 text-white border-0 mb-4 px-4 py-1 text-sm font-semibold">
+                  <Badge className="bg-gradient-primary text-white border-0 mb-4 px-4 py-1 text-sm font-semibold">
                     {subject.papers} Papers Available
                   </Badge>
                   <Button 
