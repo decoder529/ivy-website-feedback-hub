@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/components/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, FileText, Download, LogOut, User } from 'lucide-react';
+import { BookOpen, FileText, Download } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import chemistryLab from '@/assets/chemistry-lab.jpg';
@@ -12,22 +10,7 @@ import mathTeacher from '@/assets/math-teacher.jpg';
 import studentsStudying from '@/assets/students-studying.jpg';
 
 const IVYZoneDashboard = () => {
-  const { user, loading, signOut } = useAuth();
   const navigate = useNavigate();
-  const [userEmail, setUserEmail] = useState('');
-
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate('/ivyzone');
-    } else if (user) {
-      setUserEmail(user.email || '');
-    }
-  }, [user, loading, navigate]);
-
-  const handleSignOut = async () => {
-    await signOut();
-    navigate('/ivyzone');
-  };
 
   const subjects = [
     {
@@ -68,14 +51,6 @@ const IVYZoneDashboard = () => {
     }
   ];
 
-  if (loading) {
-    return (
-      <div className="min-h-screen ivyzone-hero-bg flex items-center justify-center">
-        <div className="ivyzone-text text-2xl font-semibold">Loading your dashboard...</div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen ivyzone-hero-bg">
       <Header />
@@ -92,24 +67,13 @@ const IVYZoneDashboard = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold ivyzone-text mb-3 drop-shadow-sm">
-                Welcome to IVYZone
-              </h1>
-              <div className="flex items-center gap-3 ivyzone-text-muted text-lg">
-                <User className="h-5 w-5" />
-                <span className="font-medium">{userEmail}</span>
-              </div>
-            </div>
-            <Button 
-              onClick={handleSignOut}
-              variant="outline"
-              className="ivyzone-card border-3 border-orange-300 ivyzone-text hover:opacity-80 px-6 py-3 text-lg font-semibold"
-            >
-              <LogOut className="h-5 w-5 mr-2" />
-              Sign Out
-            </Button>
+          <div className="mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold ivyzone-text mb-3 drop-shadow-sm">
+              Welcome to IBDP Past Papers
+            </h1>
+            <p className="ivyzone-text-muted text-lg">
+              Access comprehensive past papers and detailed solutions
+            </p>
           </div>
           
           {/* Enhanced Stats Cards */}

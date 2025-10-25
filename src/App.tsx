@@ -53,8 +53,7 @@ const App = () => (
           <Route path="/worksheets/chemistry" element={<WorksheetChemistry />} />
           <Route path="/worksheets/maths" element={<WorksheetMaths />} />
           <Route path="/worksheets/biology" element={<WorksheetBiology />} />
-          <Route path="/ivyzone" element={<IVYZoneAuth />} />
-          <Route path="/ivyzone/dashboard" element={<IVYZoneDashboard />} />
+          <Route path="/ivyzone" element={<IVYZoneDashboard />} />
           <Route path="/ivyzone/:subject" element={<IVYZoneSubject />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
