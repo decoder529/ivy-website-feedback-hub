@@ -63,21 +63,21 @@
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* IVYZone specific colors - Orange & White Theme */
-    --ivyzone-primary: 25 95% 53%;        /* Vibrant Orange */
-    --ivyzone-secondary: 35 91% 65%;      /* Light Orange */
-    --ivyzone-accent: 45 100% 70%;        /* Golden Orange */
-    --ivyzone-background: 0 0% 100%;       /* Pure White */
-    --ivyzone-surface: 25 100% 98%;       /* Very Light Orange Tint */
-    --ivyzone-text: 15 25% 15%;           /* Dark Brown-Orange */
-    --ivyzone-text-muted: 25 15% 45%;     /* Muted Orange-Brown */
-    --ivyzone-border: 25 30% 85%;         /* Light Orange Border */
+    /* IVYZone colors - Using main website theme */
+    --ivyzone-primary: 220 90% 56%;           /* Primary blue */
+    --ivyzone-secondary: 270 80% 60%;         /* Secondary purple */
+    --ivyzone-accent: 220 90% 48%;            /* Darker blue */
+    --ivyzone-background: 0 0% 100%;          /* Pure White */
+    --ivyzone-surface: 210 40% 98%;           /* Light muted */
+    --ivyzone-text: 210 40% 8%;               /* Foreground */
+    --ivyzone-text-muted: 215.4 16.3% 46.9%;  /* Muted foreground */
+    --ivyzone-border: 214.3 31.8% 91.4%;      /* Border */
     
-    /* IVYZone gradients - Orange Theme */
-    --ivyzone-gradient-main: linear-gradient(135deg, hsl(25 95% 53%), hsl(35 91% 65%), hsl(0 0% 100%));
-    --ivyzone-gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(25 100% 98%));
-    --ivyzone-gradient-hover: linear-gradient(135deg, hsl(25 95% 48%), hsl(35 91% 60%));
-    --ivyzone-gradient-hero: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(35 91% 65%) 50%, hsl(45 100% 70%) 100%);
+    /* IVYZone gradients - Main theme */
+    --ivyzone-gradient-main: linear-gradient(135deg, hsl(220 90% 56%), hsl(270 80% 60%));
+    --ivyzone-gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --ivyzone-gradient-hover: linear-gradient(135deg, hsl(220 90% 48%), hsl(270 80% 55%));
+    --ivyzone-gradient-hero: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(270 80% 60%) 100%);
   }
   
   /* Slide animation for testimonials */
@@ -111,12 +111,12 @@
     --input: 210 40% 12%;
     --ring: 220 90% 60%;
 
-    /* IVYZone dark mode adjustments */
-    --ivyzone-background: 25 30% 8%;
-    --ivyzone-surface: 25 25% 12%;
-    --ivyzone-border: 25 20% 25%;
+    /* IVYZone dark mode - Main theme */
+    --ivyzone-background: 210 40% 6%;
+    --ivyzone-surface: 210 40% 8%;
+    --ivyzone-border: 210 40% 12%;
     --ivyzone-text: 0 0% 98%;
-    --ivyzone-text-muted: 25 10% 75%;
+    --ivyzone-text-muted: 215 20.2% 65.1%;
   }
 }
 
@@ -144,7 +144,7 @@
     background: hsl(var(--ivyzone-surface));
     border: 1px solid hsl(var(--ivyzone-border));
     color: hsl(var(--ivyzone-text));
-    box-shadow: 0 4px 20px hsl(25 95% 53% / 0.1);
+    box-shadow: 0 4px 20px hsl(220 90% 56% / 0.1);
   }
   
   .ivyzone-text {
@@ -165,7 +165,7 @@
   .ivyzone-button:hover {
     background: var(--ivyzone-gradient-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px hsl(25 95% 53% / 0.3);
+    box-shadow: 0 8px 25px hsl(220 90% 56% / 0.3);
   }
   
   .ivyzone-feature-card {
@@ -176,7 +176,7 @@
   
   .ivyzone-feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px hsl(25 95% 53% / 0.2);
+    box-shadow: 0 15px 40px hsl(220 90% 56% / 0.2);
     border-color: hsl(var(--ivyzone-primary));
   }
 }
