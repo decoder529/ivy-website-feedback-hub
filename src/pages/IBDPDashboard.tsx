@@ -1,13 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { BookOpen, FileText, Download } from 'lucide-react';
+import { BookOpen, FileText, StickyNote } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import chemistryLab from '@/assets/chemistry-lab.jpg';
-import mathTeacher from '@/assets/math-teacher.jpg';
-import studentsStudying from '@/assets/students-studying.jpg';
 
 const IBDPDashboard = () => {
   const navigate = useNavigate();
@@ -16,196 +12,120 @@ const IBDPDashboard = () => {
     {
       name: 'Physics',
       icon: '⚛️',
-      description: 'Comprehensive physics past papers and solutions',
-      color: 'bg-blue-500',
-      papers: 145,
-      image: mathTeacher,
-      gradient: 'from-blue-400 to-blue-600'
+      description: 'Comprehensive physics resources for IBDP',
+      gradient: 'from-blue-500 to-blue-600',
+      bgColor: 'bg-blue-50'
     },
     {
       name: 'Chemistry',
       icon: '🧪',
-      description: 'Complete chemistry question papers with detailed answers',
-      color: 'bg-green-500',
-      papers: 132,
-      image: chemistryLab,
-      gradient: 'from-green-400 to-green-600'
-    },
-    {
-      name: 'Mathematics',
-      icon: '📐',
-      description: 'Mathematical problem sets and step-by-step solutions',
-      color: 'bg-purple-500',
-      papers: 158,
-      image: mathTeacher,
-      gradient: 'from-purple-400 to-purple-600'
+      description: 'Complete chemistry resources and solutions',
+      gradient: 'from-green-500 to-green-600',
+      bgColor: 'bg-green-50'
     },
     {
       name: 'Biology',
       icon: '🧬',
-      description: 'Biological sciences papers with comprehensive explanations',
-      color: 'bg-emerald-500',
-      papers: 127,
-      image: studentsStudying,
-      gradient: 'from-red-400 to-red-600'
+      description: 'Biological sciences comprehensive materials',
+      gradient: 'from-emerald-500 to-emerald-600',
+      bgColor: 'bg-emerald-50'
+    },
+    {
+      name: 'Mathematics',
+      icon: '📐',
+      description: 'Mathematical problem sets and solutions',
+      gradient: 'from-purple-500 to-purple-600',
+      bgColor: 'bg-purple-50'
+    }
+  ];
+
+  const sections = [
+    {
+      title: 'Chapter-wise Worksheets',
+      icon: BookOpen,
+      description: 'Practice worksheets organized by chapters',
+      gradient: 'from-primary to-secondary',
+      path: 'worksheets'
+    },
+    {
+      title: 'Teacher Notes',
+      icon: StickyNote,
+      description: 'Comprehensive study notes and guides',
+      gradient: 'from-secondary to-primary',
+      path: 'notes'
+    },
+    {
+      title: 'Question Papers',
+      icon: FileText,
+      description: 'Past papers with detailed solutions',
+      gradient: 'from-primary to-secondary',
+      path: 'papers'
     }
   ];
 
   return (
-    <div className="min-h-screen ivyzone-hero-bg">
+    <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Dashboard Header with Background */}
-      <section className="pt-24 pb-8 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <img 
-            src={studentsStudying} 
-            alt="Students studying" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-400/50 to-yellow-300/50"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold ivyzone-text mb-3 drop-shadow-sm">
-              Welcome to IBDP
-            </h1>
-            <p className="ivyzone-text-muted text-lg">
-              Access comprehensive past papers and detailed solutions
-            </p>
-          </div>
-          
-          {/* Enhanced Stats Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="ivyzone-feature-card">
-              <CardContent className="pt-8 text-center">
-                <div className="bg-gradient-to-br from-primary to-secondary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <FileText className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <p className="ivyzone-text-muted text-sm font-medium uppercase tracking-wide">Total Papers</p>
-                  <p className="text-3xl font-bold ivyzone-text mb-2">562+</p>
-                  <p className="text-sm ivyzone-text-muted">Question papers & solutions</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="ivyzone-feature-card">
-              <CardContent className="pt-8 text-center">
-                <div className="bg-gradient-to-br from-secondary to-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <p className="ivyzone-text-muted text-sm font-medium uppercase tracking-wide">Years Covered</p>
-                  <p className="text-3xl font-bold ivyzone-text mb-2">1999-2024</p>
-                  <p className="text-sm ivyzone-text-muted">25+ years of papers</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="ivyzone-feature-card">
-              <CardContent className="pt-8 text-center">
-                <div className="bg-gradient-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Download className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <p className="ivyzone-text-muted text-sm font-medium uppercase tracking-wide">Success Rate</p>
-                  <p className="text-3xl font-bold ivyzone-text mb-2">95%</p>
-                  <p className="text-sm ivyzone-text-muted">Student improvement</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+      {/* Hero Section */}
+      <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 animate-fade-in">
+            IBDP Resources
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Access comprehensive chapter-wise worksheets, teacher notes, and question papers for all IBDP subjects
+          </p>
         </div>
       </section>
 
-      {/* Enhanced Subjects Grid */}
-      <section className="pb-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold ivyzone-text mb-8 text-center">Browse by Subject</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {subjects.map((subject) => (
-              <Card 
-                key={subject.name}
-                className="ivyzone-feature-card overflow-hidden cursor-pointer group relative"
-                onClick={() => navigate(`/ibdp/${subject.name.toLowerCase()}`)}
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
-                  <img 
-                    src={subject.image} 
-                    alt={`${subject.name} study`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${subject.gradient} opacity-60`}></div>
+      {/* Sections */}
+      {sections.map((section, sectionIndex) => (
+        <section key={sectionIndex} className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <div className="flex justify-center mb-4">
+                <div className={`bg-gradient-to-br ${section.gradient} rounded-full w-16 h-16 flex items-center justify-center`}>
+                  <section.icon className="h-8 w-8 text-white" />
                 </div>
-                
-                <CardHeader className="text-center relative z-10 pb-4">
-                  <div className="text-5xl mb-3 group-hover:scale-110 transition-transform">{subject.icon}</div>
-                  <CardTitle className="ivyzone-text text-xl group-hover:scale-105 transition-transform font-bold">
-                    {subject.name}
-                  </CardTitle>
-                  <CardDescription className="ivyzone-text-muted font-medium">
-                    {subject.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center relative z-10 pt-0">
-                  <Badge className="bg-gradient-primary text-white border-0 mb-4 px-4 py-1 text-sm font-semibold">
-                    {subject.papers} Papers Available
-                  </Badge>
-                  <Button 
-                    variant="outline" 
-                    className="w-full ivyzone-button group-hover:scale-105 transition-transform font-semibold"
-                  >
-                    Browse Papers
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
+                {section.title}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {section.description}
+              </p>
+            </div>
 
-      {/* Recent Activity */}
-      <section className="pb-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold ivyzone-text mb-6">Quick Access</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="ivyzone-card backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="ivyzone-text">Latest Papers (2024)</CardTitle>
-                <CardDescription className="ivyzone-text-muted">
-                  Most recent examination papers
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button 
-                  className="w-full ivyzone-button"
-                  onClick={() => navigate('/ibdp/latest')}
+            {/* Subject Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {subjects.map((subject, index) => (
+                <Card 
+                  key={index} 
+                  className={`group hover:shadow-hero transition-all duration-300 hover:scale-105 border-0 overflow-hidden animate-fade-in ${subject.bgColor}`}
                 >
-                  View Latest Papers
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="ivyzone-card backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="ivyzone-text">Popular Downloads</CardTitle>
-                <CardDescription className="ivyzone-text-muted">
-                  Most downloaded papers and solutions
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button 
-                  variant="outline"
-                  className="w-full ivyzone-card border-2 ivyzone-text hover:opacity-80"
-                  onClick={() => navigate('/ibdp/popular')}
-                >
-                  View Popular Papers
-                </Button>
-              </CardContent>
-            </Card>
+                  <CardContent className="p-8 text-center">
+                    <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">
+                      {subject.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-foreground mb-4">{subject.name}</h3>
+                    <p className="text-muted-foreground mb-8 leading-relaxed text-sm">
+                      {subject.description}
+                    </p>
+                    <Button 
+                      className={`w-full bg-gradient-to-r ${subject.gradient} text-white hover:shadow-hero hover:scale-105 transition-all duration-300 py-3`}
+                      onClick={() => navigate(`/ibdp/${section.path}/${subject.name.toLowerCase()}`)}
+                    >
+                      View {subject.name}
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <Footer />
     </div>
