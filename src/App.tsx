@@ -24,7 +24,7 @@ import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
 import Biology from "./pages/Biology";
 import Maths from "./pages/Maths";
-import Worksheet from "./pages/Worksheet";
+import IGCSE from "./pages/IGCSE";
 import WorksheetPhysics from "./pages/WorksheetPhysics";
 import WorksheetChemistry from "./pages/WorksheetChemistry";
 import WorksheetMaths from "./pages/WorksheetMaths";
@@ -48,7 +48,7 @@ const App = () => (
           <Route path="/test-series/chemistry" element={<Chemistry />} />
           <Route path="/test-series/biology" element={<Biology />} />
           <Route path="/test-series/maths" element={<Maths />} />
-          <Route path="/worksheet" element={<Worksheet />} />
+          <Route path="/igcse" element={<IGCSE />} />
           <Route path="/worksheets/physics" element={<WorksheetPhysics />} />
           <Route path="/worksheets/chemistry" element={<WorksheetChemistry />} />
           <Route path="/worksheets/maths" element={<WorksheetMaths />} />

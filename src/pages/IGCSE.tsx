@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { BookOpen, Users, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Worksheet = () => {
+const IGCSE = () => {
   const navigate = useNavigate();
 
   const subjects = [
@@ -51,7 +51,7 @@ const Worksheet = () => {
       <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6 animate-fade-in hover:scale-105 transition-all duration-300">
-            Worksheets
+            IGCSE
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Download comprehensive practice worksheets designed for IGCSE and IBDP students.
@@ -110,4 +110,4 @@ const Worksheet = () => {
   );
 };
 
-export default Worksheet;
+export default IGCSE;
