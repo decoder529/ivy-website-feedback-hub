@@ -17,9 +17,9 @@ import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
 import FreeTestSeries from "./pages/TestSeries";
 import PastPapers from "./pages/PastPapers";
-import IVYZoneAuth from "./pages/IVYZoneAuth";
-import IVYZoneDashboard from "./pages/IVYZoneDashboard";
-import IVYZoneSubject from "./pages/IVYZoneSubject";
+import IBDPAuth from "./pages/IBDPAuth";
+import IBDPDashboard from "./pages/IBDPDashboard";
+import IBDPSubject from "./pages/IBDPSubject";
 import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
 import Biology from "./pages/Biology";
@@ -53,8 +53,8 @@ const App = () => (
           <Route path="/worksheets/chemistry" element={<WorksheetChemistry />} />
           <Route path="/worksheets/maths" element={<WorksheetMaths />} />
           <Route path="/worksheets/biology" element={<WorksheetBiology />} />
-          <Route path="/ivyzone" element={<IVYZoneDashboard />} />
-          <Route path="/ivyzone/:subject" element={<IVYZoneSubject />} />
+          <Route path="/ibdp" element={<IBDPDashboard />} />
+          <Route path="/ibdp/:subject" element={<IBDPSubject />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />

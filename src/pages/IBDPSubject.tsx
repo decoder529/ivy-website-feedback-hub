@@ -14,14 +14,14 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const IVYZoneSubject = () => {
+const IBDPSubject = () => {
   const { subject } = useParams();
   const { user, loading } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!loading && !user) {
-      navigate('/ivyzone');
+      navigate('/ibdp');
     }
   }, [user, loading, navigate]);
 
@@ -51,7 +51,7 @@ const IVYZoneSubject = () => {
   };
 
   const handleSessionClick = (session: string) => {
-    navigate(`/ivyzone/${subject}/${session.toLowerCase().replace(/\s+/g, '-')}`);
+    navigate(`/ibdp/${subject}/${session.toLowerCase().replace(/\s+/g, '-')}`);
   };
 
   // Subject-specific paper options with year-specific URLs
@@ -1266,4 +1266,4 @@ const IVYZoneSubject = () => {
   );
 };
 
-export default IVYZoneSubject;
+export default IBDPSubject;

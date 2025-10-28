@@ -17,7 +17,7 @@ interface SignInForm {
   password: string;
 }
 
-const IVYZoneAuth = () => {
+const IBDPAuth = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ const IVYZoneAuth = () => {
 
       if (error) throw error;
 
-      navigate('/ivyzone/dashboard');
+      navigate('/ibdp/dashboard');
       toast.success('Signed in successfully');
     } catch (error: any) {
       toast.error(error.message || 'Failed to sign in');
@@ -160,4 +160,4 @@ const IVYZoneAuth = () => {
   );
 };
 
-export default IVYZoneAuth;
+export default IBDPAuth;

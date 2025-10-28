@@ -9,7 +9,7 @@ import chemistryLab from '@/assets/chemistry-lab.jpg';
 import mathTeacher from '@/assets/math-teacher.jpg';
 import studentsStudying from '@/assets/students-studying.jpg';
 
-const IVYZoneDashboard = () => {
+const IBDPDashboard = () => {
   const navigate = useNavigate();
 
   const subjects = [
@@ -127,7 +127,7 @@ const IVYZoneDashboard = () => {
               <Card 
                 key={subject.name}
                 className="ivyzone-feature-card overflow-hidden cursor-pointer group relative"
-                onClick={() => navigate(`/ivyzone/${subject.name.toLowerCase()}`)}
+                onClick={() => navigate(`/ibdp/${subject.name.toLowerCase()}`)}
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
@@ -180,7 +180,7 @@ const IVYZoneDashboard = () => {
               <CardContent>
                 <Button 
                   className="w-full ivyzone-button"
-                  onClick={() => navigate('/ivyzone/latest')}
+                  onClick={() => navigate('/ibdp/latest')}
                 >
                   View Latest Papers
                 </Button>
@@ -197,7 +197,7 @@ const IVYZoneDashboard = () => {
                 <Button 
                   variant="outline"
                   className="w-full ivyzone-card border-2 ivyzone-text hover:opacity-80"
-                  onClick={() => navigate('/ivyzone/popular')}
+                  onClick={() => navigate('/ibdp/popular')}
                 >
                   View Popular Papers
                 </Button>
@@ -212,4 +212,4 @@ const IVYZoneDashboard = () => {
   );
 };
 
-export default IVYZoneDashboard;
+export default IBDPDashboard;
