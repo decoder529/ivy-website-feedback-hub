@@ -21,6 +21,9 @@ import IBDPAuth from "./pages/IBDPAuth";
 import IBDPDashboard from "./pages/IBDPDashboard";
 import IBDPSubject from "./pages/IBDPSubject";
 import IBDPPhysics from "./pages/IBDPPhysics";
+import IBDPChemistry from "./pages/IBDPChemistry";
+import IBDPBiology from "./pages/IBDPBiology";
+import IBDPMaths from "./pages/IBDPMaths";
 import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
 import Biology from "./pages/Biology";
@@ -56,6 +59,9 @@ const App = () => (
           <Route path="/worksheets/biology" element={<WorksheetBiology />} />
           <Route path="/ibdp" element={<IBDPDashboard />} />
           <Route path="/ibdp/worksheets/physics" element={<IBDPPhysics />} />
+          <Route path="/ibdp/worksheets/chemistry" element={<IBDPChemistry />} />
+          <Route path="/ibdp/worksheets/biology" element={<IBDPBiology />} />
+          <Route path="/ibdp/worksheets/maths" element={<IBDPMaths />} />
           <Route path="/ibdp/:subject" element={<IBDPSubject />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
