@@ -55,7 +55,13 @@ const IBDPPhysics = () => {
             mcqSolutions: 'https://drive.google.com/your-link-here',
             notes: 'https://drive.google.com/your-link-here'
           }
-        },
+        }
+      ]
+    },
+    A: {
+      name: "Theme A: Space, Time and Motion",
+      color: "from-blue-500 to-indigo-600",
+      chapters: [
         {
           id: 'ch1-1',
           title: 'Kinematics',
@@ -79,13 +85,7 @@ const IBDPPhysics = () => {
             mcqSolutions: 'https://drive.google.com/your-link-here',
             notes: 'https://drive.google.com/your-link-here'
           }
-        }
-      ]
-    },
-    A: {
-      name: "Theme A: Space, Time and Motion",
-      color: "from-blue-500 to-indigo-600",
-      chapters: [
+        },
         {
           id: 'ch2-1',
           title: "Forces and Newton's laws",
