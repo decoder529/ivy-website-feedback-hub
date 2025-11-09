@@ -24,12 +24,12 @@ const IBDPPhysics = () => {
   const navigate = useNavigate();
   const [selectedLevel, setSelectedLevel] = useState<'HL' | 'SL'>('HL');
 
-  // Chapter data structure
+  // Chapter data structure - SL Chapters
   const chapters = [
     {
-      id: 'ch1',
-      title: 'Measurements and Uncertainties',
-      number: '1',
+      id: 'ch0',
+      title: 'Uncertainties and vectors',
+      number: '0',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
@@ -37,9 +37,39 @@ const IBDPPhysics = () => {
       }
     },
     {
-      id: 'ch2',
-      title: 'Mechanics',
-      number: '2',
+      id: 'ch1-1',
+      title: 'Kinematics',
+      number: '1.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch1-2',
+      title: 'Projectile motion',
+      number: '1.2',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch2-1',
+      title: "Forces and Newton's laws",
+      number: 'A2.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch2-2',
+      title: 'Circular motion',
+      number: 'A2.2',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
@@ -48,18 +78,18 @@ const IBDPPhysics = () => {
     },
     {
       id: 'ch3',
-      title: 'Thermal Physics',
-      number: '3',
+      title: 'Work, energy and power',
+      number: 'A3',
       resources: {
         worksheet: { available: true, solutions: true },
-        mcq: { available: true, solutions: false },
+        mcq: { available: true, solutions: true },
         notes: { available: true }
       }
     },
     {
       id: 'ch4',
-      title: 'Waves',
-      number: '4',
+      title: 'Linear momentum',
+      number: 'A4',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
@@ -68,8 +98,8 @@ const IBDPPhysics = () => {
     },
     {
       id: 'ch5',
-      title: 'Electricity and Magnetism',
-      number: '5',
+      title: 'Rigid body mechanics',
+      number: 'A5',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
@@ -78,8 +108,8 @@ const IBDPPhysics = () => {
     },
     {
       id: 'ch6',
-      title: 'Circular Motion and Gravitation',
-      number: '6',
+      title: 'Relativity',
+      number: 'A6',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
@@ -88,8 +118,8 @@ const IBDPPhysics = () => {
     },
     {
       id: 'ch7',
-      title: 'Atomic, Nuclear and Particle Physics',
-      number: '7',
+      title: 'Thermal energy transfers',
+      number: 'B7',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
@@ -98,31 +128,18 @@ const IBDPPhysics = () => {
     },
     {
       id: 'ch8',
-      title: 'Energy Production',
-      number: '8',
+      title: 'The greenhouse effect',
+      number: 'B8',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
         notes: { available: true }
       }
     },
-  ];
-
-  const hlOnlyChapters = [
     {
       id: 'ch9',
-      title: 'Wave Phenomena',
-      number: '9',
-      resources: {
-        worksheet: { available: true, solutions: true },
-        mcq: { available: true, solutions: true },
-        notes: { available: true }
-      }
-    },
-    {
-      id: 'ch10',
-      title: 'Fields',
-      number: '10',
+      title: 'The gas laws',
+      number: 'B9',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
@@ -131,8 +148,8 @@ const IBDPPhysics = () => {
     },
     {
       id: 'ch11',
-      title: 'Electromagnetic Induction',
-      number: '11',
+      title: 'Current and circuits',
+      number: 'B11',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
@@ -140,9 +157,223 @@ const IBDPPhysics = () => {
       }
     },
     {
-      id: 'ch12',
-      title: 'Quantum and Nuclear Physics',
-      number: '12',
+      id: 'ch12-1',
+      title: 'Simple harmonic motion',
+      number: 'C12.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch13',
+      title: 'The wave model',
+      number: 'C13',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch14-1',
+      title: 'Wave phenomena',
+      number: 'C14.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch15',
+      title: 'Standing waves and resonance',
+      number: 'C15',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch16-1',
+      title: 'The Doppler effect',
+      number: 'C16.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch17-1',
+      title: 'Gravitation',
+      number: 'D17.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch18-1',
+      title: 'Electric field and potential',
+      number: 'D18.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch19',
+      title: 'Motion in EM fields',
+      number: 'D19',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch21-1',
+      title: 'Atomic physics',
+      number: 'E21.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch23-1',
+      title: 'Nuclear physics',
+      number: 'E23.1',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch24',
+      title: 'Nuclear fission',
+      number: 'E24',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch25',
+      title: 'Nuclear fusion',
+      number: 'E25',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+  ];
+
+  // HL Only Chapters
+  const hlOnlyChapters = [
+    {
+      id: 'ch10',
+      title: 'Thermodynamics HL',
+      number: 'B10',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch12-2',
+      title: 'SHM (HL)',
+      number: 'C12.2',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch14-2',
+      title: 'Wave phenomena (HL)',
+      number: 'C14.2',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch16-2',
+      title: 'The Doppler effect HL',
+      number: 'C16.2',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch17-2',
+      title: 'Gravitation (HL)',
+      number: 'D17.2',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch18-2',
+      title: 'Electric field and potential HL',
+      number: 'D18.2',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch20',
+      title: 'Electromagnetic induction HL',
+      number: 'D20',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch21-2',
+      title: 'Atomic physics HL',
+      number: 'E21.2',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch22',
+      title: 'Quantum physics HL',
+      number: 'E22',
+      resources: {
+        worksheet: { available: true, solutions: true },
+        mcq: { available: true, solutions: true },
+        notes: { available: true }
+      }
+    },
+    {
+      id: 'ch23-2',
+      title: 'Nuclear physics (HL)',
+      number: 'E23.2',
       resources: {
         worksheet: { available: true, solutions: true },
         mcq: { available: true, solutions: true },
