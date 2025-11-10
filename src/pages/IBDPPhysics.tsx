@@ -509,26 +509,15 @@ const IBDPPhysics = () => {
                               <FileText className="h-4 w-4" />
                               Worksheet
                             </h4>
-                            <div className="space-y-2">
-                              <a 
-                                href={chapter.links.worksheet}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-primary hover:underline"
-                              >
-                                <Download className="h-3 w-3" />
-                                Download Worksheet
-                              </a>
-                              <a 
-                                href={chapter.links.worksheetSolutions}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-primary hover:underline"
-                              >
-                                <CheckCircle2 className="h-3 w-3" />
-                                Solutions
-                              </a>
-                            </div>
+                            <a 
+                              href={chapter.links.worksheet}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-sm text-primary hover:underline"
+                            >
+                              <Download className="h-3 w-3" />
+                              Download Worksheet
+                            </a>
                           </div>
 
                           {/* MCQ Practice */}
@@ -537,26 +526,15 @@ const IBDPPhysics = () => {
                               <BookOpen className="h-4 w-4" />
                               MCQ Practice
                             </h4>
-                            <div className="space-y-2">
-                              <a 
-                                href={chapter.links.mcq}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-primary hover:underline"
-                              >
-                                <Download className="h-3 w-3" />
-                                Download MCQs
-                              </a>
-                              <a 
-                                href={chapter.links.mcqSolutions}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-primary hover:underline"
-                              >
-                                <CheckCircle2 className="h-3 w-3" />
-                                Solutions
-                              </a>
-                            </div>
+                            <a 
+                              href={chapter.links.mcq}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-sm text-primary hover:underline"
+                            >
+                              <Download className="h-3 w-3" />
+                              Download MCQs
+                            </a>
                           </div>
 
                           {/* Notes */}
@@ -598,7 +576,7 @@ const IBDPPhysics = () => {
                   Paper 1 (MCQs)
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent>
                 <a
                   href="https://drive.google.com/your-paper1-link"
                   target="_blank"
@@ -607,15 +585,6 @@ const IBDPPhysics = () => {
                 >
                   <Download className="h-4 w-4" />
                   Download Paper 1
-                </a>
-                <a
-                  href="https://drive.google.com/your-paper1-solutions"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary hover:underline"
-                >
-                  <CheckCircle2 className="h-4 w-4" />
-                  Solutions
                 </a>
               </CardContent>
             </Card>
@@ -627,7 +596,7 @@ const IBDPPhysics = () => {
                   Paper 2 (Long Questions)
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent>
                 <a
                   href="https://drive.google.com/your-paper2-link"
                   target="_blank"
@@ -636,15 +605,6 @@ const IBDPPhysics = () => {
                 >
                   <Download className="h-4 w-4" />
                   Download Paper 2
-                </a>
-                <a
-                  href="https://drive.google.com/your-paper2-solutions"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary hover:underline"
-                >
-                  <CheckCircle2 className="h-4 w-4" />
-                  Solutions
                 </a>
               </CardContent>
             </Card>
