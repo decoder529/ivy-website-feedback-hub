@@ -32,9 +32,7 @@ const IBDPPhysics = () => {
     hlOnly?: boolean;
     links: {
       worksheet: string;
-      worksheetSolutions: string;
       mcq: string;
-      mcqSolutions: string;
       notes: string;
     };
   };
@@ -50,9 +48,7 @@ const IBDPPhysics = () => {
           number: '0',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/FG6UR2iQKAqJPowh7',
             notes: 'https://drive.google.com/your-link-here'
           }
         }
@@ -68,9 +64,7 @@ const IBDPPhysics = () => {
           number: '1.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/DhEBRWLgSGm52SDW8',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -80,9 +74,7 @@ const IBDPPhysics = () => {
           number: '1.2',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/8moQpsFp8UDTQEG7A',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -92,9 +84,7 @@ const IBDPPhysics = () => {
           number: 'A2.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/RxYCah9ECkAByrT1A',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -104,9 +94,7 @@ const IBDPPhysics = () => {
           number: 'A2.2',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/A7wYztEJ5ZJCu9468',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -116,9 +104,7 @@ const IBDPPhysics = () => {
           number: 'A3',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/fucyGMC6SwjKVZcE7',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -128,9 +114,7 @@ const IBDPPhysics = () => {
           number: 'A4',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/TXE3Dhs3RmN55TpY9',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -140,9 +124,7 @@ const IBDPPhysics = () => {
           number: 'A5',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/5PKbf1xrSa1aNFTL8',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -152,9 +134,7 @@ const IBDPPhysics = () => {
           number: 'A6',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/efGekaopWqXu6y2P8',
             notes: 'https://drive.google.com/your-link-here'
           }
         }
@@ -170,9 +150,7 @@ const IBDPPhysics = () => {
           number: 'B7',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/Mf6PPz5b5C484ESV9',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -182,9 +160,7 @@ const IBDPPhysics = () => {
           number: 'B8',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/Y6EvRMSGAdpGD6o78',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -194,9 +170,7 @@ const IBDPPhysics = () => {
           number: 'B9',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/oxbDurifAUmpVccj7',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -207,9 +181,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/JXv7o3WTR1xNpdC37',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -219,9 +191,7 @@ const IBDPPhysics = () => {
           number: 'B11',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/ZEo3SJYTHD4n6Xrx5',
             notes: 'https://drive.google.com/your-link-here'
           }
         }
@@ -237,9 +207,7 @@ const IBDPPhysics = () => {
           number: 'C12.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/arY1XxKRiP3DHu7X6',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -250,9 +218,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/npewCsNxz9HiFLau6',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -262,9 +228,7 @@ const IBDPPhysics = () => {
           number: 'C13',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: ' https://forms.gle/zjXDWEh1ksyYaDa6A',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -274,9 +238,7 @@ const IBDPPhysics = () => {
           number: 'C14.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/j8NS6uHwbTraeHMEA',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -287,9 +249,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'hhttps://forms.gle/MPQNnrtiy5tkByq87',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -299,9 +259,7 @@ const IBDPPhysics = () => {
           number: 'C15',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/Y9HHboUKAvT5nowC9',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -311,9 +269,7 @@ const IBDPPhysics = () => {
           number: 'C16.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/KqTjYr7Cn4BSJGsE6',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -324,9 +280,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/tL9TkjMZaThtc4vT6',
             notes: 'https://drive.google.com/your-link-here'
           }
         }
@@ -342,9 +296,7 @@ const IBDPPhysics = () => {
           number: 'D17.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/8ZRSmdfWPnEyTDZU9',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -355,9 +307,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/cyrYKawKnV7KkEjC8',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -367,9 +317,7 @@ const IBDPPhysics = () => {
           number: 'D18.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/6nRz7w7hP3gRqzjd6',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -380,9 +328,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/3hQkE7iDvLhqP9v77',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -392,9 +338,7 @@ const IBDPPhysics = () => {
           number: 'D19',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/djfnpiBfmM49Tjxr7',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -405,9 +349,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/AJLyrbt4cpEthp8SA',
             notes: 'https://drive.google.com/your-link-here'
           }
         }
@@ -423,9 +365,7 @@ const IBDPPhysics = () => {
           number: 'E21.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/HS2AoYavEyxnH5JfA',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -436,9 +376,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/a1Ba1YngS8EQ7UYF9',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -449,9 +387,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/sAmtx7JyyaFE6t1P6',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -461,9 +397,7 @@ const IBDPPhysics = () => {
           number: 'E23.1',
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/AHaCeCfyGj6SHoEF7',
             notes: 'https://drive.google.com/your-link-here'
           }
         },
@@ -474,9 +408,7 @@ const IBDPPhysics = () => {
           hlOnly: true,
           links: {
             worksheet: 'https://drive.google.com/your-link-here',
-            worksheetSolutions: 'https://drive.google.com/your-link-here',
-            mcq: 'https://drive.google.com/your-link-here',
-            mcqSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://forms.gle/UNs4EJfZRsPrmX8w7',
             notes: 'https://drive.google.com/your-link-here'
           }
         }
