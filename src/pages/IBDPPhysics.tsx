@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Accordion, 
   AccordionContent, 
@@ -18,16 +19,12 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
 
 const IBDPPhysics = () => {
   const navigate = useNavigate();
   const [selectedLevel, setSelectedLevel] = useState<'HL' | 'SL'>('HL');
-  const [themes, setThemes] = useState<Record<string, Theme>>({});
-  const [loading, setLoading] = useState(true);
-  const { toast } = useToast();
 
+  // Theme-based organization
   type Chapter = {
     id: string;
     title: string;
@@ -42,85 +39,454 @@ const IBDPPhysics = () => {
     };
   };
 
-  type Theme = {
-    name: string;
-    color: string;
-    chapters: Chapter[];
+  const themes: Record<string, { name: string; color: string; chapters: Chapter[] }> = {
+    intro: {
+      name: "Introduction",
+      color: "from-slate-500 to-gray-600",
+      chapters: [
+        {
+          id: 'ch0',
+          title: 'Uncertainties and vectors',
+          number: '0',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        }
+      ]
+    },
+    A: {
+      name: "Theme A: Space, Time and Motion",
+      color: "from-blue-500 to-indigo-600",
+      chapters: [
+        {
+          id: 'ch1-1',
+          title: 'Kinematics',
+          number: '1.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch1-2',
+          title: 'Projectile motion',
+          number: '1.2',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch2-1',
+          title: "Forces and Newton's laws",
+          number: 'A2.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch2-2',
+          title: 'Circular motion',
+          number: 'A2.2',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch3',
+          title: 'Work, energy and power',
+          number: 'A3',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch4',
+          title: 'Linear momentum',
+          number: 'A4',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch5',
+          title: 'Rigid body mechanics',
+          number: 'A5',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch6',
+          title: 'Relativity',
+          number: 'A6',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        }
+      ]
+    },
+    B: {
+      name: "Theme B: The Particulate Nature of Matter",
+      color: "from-orange-500 to-red-600",
+      chapters: [
+        {
+          id: 'ch7',
+          title: 'Thermal energy transfers',
+          number: 'B7',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch8',
+          title: 'The greenhouse effect',
+          number: 'B8',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch9',
+          title: 'The gas laws',
+          number: 'B9',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch10',
+          title: 'Thermodynamics',
+          number: 'B10',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch11',
+          title: 'Current and circuits',
+          number: 'B11',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        }
+      ]
+    },
+    C: {
+      name: "Theme C: Wave Behaviour",
+      color: "from-purple-500 to-violet-600",
+      chapters: [
+        {
+          id: 'ch12-1',
+          title: 'Simple harmonic motion',
+          number: 'C12.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch12-2',
+          title: 'SHM (HL)',
+          number: 'C12.2',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch13',
+          title: 'The wave model',
+          number: 'C13',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch14-1',
+          title: 'Wave phenomena',
+          number: 'C14.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch14-2',
+          title: 'Wave phenomena (HL)',
+          number: 'C14.2',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch15',
+          title: 'Standing waves and resonance',
+          number: 'C15',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch16-1',
+          title: 'The Doppler effect',
+          number: 'C16.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch16-2',
+          title: 'The Doppler effect (HL)',
+          number: 'C16.2',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        }
+      ]
+    },
+    D: {
+      name: "Theme D: Fields",
+      color: "from-green-500 to-emerald-600",
+      chapters: [
+        {
+          id: 'ch17-1',
+          title: 'Gravitation',
+          number: 'D17.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch17-2',
+          title: 'Gravitation (HL)',
+          number: 'D17.2',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch18-1',
+          title: 'Electric field and potential',
+          number: 'D18.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch18-2',
+          title: 'Electric field and potential (HL)',
+          number: 'D18.2',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch19',
+          title: 'Motion in EM fields',
+          number: 'D19',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch20',
+          title: 'Electromagnetic induction',
+          number: 'D20',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        }
+      ]
+    },
+    E: {
+      name: "Theme E: Nuclear and Quantum Physics",
+      color: "from-pink-500 to-rose-600",
+      chapters: [
+        {
+          id: 'ch21-1',
+          title: 'Atomic physics',
+          number: 'E21.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch21-2',
+          title: 'Atomic physics (HL)',
+          number: 'E21.2',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch22',
+          title: 'Quantum physics',
+          number: 'E22',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch23-1',
+          title: 'Nuclear physics',
+          number: 'E23.1',
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        },
+        {
+          id: 'ch23-2',
+          title: 'Nuclear physics (HL)',
+          number: 'E23.2',
+          hlOnly: true,
+          links: {
+            worksheet: 'https://drive.google.com/your-link-here',
+            worksheetSolutions: 'https://drive.google.com/your-link-here',
+            mcq: 'https://drive.google.com/your-link-here',
+            mcqSolutions: 'https://drive.google.com/your-link-here',
+            notes: 'https://drive.google.com/your-link-here'
+          }
+        }
+      ]
+    }
   };
-
-  useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        setLoading(true);
-        
-        // Fetch themes
-        const { data: themesData, error: themesError } = await supabase
-          .from('physics_themes')
-          .select('*')
-          .order('display_order');
-
-        if (themesError) throw themesError;
-
-        // Fetch chapters
-        const { data: chaptersData, error: chaptersError } = await supabase
-          .from('physics_chapters')
-          .select('*')
-          .order('display_order');
-
-        if (chaptersError) throw chaptersError;
-
-        // Organize data
-        const organizedThemes: Record<string, Theme> = {};
-        
-        themesData?.forEach((theme) => {
-          const themeKey = theme.name.toLowerCase().includes('intro') ? 'intro' : 
-                          theme.name.includes('Theme A') ? 'A' :
-                          theme.name.includes('Theme B') ? 'B' :
-                          theme.name.includes('Theme C') ? 'C' :
-                          theme.name.includes('Theme D') ? 'D' : 'E';
-                          
-          const themeChapters = chaptersData
-            ?.filter((ch) => ch.theme_id === theme.id)
-            .map((ch) => ({
-              id: ch.id,
-              title: ch.title,
-              number: ch.number,
-              hlOnly: ch.hl_only,
-              links: {
-                worksheet: ch.worksheet_link || 'https://drive.google.com/your-link-here',
-                worksheetSolutions: ch.worksheet_solutions_link || 'https://drive.google.com/your-link-here',
-                mcq: ch.mcq_link || 'https://drive.google.com/your-link-here',
-                mcqSolutions: ch.mcq_solutions_link || 'https://drive.google.com/your-link-here',
-                notes: ch.notes_link || 'https://drive.google.com/your-link-here',
-              },
-            })) || [];
-
-          organizedThemes[themeKey] = {
-            name: theme.name,
-            color: theme.color,
-            chapters: themeChapters,
-          };
-        });
-
-        setThemes(organizedThemes);
-      } catch (error) {
-        console.error('Error fetching physics content:', error);
-        toast({
-          title: 'Error',
-          description: 'Failed to load content. Please refresh the page.',
-          variant: 'destructive',
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchContent();
-  }, [toast]);
 
   const getFilteredThemes = () => {
     if (selectedLevel === 'SL') {
-      const filtered: Record<string, Theme> = {};
+      const filtered: Record<string, typeof themes[keyof typeof themes]> = {};
       Object.entries(themes).forEach(([key, theme]) => {
         filtered[key] = {
           ...theme,
@@ -179,118 +545,112 @@ const IBDPPhysics = () => {
       {/* Main Content */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {loading ? (
-            <div className="text-center py-12">
-              <p className="text-lg text-muted-foreground">Loading content...</p>
-            </div>
-          ) : (
-            Object.entries(getFilteredThemes()).map(([key, theme]) => (
-              <Card key={key} className="mb-8 overflow-hidden border-2">
-                <CardHeader className={`bg-gradient-to-r ${theme.color} text-white`}>
-                  <CardTitle className="text-2xl font-bold">{theme.name}</CardTitle>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <Accordion type="single" collapsible className="space-y-4">
-                    {theme.chapters.map((chapter) => (
-                      <AccordionItem
-                        key={chapter.id}
-                        value={chapter.id}
-                        className="border rounded-lg px-4 hover:bg-muted/50 transition-colors"
-                      >
-                        <AccordionTrigger className="hover:no-underline">
-                          <div className="flex items-center gap-3">
-                            <span className="font-semibold text-primary">{chapter.number}</span>
-                            <span className="font-medium">{chapter.title}</span>
-                            {chapter.hlOnly && (
-                              <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">
-                                HL Only
-                              </span>
-                            )}
-                          </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="pt-4 pb-6">
-                          <div className="grid md:grid-cols-3 gap-4">
-                            {/* Worksheet */}
+          {Object.entries(getFilteredThemes()).map(([key, theme]) => (
+            <Card key={key} className="mb-8 overflow-hidden border-2">
+              <CardHeader className={`bg-gradient-to-r ${theme.color} text-white`}>
+                <CardTitle className="text-2xl font-bold">{theme.name}</CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {theme.chapters.map((chapter) => (
+                    <AccordionItem
+                      key={chapter.id}
+                      value={chapter.id}
+                      className="border rounded-lg px-4 hover:bg-muted/50 transition-colors"
+                    >
+                      <AccordionTrigger className="hover:no-underline">
+                        <div className="flex items-center gap-3">
+                          <span className="font-semibold text-primary">{chapter.number}</span>
+                          <span className="font-medium">{chapter.title}</span>
+                          {chapter.hlOnly && (
+                            <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">
+                              HL Only
+                            </span>
+                          )}
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pt-4 pb-6">
+                        <div className="grid md:grid-cols-3 gap-4">
+                          {/* Worksheet */}
+                          <div className="space-y-2">
+                            <h4 className="font-semibold flex items-center gap-2 text-sm">
+                              <FileText className="h-4 w-4" />
+                              Worksheet
+                            </h4>
                             <div className="space-y-2">
-                              <h4 className="font-semibold flex items-center gap-2 text-sm">
-                                <FileText className="h-4 w-4" />
-                                Worksheet
-                              </h4>
-                              <div className="space-y-2">
-                                <a 
-                                  href={chapter.links.worksheet}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-center gap-2 text-sm text-primary hover:underline"
-                                >
-                                  <Download className="h-3 w-3" />
-                                  Download Worksheet
-                                </a>
-                                <a 
-                                  href={chapter.links.worksheetSolutions}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-center gap-2 text-sm text-primary hover:underline"
-                                >
-                                  <CheckCircle2 className="h-3 w-3" />
-                                  Solutions
-                                </a>
-                              </div>
-                            </div>
-
-                            {/* MCQ Practice */}
-                            <div className="space-y-2">
-                              <h4 className="font-semibold flex items-center gap-2 text-sm">
-                                <BookOpen className="h-4 w-4" />
-                                MCQ Practice
-                              </h4>
-                              <div className="space-y-2">
-                                <a 
-                                  href={chapter.links.mcq}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-center gap-2 text-sm text-primary hover:underline"
-                                >
-                                  <Download className="h-3 w-3" />
-                                  Download MCQs
-                                </a>
-                                <a 
-                                  href={chapter.links.mcqSolutions}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-center gap-2 text-sm text-primary hover:underline"
-                                >
-                                  <CheckCircle2 className="h-3 w-3" />
-                                  Solutions
-                                </a>
-                              </div>
-                            </div>
-
-                            {/* Notes */}
-                            <div className="space-y-2">
-                              <h4 className="font-semibold flex items-center gap-2 text-sm">
-                                <StickyNote className="h-4 w-4" />
-                                Notes
-                              </h4>
                               <a 
-                                href={chapter.links.notes}
+                                href={chapter.links.worksheet}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-sm text-primary hover:underline"
                               >
                                 <Download className="h-3 w-3" />
-                                Download Notes
+                                Download Worksheet
+                              </a>
+                              <a 
+                                href={chapter.links.worksheetSolutions}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm text-primary hover:underline"
+                              >
+                                <CheckCircle2 className="h-3 w-3" />
+                                Solutions
                               </a>
                             </div>
                           </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            ))
-          )}
+
+                          {/* MCQ Practice */}
+                          <div className="space-y-2">
+                            <h4 className="font-semibold flex items-center gap-2 text-sm">
+                              <BookOpen className="h-4 w-4" />
+                              MCQ Practice
+                            </h4>
+                            <div className="space-y-2">
+                              <a 
+                                href={chapter.links.mcq}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm text-primary hover:underline"
+                              >
+                                <Download className="h-3 w-3" />
+                                Download MCQs
+                              </a>
+                              <a 
+                                href={chapter.links.mcqSolutions}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm text-primary hover:underline"
+                              >
+                                <CheckCircle2 className="h-3 w-3" />
+                                Solutions
+                              </a>
+                            </div>
+                          </div>
+
+                          {/* Notes */}
+                          <div className="space-y-2">
+                            <h4 className="font-semibold flex items-center gap-2 text-sm">
+                              <StickyNote className="h-4 w-4" />
+                              Notes
+                            </h4>
+                            <a 
+                              href={chapter.links.notes}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-sm text-primary hover:underline"
+                            >
+                              <Download className="h-3 w-3" />
+                              Download Notes
+                            </a>
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
