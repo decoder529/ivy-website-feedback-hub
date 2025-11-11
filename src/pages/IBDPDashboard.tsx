@@ -85,22 +85,22 @@ const IBDPDashboard = () => {
             </div>
 
             {/* Subject Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
               {subjects.map((subject, index) => (
                 <Card 
                   key={index} 
                   className={`group hover:shadow-hero transition-all duration-300 hover:scale-105 border-0 overflow-hidden animate-fade-in ${subject.bgColor}`}
                 >
-                  <CardContent className="p-8 text-center">
-                    <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">
+                  <CardContent className="p-12 text-center">
+                    <div className="text-8xl mb-8 group-hover:scale-110 transition-transform">
                       {subject.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">{subject.name}</h3>
-                    <p className="text-muted-foreground mb-8 leading-relaxed text-sm">
+                    <h3 className="text-4xl font-bold text-foreground mb-6">{subject.name}</h3>
+                    <p className="text-muted-foreground mb-10 leading-relaxed text-lg">
                       {subject.description}
                     </p>
                     <Button 
-                      className={`w-full bg-gradient-to-r ${subject.gradient} text-white hover:shadow-hero hover:scale-105 transition-all duration-300 py-3`}
+                      className={`w-full bg-gradient-to-r ${subject.gradient} text-white hover:shadow-hero hover:scale-105 transition-all duration-300 py-6 text-lg`}
                       onClick={() => navigate(`/ibdp/${section.path}/${subject.name.toLowerCase()}`)}
                     >
                       View {subject.name}
