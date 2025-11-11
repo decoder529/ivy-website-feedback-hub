@@ -46,20 +46,6 @@ const IBDPDashboard = () => {
       description: 'Practice worksheets organized by chapters',
       gradient: 'from-primary to-secondary',
       path: 'worksheets'
-    },
-    {
-      title: 'Teacher Notes',
-      icon: StickyNote,
-      description: 'Comprehensive study notes and guides',
-      gradient: 'from-secondary to-primary',
-      path: 'notes'
-    },
-    {
-      title: 'Question Papers',
-      icon: FileText,
-      description: 'Past papers with detailed solutions',
-      gradient: 'from-primary to-secondary',
-      path: 'papers'
     }
   ];
 
