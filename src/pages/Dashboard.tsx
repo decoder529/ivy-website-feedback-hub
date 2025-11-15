@@ -30,11 +30,12 @@ interface TestSeries {
   id: string;
   title: string;
   subject: string;
-  description: string;
-  difficulty_level: string;
-  required_plan: string;
-  total_questions: number;
-  duration_minutes: number;
+  description: string | null;
+  grade: string;
+  is_active: boolean;
+  questions: any;
+  created_at: string;
+  updated_at: string;
 }
 
 const Dashboard = () => {
@@ -252,24 +253,12 @@ const Dashboard = () => {
                         <CardContent>
                           <div className="space-y-2">
                             <div className="flex justify-between text-sm">
-                              <span>Questions:</span>
-                              <span>{test.total_questions}</span>
+                              <span>Subject:</span>
+                              <Badge variant="outline">{test.subject}</Badge>
                             </div>
                             <div className="flex justify-between text-sm">
-                              <span>Duration:</span>
-                              <span>{test.duration_minutes} min</span>
-                            </div>
-                            <div className="flex justify-between text-sm">
-                              <span>Level:</span>
-                              <Badge variant="outline">
-                                {test.difficulty_level}
-                              </Badge>
-                            </div>
-                            <div className="flex justify-between text-sm">
-                              <span>Required Plan:</span>
-                              <Badge variant="secondary">
-                                {test.required_plan}
-                              </Badge>
+                              <span>Grade:</span>
+                              <Badge variant="secondary">{test.grade}</Badge>
                             </div>
                           </div>
                           
