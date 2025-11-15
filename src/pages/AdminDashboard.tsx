@@ -27,13 +27,12 @@ interface DemoRequest {
 
 interface TeacherMessage {
   id: string;
-  user_id: string;
-  subject: string;
+  name: string;
+  email: string;
   message: string;
-  teacher_name: string;
   status: string;
-  response?: string;
   created_at: string;
+  updated_at: string;
 }
 
 interface UserSubscription {
@@ -359,8 +358,8 @@ const AdminDashboard = () => {
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead>Subject</TableHead>
-                        <TableHead>Teacher</TableHead>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Email</TableHead>
                         <TableHead>Status</TableHead>
                         <TableHead>Created</TableHead>
                         <TableHead>Actions</TableHead>
@@ -369,8 +368,8 @@ const AdminDashboard = () => {
                     <TableBody>
                       {teacherMessages.map((message) => (
                         <TableRow key={message.id}>
-                          <TableCell className="font-medium">{message.subject}</TableCell>
-                          <TableCell>{message.teacher_name}</TableCell>
+                          <TableCell className="font-medium">{message.name}</TableCell>
+                          <TableCell>{message.email}</TableCell>
                           <TableCell>{getStatusBadge(message.status)}</TableCell>
                           <TableCell>{new Date(message.created_at).toLocaleDateString()}</TableCell>
                           <TableCell>
@@ -378,7 +377,6 @@ const AdminDashboard = () => {
                               <DialogTrigger asChild>
                                 <Button variant="outline" size="sm" onClick={() => {
                                   setSelectedMessage(message);
-                                  setResponse(message.response || '');
                                   setNewStatus(message.status);
                                 }}>
                                   <Eye className="h-4 w-4" />
@@ -407,25 +405,16 @@ const AdminDashboard = () => {
                                       </SelectContent>
                                     </Select>
                                   </div>
-                                  <div>
-                                    <label className="text-sm font-medium">Response</label>
-                                    <Textarea
-                                      value={response}
-                                      onChange={(e) => setResponse(e.target.value)}
-                                      placeholder="Write your response..."
-                                    />
-                                  </div>
                                   <Button 
                                     onClick={() => {
                                       if (selectedMessage) {
                                         updateTeacherMessage(selectedMessage.id, {
-                                          status: newStatus,
-                                          response: response
+                                          status: newStatus
                                         });
                                       }
                                     }}
                                   >
-                                    Update Message
+                                    Update Status
                                   </Button>
                                 </div>
                               </DialogContent>

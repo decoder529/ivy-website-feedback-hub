@@ -33,6 +33,10 @@ import WorksheetPhysics from "./pages/WorksheetPhysics";
 import WorksheetChemistry from "./pages/WorksheetChemistry";
 import WorksheetMaths from "./pages/WorksheetMaths";
 import WorksheetBiology from "./pages/WorksheetBiology";
+import IBDPPastPapersPhysics from "./pages/IBDPPastPapersPhysics";
+import IBDPPastPapersChemistry from "./pages/IBDPPastPapersChemistry";
+import IBDPPastPapersBiology from "./pages/IBDPPastPapersBiology";
+import IBDPPastPapersMaths from "./pages/IBDPPastPapersMaths";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +66,10 @@ const App = () => (
           <Route path="/ibdp/worksheets/chemistry" element={<IBDPChemistry />} />
           <Route path="/ibdp/worksheets/biology" element={<IBDPBiology />} />
           <Route path="/ibdp/worksheets/maths" element={<IBDPMaths />} />
+          <Route path="/ibdp/past-papers/physics" element={<IBDPPastPapersPhysics />} />
+          <Route path="/ibdp/past-papers/chemistry" element={<IBDPPastPapersChemistry />} />
+          <Route path="/ibdp/past-papers/biology" element={<IBDPPastPapersBiology />} />
+          <Route path="/ibdp/past-papers/maths" element={<IBDPPastPapersMaths />} />
           <Route path="/ibdp/:subject" element={<IBDPSubject />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<AboutUs />} />
