@@ -61,9 +61,9 @@ const IBDPSubject = () => {
         'MAY-JUNE-2025': {
           HL: {
             qp: {
-              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz1-hl-qp/view',
-              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p1-tz2-hl-qp/view',
-              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz1-hl-qp/view',
+              'Physics_paper_1__TZ1_HL': 'https://drive.google.com/file/d/1SRC2xAmKELbg94PUBGVzpR9QtMSItFFo/view?usp=share_link',
+              'Physics_paper_1__TZ2_HL': 'https://drive.google.com/file/d/1pQc-4wKMYMPecdmGVRas4oxcuUuPmx0B/view?usp=share_link',
+              'Physics_paper_2__TZ1_HL': 'https://drive.google.com/file/d/1xmC0pGnwmEMZst2cP-ErDvCQdQ65OzhY/view?usp=sharing',
               'Physics_paper_2__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p2-tz2-hl-qp/view',
               'Physics_paper_3__TZ1_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz1-hl-qp/view',
               'Physics_paper_3__TZ2_HL': 'https://drive.google.com/file/d/physics-2023-mj-p3-tz2-hl-qp/view'
