@@ -1,127 +1,56 @@
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ChevronLeft, ExternalLink } from 'lucide-react';
 
-const IBDPPastPapersPhysicsDetail = ({ year, level }: { year: string; level: string }) => {
+const IBDPPastPapersPhysics = () => {
   const navigate = useNavigate();
+  
+  const years = Array.from({ length: 2025 - 1999 + 1 }, (_, i) => 2025 - i);
   
   // Store paper links here - you can replace these with actual Google Drive links
   const [paperLinks] = useState<{[key: string]: string}>({
-    // Example: 'p1': 'https://drive.google.com/...',
+    // Example: 'hl_2025_may_p1': 'https://drive.google.com/...',
   });
-
-  const papers = [
-    { id: 'p1', label: 'Physics_paper_1_HL' },
-    { id: 'p2', label: 'Physics_paper_2_HL' },
-    { id: 'p3', label: 'Physics_paper_3_HL' },
-  ];
-
-  const markschemes = [
-    { id: 'ms1', label: 'Physics_paper_1_HL_markscheme' },
-    { id: 'ms2', label: 'Physics_paper_2_HL_markscheme' },
-    { id: 'ms3', label: 'Physics_paper_3_HL_markscheme' },
-  ];
 
   const handlePaperClick = (paperId: string) => {
     const link = paperLinks[paperId];
     if (link) {
       window.open(link, '_blank');
     } else {
-      // Placeholder - opens a blank tab for now
       window.open('about:blank', '_blank');
     }
   };
 
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <Button
-            variant="outline"
-            onClick={() => navigate(`/ibdp/past-papers/physics`)}
-            className="mb-6"
+  const renderExamPapers = (year: number, level: string, exam: string) => {
+    const papers = [
+      { id: `${level}_${year}_${exam}_p1`, label: 'Physics_paper_1_' + level.toUpperCase() },
+      { id: `${level}_${year}_${exam}_p2`, label: 'Physics_paper_2_' + level.toUpperCase() },
+      { id: `${level}_${year}_${exam}_p3`, label: 'Physics_paper_3_' + level.toUpperCase() },
+      { id: `${level}_${year}_${exam}_ms1`, label: 'Physics_paper_1_' + level.toUpperCase() + '_markscheme' },
+      { id: `${level}_${year}_${exam}_ms2`, label: 'Physics_paper_2_' + level.toUpperCase() + '_markscheme' },
+      { id: `${level}_${year}_${exam}_ms3`, label: 'Physics_paper_3_' + level.toUpperCase() + '_markscheme' },
+    ];
+
+    return (
+      <div className="space-y-2">
+        {papers.map((paper) => (
+          <button
+            key={paper.id}
+            onClick={() => handlePaperClick(paper.id)}
+            className="w-full text-left px-4 py-2 rounded-lg bg-card hover:bg-accent transition-colors flex items-center justify-between group"
           >
-            <ChevronLeft className="mr-2 h-4 w-4" />
-            Back to Years
-          </Button>
-          
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-              MAY-JUNE-{year}
-            </h1>
-            <p className="text-muted-foreground">
-              Home / {level.toUpperCase()}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Question Papers */}
-            <div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px flex-1 bg-primary"></div>
-                <h2 className="text-lg font-semibold text-primary">QUESTION PAPERS</h2>
-                <div className="h-px flex-1 bg-primary"></div>
-              </div>
-              <div className="space-y-3">
-                {papers.map((paper) => (
-                  <button
-                    key={paper.id}
-                    onClick={() => handlePaperClick(paper.id)}
-                    className="w-full text-left px-4 py-3 rounded-lg bg-card hover:bg-accent transition-colors flex items-center justify-between group"
-                  >
-                    <span className="text-primary font-medium">{paper.label}</span>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Papers Solution */}
-            <div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px flex-1 bg-primary"></div>
-                <h2 className="text-lg font-semibold text-primary">PAPERS SOLUTION</h2>
-                <div className="h-px flex-1 bg-primary"></div>
-              </div>
-              <div className="space-y-3">
-                {markschemes.map((paper) => (
-                  <button
-                    key={paper.id}
-                    onClick={() => handlePaperClick(paper.id)}
-                    className="w-full text-left px-4 py-3 rounded-lg bg-card hover:bg-accent transition-colors flex items-center justify-between group"
-                  >
-                    <span className="text-primary font-medium">{paper.label}</span>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
-};
-
-const IBDPPastPapersPhysics = () => {
-  const navigate = useNavigate();
-  const params = useParams();
-  
-  const years = Array.from({ length: 2025 - 1999 + 1 }, (_, i) => 2025 - i);
-  
-  // If we have year and level params, show detail view
-  if (params.year && params.level) {
-    return <IBDPPastPapersPhysicsDetail year={params.year} level={params.level} />;
-  }
+            <span className="text-primary font-medium text-sm">{paper.label}</span>
+            <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          </button>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -155,57 +84,57 @@ const IBDPPastPapersPhysics = () => {
             </TabsList>
 
             <TabsContent value="hl" className="space-y-4">
-              <div className="grid gap-4 max-w-4xl mx-auto">
-                {years.map((year) => (
-                  <Card 
-                    key={year} 
-                    className="cursor-pointer hover:shadow-lg transition-shadow"
-                    onClick={() => navigate(`/ibdp/past-papers/physics/${year}/hl`)}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-semibold">{year}</h3>
-                        <Button variant="outline">
-                          View Papers
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="max-w-4xl mx-auto">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {years.map((year) => (
+                    <AccordionItem key={year} value={`year-${year}`} className="border rounded-lg bg-card">
+                      <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                        <span className="text-xl font-semibold">{year}</span>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-4">
+                        <div className="space-y-6">
+                          <div>
+                            <h3 className="text-lg font-semibold text-primary mb-3">May Examination</h3>
+                            {renderExamPapers(year, 'hl', 'may')}
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-primary mb-3">November Examination</h3>
+                            {renderExamPapers(year, 'hl', 'nov')}
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
             </TabsContent>
 
             <TabsContent value="sl" className="space-y-4">
-              <div className="grid gap-4 max-w-4xl mx-auto">
-                {years.map((year) => (
-                  <Card 
-                    key={year}
-                    className="cursor-pointer hover:shadow-lg transition-shadow"
-                    onClick={() => navigate(`/ibdp/past-papers/physics/${year}/sl`)}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-semibold">{year}</h3>
-                        <Button variant="outline">
-                          View Papers
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="max-w-4xl mx-auto">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {years.map((year) => (
+                    <AccordionItem key={year} value={`year-${year}`} className="border rounded-lg bg-card">
+                      <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                        <span className="text-xl font-semibold">{year}</span>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-4">
+                        <div className="space-y-6">
+                          <div>
+                            <h3 className="text-lg font-semibold text-primary mb-3">May Examination</h3>
+                            {renderExamPapers(year, 'sl', 'may')}
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-primary mb-3">November Examination</h3>
+                            {renderExamPapers(year, 'sl', 'nov')}
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
             </TabsContent>
           </Tabs>
-
-          <Card className="mt-8 max-w-4xl mx-auto bg-muted/50">
-            <CardContent className="p-6">
-              <h3 className="font-semibold mb-2">Download Guide</h3>
-              <ul className="space-y-1 text-sm text-muted-foreground">
-                <li>• <strong>Paper 1, 2, 3</strong>: Question papers for each examination component</li>
-                <li>• <strong>Markscheme 1, 2, 3</strong>: Answer keys and marking guides for respective papers</li>
-              </ul>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
