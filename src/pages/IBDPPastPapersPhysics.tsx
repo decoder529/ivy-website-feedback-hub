@@ -78,16 +78,16 @@ const IBDPPastPapersPhysics = () => {
           </div>
 
           <Tabs defaultValue="hl" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8 bg-transparent">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8 bg-transparent gap-2">
               <TabsTrigger 
                 value="hl"
-                className="bg-white text-primary hover:bg-primary hover:text-white transition-colors data-[state=active]:bg-primary data-[state=active]:text-white"
+                className="bg-white text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out data-[state=active]:bg-primary data-[state=active]:text-white"
               >
                 Higher Level (HL)
               </TabsTrigger>
               <TabsTrigger 
                 value="sl"
-                className="bg-white text-primary hover:bg-primary hover:text-white transition-colors data-[state=active]:bg-primary data-[state=active]:text-white"
+                className="bg-white text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out data-[state=active]:bg-primary data-[state=active]:text-white"
               >
                 Standard Level (SL)
               </TabsTrigger>
