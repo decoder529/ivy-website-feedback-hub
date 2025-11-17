@@ -11,42 +11,30 @@ const IBDPPastPapersPhysics = () => {
   const navigate = useNavigate();
   
   const years = Array.from({ length: 2025 - 1999 + 1 }, (_, i) => 2025 - i);
-  
-  // Store paper links here - you can replace these with actual Google Drive links
-  const [paperLinks] = useState<{[key: string]: string}>({
-    // Example: 'hl_2025_may_p1': 'https://drive.google.com/...',
-  });
-
-  const handlePaperClick = (paperId: string) => {
-    const link = paperLinks[paperId];
-    if (link) {
-      window.open(link, '_blank');
-    } else {
-      window.open('about:blank', '_blank');
-    }
-  };
 
   const renderExamPapers = (year: number, level: string, exam: string) => {
     const papers = [
-      { id: `${level}_${year}_${exam}_p1`, label: 'Physics_paper_1_' + level.toUpperCase() },
-      { id: `${level}_${year}_${exam}_p2`, label: 'Physics_paper_2_' + level.toUpperCase() },
-      { id: `${level}_${year}_${exam}_p3`, label: 'Physics_paper_3_' + level.toUpperCase() },
-      { id: `${level}_${year}_${exam}_ms1`, label: 'Physics_paper_1_' + level.toUpperCase() + '_markscheme' },
-      { id: `${level}_${year}_${exam}_ms2`, label: 'Physics_paper_2_' + level.toUpperCase() + '_markscheme' },
-      { id: `${level}_${year}_${exam}_ms3`, label: 'Physics_paper_3_' + level.toUpperCase() + '_markscheme' },
+      { id: `${level}_${year}_${exam}_p1`, label: 'Physics_paper_1_' + level.toUpperCase(), link: 'https://drive.google.com/your-link-here' },
+      { id: `${level}_${year}_${exam}_p2`, label: 'Physics_paper_2_' + level.toUpperCase(), link: 'https://drive.google.com/your-link-here' },
+      { id: `${level}_${year}_${exam}_p3`, label: 'Physics_paper_3_' + level.toUpperCase(), link: 'https://drive.google.com/your-link-here' },
+      { id: `${level}_${year}_${exam}_ms1`, label: 'Physics_paper_1_' + level.toUpperCase() + '_markscheme', link: 'https://drive.google.com/your-link-here' },
+      { id: `${level}_${year}_${exam}_ms2`, label: 'Physics_paper_2_' + level.toUpperCase() + '_markscheme', link: 'https://drive.google.com/your-link-here' },
+      { id: `${level}_${year}_${exam}_ms3`, label: 'Physics_paper_3_' + level.toUpperCase() + '_markscheme', link: 'https://drive.google.com/your-link-here' },
     ];
 
     return (
       <div className="space-y-2">
         {papers.map((paper) => (
-          <button
+          <a
             key={paper.id}
-            onClick={() => handlePaperClick(paper.id)}
-            className="w-full text-left px-4 py-2 rounded-lg bg-card hover:bg-accent transition-colors flex items-center justify-between group"
+            href={paper.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full text-left px-4 py-2 rounded-lg bg-card hover:bg-accent transition-colors flex items-center justify-between group block"
           >
             <span className="text-primary font-medium text-sm">{paper.label}</span>
             <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-          </button>
+          </a>
         ))}
       </div>
     );
