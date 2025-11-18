@@ -41,18 +41,18 @@ const IBDPDashboard = () => {
 
   const sections = [
     {
-      title: 'Chapter-wise Worksheets',
-      icon: BookOpen,
-      description: 'Practice worksheets organized by chapters',
-      gradient: 'from-primary to-secondary',
-      path: 'worksheets'
-    },
-    {
       title: 'IBDP Past Year Papers',
       icon: FileText,
       description: 'Access past examination papers for comprehensive practice',
       gradient: 'from-accent to-primary',
       path: 'past-papers'
+    },
+    {
+      title: 'Chapter-wise Worksheets',
+      icon: BookOpen,
+      description: 'Practice worksheets organized by chapters',
+      gradient: 'from-primary to-secondary',
+      path: 'worksheets'
     }
   ];
 
